@@ -1,0 +1,89 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:block": {
+    "description": {
+      "identifier": "thump989:mystic_workbench",
+      "menu_category": {
+        "category": "items"
+      },
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": ["minecraft:cardinal_direction"]
+        }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": true,
+      "minecraft:selection_box": true,
+      "minecraft:crafting_table": {
+        "table_name": "§dWorkbench",
+        "crafting_tags": ["mystic_workbench", "crafting_table"]
+      },
+      "minecraft:light_emission": 15,
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 2
+      },
+      "tag:minecraft:is_pickaxe_item_destructible": {},
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "mystic_workbench_top"
+        },
+        "up": {
+          "texture": "mystic_workbench_top"
+        },
+        "down": {
+          "texture": "mystic_workbench_bottom"
+        },
+        "north": {
+          "texture": "mystic_workbench_north"
+        },
+        "east": {
+          "texture": "mystic_workbench_east"
+        },
+        "south": {
+          "texture": "mystic_workbench_south"
+        },
+        "west": {
+          "texture": "mystic_workbench_west"
+        }
+      },
+      "minecraft:map_color": "#691671"
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [0, 180, 0]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [0, 0, 0]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [0, 90, 0]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [0, 270, 0]
+          }
+        }
+      }
+    ]
+  }
+}

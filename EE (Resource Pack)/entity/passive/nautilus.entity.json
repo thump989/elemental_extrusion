@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:nautilus",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/nautilus"
+      },
+      "geometry": {
+        "default": "geometry.nautilus"
+      },
+      "animations": {
+        "idle": "animation.nautilus.tentacle_idle",
+        "swim": "animation.nautilus.swim",
+        "head_move": "animation.nautilus.head_move",
+        "retract": "animation.nautilus.retract",
+        "unretract": "animation.nautilus.unretract",
+        "retract_hold": "animation.nautilus.retract_hold",
+        "body_idle": "animation.nautilus.body_idle",
+        "hiding_controller": "controller.animation.nautilus.hiding_controller",
+        "root_controller": "controller.animation.nautilus.move"
+      },
+      "scripts": {
+        "animate": ["root_controller", "hiding_controller", "idle"]
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#e6b985",
+        "overlay_color": "#f99292"
+      }
+    }
+  }
+}

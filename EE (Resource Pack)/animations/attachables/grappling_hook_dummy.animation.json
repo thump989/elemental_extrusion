@@ -1,0 +1,46 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.grappling_hook_dummy.move": {
+			"loop": true,
+			"bones": {
+				"leftgear": {
+					"rotation": [0, 0, "q.modified_move_speed"]
+				},
+				"rightgear": {
+					"rotation": [0, 0, "q.modified_move_speed"]
+				}
+			}
+		},
+		"animation.grappling_hook_dummy.warn": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"root": {
+					"scale": 1
+				},
+				"warninglight": {
+					"scale": {
+						"0.0": [0, 0, 0],
+						"0.25": {
+							"pre": [0, 0, 0],
+							"post": [1, 1, 1]
+						},
+						"0.5": {
+							"pre": [1, 1, 1],
+							"post": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.grappling_hook_dummy.idle": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"warninglight": {
+					"scale": 0
+				}
+			}
+		}
+	}
+}

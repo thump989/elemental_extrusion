@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:thunder_orb",
+      "materials": {
+        "default": "entity_beam_additive"
+      },
+      "textures": {
+        "default": "textures/entity/thunder_orb"
+      },
+      "animations": {
+        "basic": "animation.thunder_orb.idle"
+      },
+      "particle_effects": {
+        "ambient_thunder_1": "thump989:ambient_thunder_1",
+        "ambient_thunder_tome": "thump989:ambient_thunder_tome"
+      },
+      "scripts": {
+        "should_update_bones_and_effects_offscreen": "(1.0)",
+        "animate": ["basic"]
+      },
+      "geometry": {
+        "default": "geometry.thunder_orb"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

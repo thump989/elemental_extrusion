@@ -1,0 +1,39 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "thump989:voidskipper_heart",
+      "render_controllers": [
+        "controller.render.default",
+        "controller.render.heart"
+      ],
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "solid": "entity_beam_additive"
+      },
+      "textures": {
+        "default": "textures/entity/attachable/voidskipper_heart"
+      },
+      "geometry": {
+        "default": "geometry.voidskipper_heart",
+        "solid": "geometry.voidskipper_heart_outer"
+      },
+      "animations": {
+        "first_person_hold": "animation.voidskipper_heart.first_person_hold",
+        "third_person_hold": "animation.voidskipper_heart.third_person_hold",
+        "idle": "animation.voidskipper_heart.idle"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "first_person_hold": "c.is_first_person"
+          },
+          {
+            "third_person_hold": "!c.is_first_person"
+          },
+          "idle"
+        ]
+      }
+    }
+  }
+}

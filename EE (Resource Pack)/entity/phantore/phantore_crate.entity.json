@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:phantore_crate",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "animations": {
+        "basic": "animation.phantore_crate.idle"
+      },
+      "scripts": {
+        "animate": ["basic"]
+      },
+      "textures": {
+        "default": "textures/entity/phantore_crate"
+      },
+      "geometry": {
+        "default": "geometry.phantore_crate"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

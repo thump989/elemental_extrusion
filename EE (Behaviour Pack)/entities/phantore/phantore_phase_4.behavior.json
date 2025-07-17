@@ -1,0 +1,896 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:phantore_phase_4",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:zombie",
+      "properties": {
+        "thump989:alive": {
+          "client_sync": true,
+          "default": true,
+          "type": "bool"
+        },
+        "thump989:phantore_power": {
+          "client_sync": true,
+          "default": 0,
+          "range": [0, 30],
+          "type": "int"
+        },
+        "thump989:xp_blast_amount": {
+          "client_sync": true,
+          "default": 0.0,
+          "range": [0.0, 50.0],
+          "type": "float"
+        },
+        "thump989:phantore_attack_state": {
+          "client_sync": true,
+          "default": "none",
+          "type": "enum",
+          "values": [
+            "none",
+            "summon",
+            "xp_timer",
+            "xp_bomb",
+            "skullshot",
+            "skullshot_2",
+            "recover",
+            "ranged_attack",
+            "melee"
+          ]
+        }
+      },
+      "animations": {
+        "failsafe": "animation.phantore.defeat_failsafe",
+        "nightlock": "animation.phantore.nightlock",
+        "skullattack_1": "animation.phantore.super_skullshoot_1",
+        "skullattack_2": "animation.phantore.super_skullshoot_2",
+        "xp_siphon": "animation.phantore.xp_siphon",
+        "xp_suction": "animation.phantore.xp_suction_phase4",
+        "skullshot_controller": "controller.animation.phantore_attacks",
+        "fire_res_remove": "animation.phantore.fire_res_remove"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "failsafe": "q.property('thump989:alive')==false"
+          },
+          {
+            "nightlock": "q.property('thump989:alive')==true"
+          },
+          {
+            "skullshot_controller": "q.property('thump989:alive')==true"
+          },
+          {
+            "fire_res_remove": "q.property('thump989:alive')==true"
+          },
+          {
+            "xp_siphon": "q.property('thump989:phantore_attack_state')=='xp_bomb' && q.property('thump989:alive')==true"
+          },
+          {
+            "xp_suction": "q.property('thump989:phantore_attack_state')=='xp_bomb' && q.property('thump989:alive')==true"
+          }
+        ]
+      }
+    },
+    "components": {
+      "minecraft:equipment": {
+        "table": "loot_tables/spawn_equipment/faux_armour.json",
+        "slot_drop_chance": [
+          {
+            "drop_chance": 0,
+            "slot": "slot.armor.chest"
+          }
+        ]
+      },
+      "minecraft:tick_world": {
+        "never_despawn": true,
+        "radius": 2
+      },
+      "minecraft:dimension_bound": {},
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:boss": {
+        "hud_range": 55,
+        "name": "§l§4Phantore",
+        "should_darken_sky": true
+      },
+      "minecraft:health": {
+        "value": 4000,
+        "max": 4000,
+        "min": 1
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "event": "thump989:phantore_phase1_defeat",
+            "target": "self",
+            "filters": {
+              "test": "actor_health",
+              "value": 1,
+              "subject": "self",
+              "operator": "<="
+            }
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": ["mob", "monster", "boss", "undead", "phantore"]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "monster"
+              }
+            },
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:follow_range": {
+        "value": 48,
+        "max": 48
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:navigation.walk": {
+        "avoid_water": true
+      }
+    },
+    "component_groups": {
+      "self:skullcast": {
+        "minecraft:movement": {
+          "value": 0
+        },
+        "minecraft:timer": {
+          "time": 6,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:phantore_skullshot_end",
+            "target": "self"
+          }
+        }
+      },
+      "self:melee_mode": {
+        "minecraft:timer": {
+          "time": 15,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:phantore_melee_mode_end",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.melee_attack": {
+          "melee_fov": 90,
+          "track_target": false,
+          "attack_types": "example",
+          "random_stop_interval": 0,
+          "reach_multiplier": 2,
+          "can_spread_on_fire": true,
+          "speed_multiplier": 1.25,
+          "cooldown_time": 1
+        },
+        "minecraft:movement": {
+          "value": 0.25
+        },
+        "minecraft:attack": {
+          "damage": 15,
+          "effect_name": "trial_omen",
+          "effect_duration": "infinite"
+        },
+        "minecraft:knockback_resistance": {
+          "value": 0.8,
+          "max": 0.8
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "scan_interval": 10,
+          "must_reach": false,
+          "entity_types": [
+            {
+              "max_dist": 32,
+              "filters": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "wolf"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "irongolem"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "self:roar": {
+        "minecraft:movement": {
+          "value": 0.25
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1,
+          "max": 1
+        },
+        "minecraft:behavior.knockback_roar": {
+          "attack_time": 0.95,
+          "knockback_height_cap": 0.4,
+          "priority": 0,
+          "cooldown_time": 2,
+          "duration": 3,
+          "knockback_damage": 15,
+          "knockback_horizontal_strength": 2,
+          "knockback_range": 4,
+          "on_roar_end": {
+            "event": "thump989:phantore_roar_end",
+            "target": "self"
+          },
+          "knockback_vertical_strength": 2,
+          "damage_filters": [
+            {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wolf"
+                }
+              ]
+            }
+          ],
+          "knockback_filters": [
+            {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wolf"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "self:skeleton_cast": {
+        "minecraft:timer": {
+          "time": 5,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:phantore_skeleton_cast_end",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.summon_entity": {
+          "summon_choices": [
+            {
+              "cast_duration": 4,
+              "cooldown_time": 1,
+              "do_casting": true,
+              "max_activation_range": 48,
+              "min_activation_range": 1,
+              "particle_color": "#00e1ff",
+              "weight": 1,
+              "sequence": [
+                {
+                  "base_delay": 3,
+                  "entity_lifespan": -1,
+                  "delay_per_summon": 0,
+                  "entity_type": "minecraft:lightning_bolt",
+                  "shape": "circle",
+                  "target": "self",
+                  "size": 4,
+                  "num_entities_spawned": 4
+                },
+                {
+                  "base_delay": 0.05,
+                  "entity_lifespan": -1,
+                  "delay_per_summon": 0,
+                  "entity_type": "thump989:elite_skeleton",
+                  "shape": "circle",
+                  "target": "self",
+                  "size": 4,
+                  "num_entities_spawned": 4
+                }
+              ]
+            }
+          ]
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "scan_interval": 10,
+          "must_reach": true,
+          "entity_types": [
+            {
+              "max_dist": 32,
+              "filters": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "wolf"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "irongolem"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "self:fireball_attack": {
+        "minecraft:timer": {
+          "time": 18.5,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:phantore_fireball_attack_end",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "scan_interval": 10,
+          "must_reach": true,
+          "entity_types": [
+            {
+              "max_dist": 32,
+              "filters": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "wolf"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "irongolem"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "minecraft:behavior.fire_at_target": {
+          "attack_cooldown": 1,
+          "owner_anchor": 2,
+          "owner_offset": [0, 1, 0],
+          "priority": 0,
+          "max_head_rotation_x": 30,
+          "max_head_rotation_y": 30,
+          "attack_range": [0, 30],
+          "pre_shoot_delay": 3,
+          "post_shoot_delay": 2,
+          "projectile_def": "thump989:phantore_fireball",
+          "target_offset": [0, 0, 0],
+          "target_anchor": 0,
+          "ranged_fov": 360
+        },
+        "minecraft:movement": {
+          "value": 0.25
+        }
+      },
+      "self:xp_bomb_timer": {
+        "minecraft:timer": {
+          "time": 2,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:phantore_xp_bomb",
+            "target": "self"
+          }
+        }
+      },
+      "self:xp_bomb": {
+        "minecraft:timer": {
+          "time": 11.75,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:xp_bomb_detonate",
+            "target": "self"
+          }
+        }
+      },
+      "self:xp_bomb_recover": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "scan_interval": 10,
+          "must_reach": true,
+          "entity_types": [
+            {
+              "max_dist": 32,
+              "filters": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "wolf"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "irongolem"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "minecraft:behavior.melee_attack": {
+          "speed_multiplier": 0,
+          "cooldown_time": 1,
+          "reach_multiplier": 0
+        },
+        "minecraft:attack": {
+          "damage": 1
+        },
+        "minecraft:timer": {
+          "time": 5,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:phantore_attack_select",
+            "target": "self"
+          }
+        }
+      },
+      "self:attack_prepare": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "scan_interval": 10,
+          "must_reach": true,
+          "entity_types": [
+            {
+              "max_dist": 32,
+              "filters": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "wolf"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "irongolem"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "minecraft:behavior.melee_attack": {
+          "speed_multiplier": 0,
+          "cooldown_time": 1,
+          "reach_multiplier": 0
+        },
+        "minecraft:attack": {
+          "damage": 1
+        },
+        "minecraft:timer": {
+          "time": 1,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:phantore_attack_select",
+            "target": "self"
+          }
+        }
+      },
+      "self:defeated": {
+        "minecraft:timer": {
+          "time": 3.5,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:phantore_loot_spawn",
+            "target": "self"
+          }
+        },
+        "minecraft:mob_effect_immunity": {
+          "mob_effects": [
+            "absorption",
+            "bad_omen",
+            "blindness",
+            "conduit_power",
+            "darkness",
+            "fatal_poison",
+            "fire_resistance",
+            "haste",
+            "health_boost",
+            "hunger",
+            "infested",
+            "instant_damage",
+            "instant_health",
+            "invisibility",
+            "jump_boost",
+            "levitation",
+            "mining_fatigue",
+            "nausea",
+            "night_vision",
+            "oozing",
+            "poison",
+            "raid_omen",
+            "regeneration",
+            "resistance",
+            "saturation",
+            "slow_falling",
+            "slowness",
+            "speed",
+            "strength",
+            "trial_omen",
+            "village_hero",
+            "water_breathing",
+            "weakness",
+            "weaving",
+            "wind_charged",
+            "wither"
+          ]
+        },
+        "minecraft:environment_sensor": {},
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": "no"
+            }
+          ]
+        },
+        "minecraft:boss": {
+          "hud_range": 0,
+          "name": "a",
+          "should_darken_sky": false
+        }
+      },
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:phantore_loot_spawn": {
+        "queue_command": {
+          "command": [
+            "particle thump989:phantore_fire_explosion_burst ~ ~1 ~",
+            "playsound mob.phantore.fireball_explode @a ~ ~ ~",
+            "summon thump989:phantore_crate",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      },
+      "thump989:phantore_phase1_defeat": {
+        "set_property": {
+          "thump989:alive": false
+        },
+        "remove": {
+          "component_groups": [
+            "self:skullcast",
+            "self:attack_prepare",
+            "self:shadowfire_cast",
+            "self:skeleton_cast",
+            "self:fireball_attack",
+            "self:xp_bomb_timer",
+            "self:xp_bomb",
+            "self:xp_bomb_recover"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:defeated"]
+        }
+      },
+      "thump989:phantore_skullhot_start": {
+        "set_property": {
+          "thump989:phantore_attack_state": "math.random_integer(0,1)==1 ? 'skullshot' : 'skullshot_2'"
+        },
+        "add": {
+          "component_groups": ["self:skullcast"]
+        }
+      },
+      "thump989:phantore_skullshot_end": {
+        "set_property": {
+          "thump989:phantore_attack_state": "none",
+          "thump989:phantore_power": "q.property('thump989:phantore_power')+1"
+        },
+        "remove": {
+          "component_groups": ["self:skullcast"]
+        },
+        "add": {
+          "component_groups": ["self:attack_prepare"]
+        }
+      },
+      "thump989:phantore_melee_mode": {
+        "add": {
+          "component_groups": ["self:melee_mode"]
+        },
+        "set_property": {
+          "thump989:phantore_attack_state": "melee"
+        }
+      },
+      "thump989:phantore_melee_mode_end": {
+        "remove": {
+          "component_groups": ["self:melee_mode"]
+        },
+        "set_property": {
+          "thump989:phantore_attack_state": "none",
+          "thump989:phantore_power": "q.property('thump989:phantore_power')+3"
+        },
+        "add": {
+          "component_groups": ["self:attack_prepare"]
+        }
+      },
+      "thump989:phantore_roar": {
+        "add": {
+          "component_groups": ["self:roar"]
+        },
+        "set_property": {
+          "thump989:phantore_attack_state": "melee"
+        }
+      },
+      "thump989:phantore_roar_end": {
+        "remove": {
+          "component_groups": ["self:roar"]
+        },
+        "set_property": {
+          "thump989:phantore_attack_state": "none",
+          "thump989:phantore_power": "q.property('thump989:phantore_power')+2"
+        },
+        "add": {
+          "component_groups": ["self:attack_prepare"]
+        }
+      },
+      "thump989:phantore_skeleton_cast": {
+        "reset_target": {},
+        "add": {
+          "component_groups": ["self:skeleton_cast"]
+        },
+        "set_property": {
+          "thump989:phantore_attack_state": "summon"
+        }
+      },
+      "thump989:phantore_skeleton_cast_end": {
+        "reset_target": {},
+        "remove": {
+          "component_groups": ["self:skeleton_cast"]
+        },
+        "set_property": {
+          "thump989:phantore_attack_state": "none",
+          "thump989:phantore_power": 0
+        },
+        "add": {
+          "component_groups": ["self:attack_prepare"]
+        }
+      },
+      "thump989:phantore_fireball_attack": {
+        "add": {
+          "component_groups": ["self:fireball_attack"]
+        },
+        "set_property": {
+          "thump989:phantore_attack_state": "ranged_attack"
+        }
+      },
+      "thump989:phantore_fireball_attack_end": {
+        "remove": {
+          "component_groups": ["self:fireball_attack"]
+        },
+        "set_property": {
+          "thump989:phantore_attack_state": "none",
+          "thump989:phantore_power": "q.property('thump989:phantore_power')+4"
+        },
+        "add": {
+          "component_groups": ["self:attack_prepare"]
+        }
+      },
+      "thump989:phantore_xp_bomb_timer": {
+        "add": {
+          "component_groups": ["self:xp_bomb_timer"]
+        },
+        "set_property": {
+          "thump989:phantore_attack_state": "xp_timer",
+          "thump989:xp_blast_amount": 0.0
+        },
+        "queue_command": {
+          "command": ["playsound mob.phantore.exp_absorb_start @a ~ ~ ~"]
+        }
+      },
+      "thump989:phantore_xp_bomb": {
+        "set_property": {
+          "thump989:phantore_attack_state": "xp_bomb"
+        },
+        "remove": {
+          "component_groups": ["self:xp_bomb_timer"]
+        },
+        "add": {
+          "component_groups": ["self:xp_bomb"]
+        }
+      },
+      "thump989:xp_bomb_detonate": {
+        "remove": {
+          "component_groups": ["self:xp_bomb"]
+        },
+        "add": {
+          "component_groups": ["self:xp_bomb_recover"]
+        },
+        "set_property": {
+          "thump989:xp_blast_amount": 0.0,
+          "thump989:phantore_attack_state": "recover",
+          "thump989:phantore_power": 0
+        },
+        "queue_command": {
+          "command": [
+            "scriptevent thump989:phantore_xp_explosion xp_explosion",
+            "playsound mob.phantore.exp_absorb_start @a ~ ~ ~"
+          ]
+        }
+      },
+      "thump989:phantore_attack_select": {
+        "sequence": [
+          {
+            "set_property": {
+              "thump989:phantore_attack_state": "none"
+            },
+            "remove": {
+              "component_groups": ["self:attack_prepare"]
+            }
+          },
+          {
+            "first_valid": [
+              {
+                "filters": [
+                  {
+                    "test": "has_target",
+                    "subject": "self",
+                    "operator": "not"
+                  }
+                ],
+                "add": {
+                  "component_groups": ["self:attack_prepare"]
+                }
+              },
+              {
+                "filters": [
+                  {
+                    "test": "int_property",
+                    "value": 10,
+                    "domain": "thump989:phantore_power",
+                    "operator": "<="
+                  }
+                ],
+                "randomize": [
+                  {
+                    "trigger": "thump989:phantore_skullhot_start",
+                    "weight": 2
+                  },
+                  {
+                    "trigger": "thump989:phantore_fireball_attack",
+                    "weight": 1
+                  },
+                  {
+                    "trigger": "thump989:phantore_melee_mode",
+                    "weight": 1
+                  },
+                  {
+                    "filters": [
+                      {
+                        "test": "target_distance",
+                        "value": 6,
+                        "operator": "<="
+                      }
+                    ],
+                    "trigger": "thump989:phantore_roar",
+                    "weight": 1
+                  }
+                ]
+              },
+              {
+                "filters": [
+                  {
+                    "test": "int_property",
+                    "value": 10,
+                    "domain": "thump989:phantore_power",
+                    "operator": ">"
+                  }
+                ],
+                "randomize": [
+                  {
+                    "trigger": "thump989:phantore_skeleton_cast",
+                    "weight": 1
+                  },
+                  {
+                    "trigger": "thump989:phantore_xp_bomb_timer",
+                    "weight": 1
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["self:attack_prepare"]
+        },
+        "queue_command": {
+          "command": ["weather clear"]
+        }
+      },
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      }
+    }
+  }
+}

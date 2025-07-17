@@ -1,0 +1,188 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:underworld_hands",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:zombie"
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:type_family": {
+        "family": ["monster"]
+      },
+      "minecraft:cannot_be_attacked": {},
+      "minecraft:mob_effect_immunity": {
+        "mob_effects": [
+          "absorption",
+          "bad_omen",
+          "blindness",
+          "conduit_power",
+          "darkness",
+          "fatal_poison",
+          "fire_resistance",
+          "haste",
+          "health_boost",
+          "hunger",
+          "infested",
+          "instant_damage",
+          "instant_health",
+          "invisibility",
+          "jump_boost",
+          "levitation",
+          "mining_fatigue",
+          "nausea",
+          "night_vision",
+          "oozing",
+          "poison",
+          "raid_omen",
+          "regeneration",
+          "resistance",
+          "saturation",
+          "slow_falling",
+          "slowness",
+          "speed",
+          "strength",
+          "trial_omen",
+          "village_hero",
+          "water_breathing",
+          "weakness",
+          "weaving",
+          "wind_charged",
+          "wither"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0.5
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:navigation.walk": {
+        "avoid_water": true
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:timer": {
+        "time": 2,
+        "looping": true,
+        "time_down_event": {
+          "event": "thump989:initiate",
+          "target": "self"
+        }
+      }
+    },
+    "component_groups": {
+      "self:active": {
+        "minecraft:movement": {
+          "value": 0.15
+        },
+        "minecraft:area_attack": {
+          "damage_per_tick": 11,
+          "damage_range": 0.2,
+          "cause": "magic",
+          "entity_filter": [
+            {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wolf"
+                }
+              ]
+            }
+          ]
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "scan_interval": 10,
+          "reselect_targets": true,
+          "must_reach": false,
+          "must_see": false,
+          "entity_types": [
+            {
+              "filters": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "irongolem"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "wolf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "minecraft:attack": {
+          "damage": 1
+        },
+        "minecraft:behavior.melee_attack": {
+          "cooldown_time": 1,
+          "reach_multiplier": 0
+        }
+      },
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["self:active"]
+        }
+      }
+    }
+  }
+}

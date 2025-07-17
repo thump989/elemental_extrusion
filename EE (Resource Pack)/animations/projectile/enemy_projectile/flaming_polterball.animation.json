@@ -1,0 +1,19 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.flaming_polterball.move": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": ["q.anim_time*360", 0, "q.anim_time*360"]
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "polterflame_particle",
+					"locator": "fire"
+				}
+			}
+		}
+	}
+}

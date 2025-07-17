@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:magic_boomerang",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/magic_boomerang"
+      },
+      "particle_effects": {
+        "magic": "thump989:magic_boomerang"
+      },
+      "animations": {
+        "scale": "animation.projectile.scale",
+        "spin": "animation.magic_boomerang.spin",
+        "move": "animation.projectile.move"
+      },
+      "scripts": {
+        "animate": ["spin", "move", "scale"]
+      },
+      "geometry": {
+        "default": "geometry.magic_boomerang"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

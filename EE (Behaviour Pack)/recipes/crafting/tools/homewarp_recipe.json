@@ -1,0 +1,26 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:homewarp"
+    },
+    "tags": ["crafting_table"],
+    "pattern": [" P ", "PCP", " P "],
+    "key": {
+      "P": "thump989:pure_magic",
+      "C": "minecraft:compass"
+    },
+    "unlock": [
+      {
+        "item": "thump989:pure_magic"
+      }
+    ],
+    "result": [
+      {
+        "item": "thump989:homeworld_locator",
+
+        "count": 1
+      }
+    ]
+  }
+}

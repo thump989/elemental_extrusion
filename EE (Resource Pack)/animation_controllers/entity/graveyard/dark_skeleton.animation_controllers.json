@@ -1,0 +1,26 @@
+{
+  "format_version": "1.19.0",
+  "animation_controllers": {
+    "controller.animation.dark_skeleton.cast_controller": {
+      "states": {
+        "default": {
+          "transitions": [{ "casting": "q.is_casting" }]
+        },
+        "casting": {
+          "animations": ["cast"],
+          "particle_effects": [
+            {
+              "effect": "spell",
+              "locator": "right_hand"
+            },
+            {
+              "effect": "spell",
+              "locator": "left_hand"
+            }
+          ],
+          "transitions": [{ "default": "!q.is_casting" }]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": "1.19.0",
+  "animation_controllers": {
+    "controller.animation.stormsower_trident": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": [
+            "first_person_hold",
+            {
+              "first_person_charge": "query.main_hand_item_use_duration > 0.0f"
+            }
+          ],
+          "transitions": [{ "third_person": "!c.is_first_person" }]
+        },
+        "third_person": {
+          "animations": [
+            "third_person_hold",
+            {
+              "wield_first_person_raise": "query.main_hand_item_use_duration > 0.0f"
+            }
+          ],
+          "transitions": [{ "idle": "c.is_first_person" }]
+        }
+      }
+    }
+  }
+}

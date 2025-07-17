@@ -1,0 +1,239 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:sinister_witch",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:mob_effect_immunity": {
+        "mob_effects": ["slowness", "weakness", "poison"]
+      },
+      "minecraft:pushable": {
+        "is_pushable": true
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:navigation.walk": {
+        "avoid_water": true
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "damager",
+                      "value": "monster"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "monster"
+                    }
+                  ]
+                }
+              ]
+            },
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": ["mob", "monster"]
+      },
+      "minecraft:health": {
+        "value": 50,
+        "max": 50
+      },
+      "minecraft:experience_reward": {
+        "on_death": "q.last_hit_by_player ? 30 : 0"
+      },
+      "minecraft:behavior.ranged_attack": {
+        "attack_interval": 3,
+        "burst_shots": 3,
+        "speed_multiplier": 1,
+        "burst_interval": 0.51,
+        "attack_radius": 20,
+        "priority": 3
+      },
+      "minecraft:follow_range": {
+        "value": 48,
+        "max": 48
+      },
+      "minecraft:shooter": {
+        "power": 1.25,
+        "def": "thump989:sinister_witch_blast"
+      },
+      "minecraft:behavior.summon_entity": {
+        "priority": 2,
+        "summon_choices": [
+          {
+            "cast_duration": 2,
+            "cooldown_time": 15,
+            "do_casting": true,
+            "particle_color": "#09f043aa",
+            "weight": 1,
+            "sequence": [
+              {
+                "base_delay": 1,
+                "delay": 1,
+                "delay_per_summon": 0,
+                "entity_lifespan": 240,
+                "entity_type": "thump989:mystic_zombie",
+                "summon_event": "thump989:summon_minion",
+                "num_entities_spawned": 1,
+                "shape": "circle",
+                "size": 2,
+                "summon_cap": 4,
+                "summon_cap_radius": 25,
+                "target": "self"
+              }
+            ]
+          },
+          {
+            "do_casting": true,
+            "cast_duration": 5,
+            "cooldown_time": 1,
+            "min_activation_range": 5,
+            "weight": 1,
+            "particle_color": "#7c7512",
+            "sequence": [
+              {
+                "delay": 1,
+                "base_delay": 1,
+                "entity_type": "thump989:curse_bomb",
+                "entity_lifespan": -1,
+                "target": "self",
+                "size": 1,
+                "num_entities_spawned": 1,
+                "shape": "line",
+                "delay_per_summon": 0.1
+              },
+              {
+                "delay": 0,
+                "base_delay": 0,
+                "entity_type": "thump989:curse_bomb",
+                "entity_lifespan": -1,
+                "target": "self",
+                "size": 19,
+                "num_entities_spawned": 5,
+                "shape": "line",
+                "delay_per_summon": 0.1
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 1,
+        "scan_interval": 10,
+        "set_persistent": true,
+        "must_see": true,
+        "entity_types": [
+          {
+            "max_dist": 32,
+            "filters": [
+              {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "wolf"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "irongolem"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:behavior.drink_potion": {
+        "priority": 0,
+        "potions": [
+          {
+            "chance": 0.5,
+            "filters": [
+              {
+                "all_of": [
+                  {
+                    "test": "actor_health",
+                    "operator": "<",
+                    "value": 50
+                  },
+                  {
+                    "test": "has_mob_effect",
+                    "value": "regeneration",
+                    "operator": "not"
+                  }
+                ]
+              }
+            ],
+            "id": 30
+          },
+          {
+            "chance": 0.5,
+            "filters": [
+              {
+                "all_of": [
+                  {
+                    "test": "has_mob_effect",
+                    "value": "fire_resistance",
+                    "operator": "not"
+                  },
+                  {
+                    "test": "on_fire",
+                    "subject": "self"
+                  }
+                ]
+              }
+            ],
+            "id": 13
+          },
+          {
+            "chance": 0.5,
+            "filters": [
+              {
+                "all_of": [
+                  {
+                    "test": "has_mob_effect",
+                    "value": "speed",
+                    "operator": "not"
+                  },
+                  {
+                    "test": "target_distance",
+                    "subject": "self",
+                    "value": 11,
+                    "operator": ">="
+                  }
+                ]
+              }
+            ],
+            "id": 16
+          }
+        ]
+      }
+    }
+  }
+}

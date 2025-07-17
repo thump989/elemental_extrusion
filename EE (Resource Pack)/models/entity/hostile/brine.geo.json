@@ -1,0 +1,83 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.brine",
+				"texture_width": 64,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 2, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, -10, 0]
+				},
+				{
+					"name": "head",
+					"parent": "root",
+					"pivot": [0, 4, 0],
+					"cubes": [
+						{"origin": [-4, 1, -4], "size": [8, 8, 8], "uv": [0, 0]},
+						{"origin": [-4, 9, -3], "size": [0, 7, 6], "pivot": [-4, 9, 0], "rotation": [-180, 0, 12.5], "uv": [18, 17]},
+						{"origin": [4, 9, -3], "size": [0, 7, 6], "pivot": [4, 9, 0], "rotation": [-180, 0, -12.5], "uv": [18, 17], "mirror": true},
+						{"origin": [0, 8, -10.5], "size": [0, 8, 14], "uv": [24, -14]}
+					],
+					"locators": {
+						"lure": [0, 9, -7.5]
+					}
+				},
+				{
+					"name": "tail",
+					"parent": "root",
+					"pivot": [0, 3.77614, 5.27614]
+				},
+				{
+					"name": "rotation2",
+					"parent": "tail",
+					"pivot": [0, 3.27614, 3.27614],
+					"rotation": [-90, 0, 0],
+					"cubes": [
+						{"origin": [-1, 4.29289, 2.70711], "size": [2, 8, 2], "pivot": [0, 5, 3], "rotation": [-45, 0, 0], "uv": [0, 16]},
+						{"origin": [-3.5, 3, -0.5], "size": [2, 8, 2], "pivot": [-2.5, 7, 0.5], "rotation": [35.26439, -30, -54.73561], "uv": [0, 16]},
+						{"origin": [1.5, 3, -0.5], "size": [2, 8, 2], "pivot": [2.5, 7, 0.5], "rotation": [35.26439, 30, 54.73561], "uv": [0, 16], "mirror": true}
+					]
+				},
+				{
+					"name": "rod4",
+					"parent": "root",
+					"pivot": [6, 4, -5],
+					"cubes": [
+						{"origin": [-1, 1, -8], "size": [2, 8, 2], "pivot": [0, 5, 0.5], "rotation": [0, -90, 0], "uv": [0, 16]}
+					]
+				},
+				{
+					"name": "rod3",
+					"parent": "root",
+					"pivot": [0, 5, 0.5],
+					"cubes": [
+						{"origin": [5, 0, -6], "size": [2, 8, 2], "uv": [0, 16], "mirror": true}
+					]
+				},
+				{
+					"name": "rod2",
+					"parent": "root",
+					"pivot": [-6, 4, -5],
+					"cubes": [
+						{"origin": [-7, 0, -6], "size": [2, 8, 2], "uv": [0, 16]}
+					]
+				},
+				{
+					"name": "rod1",
+					"parent": "root",
+					"pivot": [0, 5, 0.5],
+					"cubes": [
+						{"origin": [-1, 1, 7], "size": [2, 8, 2], "pivot": [0, 5, 0.5], "rotation": [0, -90, 0], "uv": [0, 16]}
+					]
+				}
+			]
+		}
+	]
+}

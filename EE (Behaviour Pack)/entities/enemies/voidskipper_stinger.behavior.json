@@ -1,0 +1,107 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:voidskipper_stinger",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:transient": {},
+      "minecraft:projectile": {
+        "anchor": 1,
+        "inertia": 1,
+        "liquid_inertia": 1,
+        "power": 2,
+        "gravity": 0,
+        "should_bounce": true,
+        "offset": [0, -1, 0],
+        "uncertainty_base": 8,
+        "on_hit": {
+          "mob_effect": {
+            "amplifier": 4,
+            "effect": "slowness",
+            "duration": 40,
+            "durationeasy": 40,
+            "durationhard": 40,
+            "durationnormal": 40
+          },
+          "impact_damage": {
+            "damage": 7,
+            "knockback": true,
+            "destroy_on_hit": false,
+            "destroy_on_hit_requires_damage": false
+          },
+          "stick_in_ground": {}
+        }
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "event": "thump989:projectile_attack",
+            "target": "self",
+            "filters": {
+              "test": "on_ground",
+              "subject": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      },
+      "self:charging": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:environment_sensor": {},
+        "minecraft:timer": {
+          "time": 1.2,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:explode",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "events": {
+      "thump989:explode": {
+        "queue_command": {
+          "command": [
+            "scriptevent thump989:voidskipper_stinger stinger_explode"
+          ]
+        }
+      },
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      },
+      "thump989:projectile_attack": {
+        "add": {
+          "component_groups": ["self:charging"]
+        }
+      }
+    }
+  }
+}

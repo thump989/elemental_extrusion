@@ -1,0 +1,50 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:voidskipper",
+      "materials": {
+        "default": "entity_beam_additive",
+        "solid": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/voidskipper"
+      },
+      "geometry": {
+        "default": "geometry.voidskipper",
+        "solid": "geometry.voidskipper_solid"
+      },
+      "scripts": {
+        "initialize": [
+          "variable.runtimeid = 0;",
+          "variable.tailrotx = -5.0;",
+          "variable.wingrotz = 0.0;"
+        ],
+        "should_update_bones_and_effects_offscreen": "(1.0)",
+        "animate": ["fly", "controller", "heartbeat", "lookat"]
+      },
+      "animations": {
+        "base_pose": "animation.voidskipper.base_pose",
+        "lookat": "animation.humanoid.look_at_target.default",
+        "tentacle_idle": "animation.voidskipper.tentacle_idle",
+        "fly": "animation.voidskipper.fly",
+        "controller": "controller.animation.voidskipper.face_controller",
+        "heartbeat": "animation.voidskipper.heart"
+      },
+      "particle_effects": {
+        "wing_dust": "minecraft:phantom_trail_particle"
+      },
+      "sound_effects": {
+        "flap": "mob.phantom.flap"
+      },
+      "render_controllers": [
+        "controller.render.default",
+        "controller.render.voidskipper"
+      ],
+      "spawn_egg": {
+        "base_color": "#000000",
+        "overlay_color": "#5b004f"
+      }
+    }
+  }
+}

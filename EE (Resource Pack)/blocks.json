@@ -1,0 +1,96 @@
+{
+	"format_version": "1.21.0",
+	"shadowfire": {
+		"sound": "tuff"
+	},
+	"grave_dirt": {
+		"sound": "gravel"
+	},
+	"ominous_sentry_spawner": {
+		"sound": "stone"
+	},
+	"phantom_bricks": {
+		"sound": "stone"
+	},
+	"titan_beetle_egg": {
+		"sound": "wood"
+	},
+	"royal_caldpteron_egg": {
+		"sound": "stone"
+	},
+	"glowworm_larva": {
+		"sound": "slime"
+	},
+	"caldpteron_egg": {
+		"sound": "cloth"
+	},
+	"somberfish_eggs": {
+		"sound": "stone"
+	},
+	"radioactive_coral": {
+		"sound": "stone"
+	},
+	"radioactive_coral_block": {
+		"sound": "stone"
+	},
+	"fly_bush": {
+		"sound": "grass"
+	},
+	"glowworm_egg_vine": {
+		"sound": "grass"
+	},
+	"glowworm_vine": {
+		"sound": "grass"
+	},
+	"castle_vault": {
+		"sound": "metal"
+	},
+	"mimic_spawner": {
+		"sound": "stone"
+	},
+	"spider_egg_cluster": {
+		"sound": "shroomlight"
+	},
+	"wisp_spawner": {
+		"sound": "stone"
+	},
+	"polterabra_spawner": {
+		"sound": "stone"
+	},
+	"golden_apple_sapling": {
+		"sound": "grass"
+	},
+	"celestial_padding": {
+		"sound": "glass"
+	},
+	"stellar_obsidian": {
+		"sound": "stone"
+	},
+	"stellar_reactor_core": {
+		"sound": "metal"
+	},
+	"sieve": {
+		"sound": "stone"
+	},
+	"fish_trap": {
+		"sound": "wood"
+	},
+	"cheese_press": {
+		"sound": "wood"
+	},
+	"cobalt_ore": {
+		"sound": "stone"
+	},
+	"cosmic_drill": {
+		"sound": "stone"
+	},
+	"mystic_workbench": {
+		"sound": "stone"
+	},
+	"dark_totem": {
+		"sound": "stone"
+	},
+	"malumite_ore": {
+		"sound": "sculk"
+	}
+}

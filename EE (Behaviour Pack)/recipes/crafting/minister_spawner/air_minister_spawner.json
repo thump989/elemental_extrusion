@@ -1,0 +1,29 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:air_minister"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["BBB", "BEB", "BBB"],
+    "key": {
+      "B": "minecraft:breeze_rod",
+      "E": "minecraft:ender_eye"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:ender_eye"
+      },
+      {
+        "item": "minecraft:breeze_rod"
+      }
+    ],
+    "result": [
+      {
+        "item": "thump989:conjure_air_minister",
+
+        "count": 1
+      }
+    ]
+  }
+}

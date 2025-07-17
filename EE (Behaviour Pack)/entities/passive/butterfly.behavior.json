@@ -1,0 +1,173 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:butterfly",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "thump989:butterfly_variant": {
+          "client_sync": true,
+          "default": 0,
+          "range": [0, 6],
+          "type": "int"
+        }
+      }
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:collision_box": {
+        "height": 0.4,
+        "width": 0.4
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entity/butterfly.json"
+      },
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": true,
+        "always_show": false
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:can_fly": true,
+      "minecraft:movement": {
+        "value": 0.02
+      },
+      "minecraft:movement.basic": {
+        "max_turn": 30
+      },
+      "minecraft:jump.static": {
+        "jump_power": 0.42
+      },
+      "minecraft:navigation.float": {
+        "avoid_water": true,
+        "avoid_damage_blocks": true,
+        "can_path_from_air": true
+      },
+      "minecraft:behavior.float_wander": {
+        "xz_dist": 10,
+        "y_dist": 7,
+        "y_offset": 0,
+        "must_reach": true,
+        "random_reselect": false
+      },
+      "minecraft:leashable": {
+        "can_be_stolen": false,
+        "hard_distance": 6,
+        "max_distance": 10,
+        "soft_distance": 4
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {},
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "first_valid": [
+              {
+                "filters": {
+                  "test": "has_biome_tag",
+                  "value": "cherry_grove"
+                },
+                "set_property": {
+                  "thump989:butterfly_variant": 1
+                }
+              },
+              {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "has_biome_tag",
+                      "value": "flower_forest"
+                    },
+                    {
+                      "test": "has_biome_tag",
+                      "value": "meadow"
+                    },
+                    {
+                      "test": "has_biome_tag",
+                      "value": "sunflower_plains"
+                    }
+                  ]
+                },
+                "set_property": {
+                  "thump989:butterfly_variant": 2
+                }
+              },
+              {
+                "filters": {
+                  "test": "has_biome_tag",
+                  "value": "pale_garden"
+                },
+                "set_property": {
+                  "thump989:butterfly_variant": 3
+                }
+              },
+              {
+                "filters": {
+                  "test": "has_biome_tag",
+                  "value": "jungle"
+                },
+                "set_property": {
+                  "thump989:butterfly_variant": 4
+                }
+              },
+              {
+                "filters": {
+                  "test": "has_biome_tag",
+                  "value": "desert"
+                },
+                "set_property": {
+                  "thump989:butterfly_variant": 5
+                }
+              },
+              {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "has_biome_tag",
+                      "value": "mesa"
+                    },
+                    {
+                      "test": "has_biome_tag",
+                      "value": "savanna"
+                    }
+                  ]
+                },
+                "set_property": {
+                  "thump989:butterfly_variant": 6
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

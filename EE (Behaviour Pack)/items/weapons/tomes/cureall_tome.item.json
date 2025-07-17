@@ -1,0 +1,33 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:cureall_tome",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "cureall_tome",
+      "minecraft:rarity": "rare",
+      "minecraft:durability": {
+        "max_durability": 250,
+        "damage_chance": {
+          "min": 100,
+          "max": 100
+        }
+      },
+      "minecraft:enchantable": {
+        "slot": "elytra",
+        "value": 25
+      },
+      "thump989:deny_melee_damage": {},
+      "thump989:cureall_tome": {},
+      "minecraft:cooldown": {
+        "category": "cureall_tome",
+        "duration": 10
+      }
+    }
+  }
+}

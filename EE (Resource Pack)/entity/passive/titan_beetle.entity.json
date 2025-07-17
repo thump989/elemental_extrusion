@@ -1,0 +1,39 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:titan_beetle",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/titan_beetle"
+      },
+      "animations": {
+        "lookat": "animation.humanoid.look_at_target.default",
+        "head_idle": "animation.titan_beetle.head_idle",
+        "mandible_idle": "animation.titan_beetle.mandible_idle",
+        "walk": "animation.titan_beetle.walk",
+        "gravid": "animation.titan_beetle.gravid",
+        "gravid_controller": "controller.animation.titan_beetle.gravid_controller",
+        "mandible_loot": "animation.titan_beetle.mandible_loot",
+        "noloot": "animation.titan_beetle.noloot",
+        "wings_idle": "animation.titan_beetle.wings_idle",
+        "mandible_controller": "controller.animation.titan_beetle.mandible_controller",
+        "walk_controller": "controller.animation.titan_beetle.walk_controller",
+        "root_controller": "controller.animation.titan_beetle.root_controller"
+      },
+      "scripts": {
+        "animate": ["root_controller", "lookat"]
+      },
+      "geometry": {
+        "default": "geometry.titan_beetle"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#293705",
+        "overlay_color": "#234207"
+      }
+    }
+  }
+}

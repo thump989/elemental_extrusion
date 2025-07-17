@@ -1,0 +1,14 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:structure_template_feature": {
+    "description": {
+      "identifier": "thump989:pale_tower"
+    },
+    "structure_name": "mystructure:pale_tower",
+    "adjustment_radius": 4,
+    "facing_direction": "random",
+    "constraints": {
+      "unburied": {}
+    }
+  }
+}

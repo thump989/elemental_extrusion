@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:astral_staff_projectile",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/solarflare"
+      },
+      "animations": {
+        "rotate": "animation.solarflare.move",
+        "move": "animation.projectile.move",
+        "particle": "animation.solarflare.particle"
+      },
+      "particle_effects": {
+        "solarflare_idle": "thump989:solarflare_idle"
+      },
+      "scripts": {
+        "animate": [
+          "move",
+          "particle",
+          {
+            "rotate": "q.is_moving"
+          }
+        ]
+      },
+      "geometry": {
+        "default": "geometry.solarflare"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

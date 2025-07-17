@@ -1,0 +1,33 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:mystic_extractor"
+    },
+    "tags": ["crafting_table"],
+    "pattern": [" LL", " GL", "A  "],
+    "key": {
+      "L": "minecraft:lapis_lazuli",
+      "G": "minecraft:glass_bottle",
+      "A": "minecraft:amethyst_shard"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:amethyst_shard"
+      },
+      {
+        "item": "minecraft:lapis_lazuli"
+      },
+      {
+        "item": "minecraft:glass_bottle"
+      }
+    ],
+    "result": [
+      {
+        "item": "thump989:mystic_exctractor",
+
+        "count": 1
+      }
+    ]
+  }
+}

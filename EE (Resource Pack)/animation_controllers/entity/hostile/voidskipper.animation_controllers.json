@@ -1,0 +1,25 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.voidskipper.face_controller": {
+			"states": {
+				"default": {
+					"animations": ["base_pose"],
+					"transitions": [
+						{"primed": "q.facing_target_to_range_attack"}
+					],
+					"blend_transition": 1,
+					"blend_via_shortest_path": true
+				},
+				"primed": {
+					"animations": ["tentacle_idle"],
+					"transitions": [
+						{"default": "!q.facing_target_to_range_attack"}
+					],
+					"blend_transition": 0.25,
+					"blend_via_shortest_path": true
+				}
+			}
+		}
+	}
+}

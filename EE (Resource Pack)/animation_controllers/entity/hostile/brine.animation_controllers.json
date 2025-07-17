@@ -1,0 +1,25 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.brine.controller": {
+			"states": {
+				"default": {
+					"transitions": [
+						{"particle": "!q.has_target"}
+					]
+				},
+				"particle": {
+					"particle_effects": [
+						{
+							"effect": "lure",
+							"locator": "lure"
+						}
+					],
+					"transitions": [
+						{"default": "q.has_target"}
+					]
+				}
+			}
+		}
+	}
+}

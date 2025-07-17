@@ -1,0 +1,52 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.spirit_of_the_turtle.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [90, 56, -32],
+					"position": [9, 18, 5]
+				},
+				"body": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.spirit_of_the_turtle.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [25, 0, 0],
+					"position": [0.5, 19, -2.5],
+					"scale": 0.85
+				},
+				"body": {
+					"position": [-2, 44.70999, 4.58441]
+				}
+			}
+		},
+		"animation.spirit_of_the_turtle.idle": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [0, 0, 0],
+					"position": ["math.sin(q.anim_time*180)", "math.sin(q.anim_time*60)", 0],
+					"scale": 1
+				},
+				"leg2": {
+					"rotation": [0, "math.sin(q.anim_time*180)*2", 0]
+				},
+				"leg3": {
+					"rotation": [0, "-math.sin(q.anim_time*180)*2", 0]
+				},
+				"rightwing": {
+					"rotation": [0, 0, "-45 + math.sin(q.anim_time*360)*15"]
+				},
+				"leftwing": {
+					"rotation": [0, 0, "45 - math.sin(q.anim_time*360)*15"]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:radioactive_shrimp",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/radioactive_shrimp/blue"
+      },
+      "geometry": {
+        "default": "geometry.radioactive_shrimp"
+      },
+      "animations": {
+        "body_idle": "animation.radioactive_shrimp.body_idle",
+        "body_swim": "animation.radioactive_shrimp.body_swim",
+        "legs_small_swim": "animation.radioactive_shrimp.legs_small_swim",
+        "legs_large_swim": "animation.radioactive_shrimp.legs_large_swim",
+        "head_idle": "animation.radioactive_shrimp.head_idle",
+        "land_idle": "animation.radioactive_shrimp.land_idle",
+        "water_controller": "controller.animation.radioactive_shrimp.water_controller",
+        "ground_controller": "controller.animation.radioactive_shrimp.ground_controller",
+        "root_controller": "controller.animation.radioactive_shrimp.root_controller"
+      },
+      "scripts": {
+        "animate": ["root_controller"]
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#009400",
+        "overlay_color": "#28bc4a"
+      }
+    }
+  }
+}

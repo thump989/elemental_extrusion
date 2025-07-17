@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:earth_minister",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/earth_minister"
+      },
+      "sound_effects": {
+        "ground_rumble": "mob.earth_minister.ground_rumble",
+        "ground_burst": "mob.earth_minister.ground_burst"
+      },
+      "particle_effects": {
+        "burrow_idle": "thump989:burrow_idle",
+        "earth_minister_burrow": "thump989:earth_minister_burrow",
+        "earth_minister_roar_prep": "thump989:earth_minister_roar_prep",
+        "earth_minister_roar_burst": "thump989:earth_minister_roar_burst"
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "move": "animation.blemish.move",
+        "move_2": "animation.blemish.move_2",
+        "move_3": "animation.blemish.move_3",
+        "casting": "animation.blemish.casting",
+        "burrow": "animation.earth_minister.burrow",
+        "burrow_idle": "animation.earth_minister.burrow_idle",
+        "burrowed_attack": "animation.earth_minister.burrowed_attack",
+        "unburrow": "animation.earth_minister.unburrow",
+        "minister_controller": "controller.animation.earth_minister.controller",
+        "controller": "controller.animation.blemish.controller"
+      },
+      "scripts": {
+        "should_update_bones_and_effects_offscreen": "(1.0)",
+        "animate": ["minister_controller", "controller"]
+      },
+      "geometry": {
+        "default": "geometry.earth_minister"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#4a354d",
+        "overlay_color": "#8c8c8c"
+      }
+    }
+  }
+}

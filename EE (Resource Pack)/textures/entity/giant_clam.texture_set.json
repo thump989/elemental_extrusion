@@ -1,0 +1,8 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "giant_clam",
+		"metalness_emissive_roughness": "giant_clam_mer",
+		"heightmap": "giant_clam_height"
+	}
+}

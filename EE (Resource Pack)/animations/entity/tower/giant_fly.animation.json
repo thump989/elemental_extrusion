@@ -1,0 +1,43 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.giant_fly.flying": {
+			"loop": true,
+			"animation_length": 0.15,
+			"bones": {
+				"body": {
+					"rotation": [0, 0, 0]
+				},
+				"leftwing_bone": {
+					"rotation": {
+						"0.0": [0, 0, 35],
+						"0.05": [0, 0, -35],
+						"0.1": [0, 0, 35],
+						"0.15": [0, 0, -35]
+					},
+					"scale": 2
+				},
+				"leg_front": {
+					"rotation": [15, 0, 0]
+				},
+				"rightwing_bone": {
+					"rotation": {
+						"0.0": [0, 0, -35],
+						"0.05": [0, 0, 35],
+						"0.1": [0, 0, -35],
+						"0.15": [0, 0, 35]
+					},
+					"scale": 2
+				}
+			}
+		},
+		"animation.giant_fly.fly.bobbing": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"position": [0, "math.cos(query.life_time * 687.4) * 1.6", 0]
+				}
+			}
+		}
+	}
+}

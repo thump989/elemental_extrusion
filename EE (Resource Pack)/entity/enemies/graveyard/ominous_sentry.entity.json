@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:ominous_sentry",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/ominous_sentry",
+        "active": "textures/entity/ominous_sentry_active"
+      },
+      "particle_effects": {
+        "skull": "thump989:ominous_sentry_active"
+      },
+      "animations": {
+        "basic": "animation.metalsnare_pigman.look_at_target.default",
+        "particle_controller": "controller.animation.ominous_sentry.particle"
+      },
+
+      "scripts": {
+        "should_update_bones_and_effects_offscreen": "(1.0)",
+        "animate": ["basic", "particle_controller"]
+      },
+      "geometry": {
+        "default": "geometry.ominous_sentry"
+      },
+      "render_controllers": ["controller.render.ominous_sentry"],
+      "spawn_egg": {
+        "base_color": "#b5d79d",
+        "overlay_color": "#07aefd"
+      }
+    }
+  }
+}

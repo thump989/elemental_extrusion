@@ -1,0 +1,133 @@
+{
+  "format_version": "1.21.5",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:voidskipper",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:experience_reward": {
+        "on_death": 25
+      },
+      "minecraft:dimension_bound": {},
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entity/voidskipper.json"
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 30,
+        "max": 30
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_contact_with_water",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "drowning",
+            "damage_per_tick": 1
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 4
+      },
+      "minecraft:scale": {
+        "value": 2
+      },
+      "minecraft:movement": {
+        "value": 0.03
+      },
+      "minecraft:navigation.float": {
+        "can_path_over_water": true
+      },
+      "minecraft:behavior.float_wander": {
+        "priority": 2,
+        "must_reach": true
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:can_fly": {},
+      "minecraft:shooter": {
+        "def": "thump989:voidskipper_stinger"
+      },
+      "minecraft:type_family": {
+        "family": ["voidskipper", "monster", "mob"]
+      },
+      "minecraft:jump.static": {},
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "max_distance": 200,
+          "min_distance": 200
+        },
+        "despawn_from_simulation_edge": true
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.ranged_attack": {
+        "priority": 1,
+        "attack_radius": 64,
+        "attack_interval": 5,
+        "burst_interval": 0,
+        "burst_shots": 24
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "has_equipment",
+                  "subject": "other",
+                  "value": "thump989:voidskipper_heart",
+                  "domain": "hand",
+                  "operator": "!="
+                }
+              ]
+            },
+            "reevaluate_description": true,
+            "max_dist": 64
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:dark_skeleton",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:zombie"
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": true
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:navigation.walk": {
+        "avoid_water": true
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:type_family": {
+        "family": ["mob", "monster", "undead"]
+      },
+      "minecraft:experience_reward": {
+        "on_death": "q.last_hit_by_player ? 20 : 0"
+      },
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": true,
+        "always_show": false
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "scan_interval": 10,
+        "set_persistent": true,
+        "must_see": true,
+        "entity_types": [
+          {
+            "max_dist": 32,
+            "filters": [
+              {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "wolf"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "irongolem"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:behavior.summon_entity": {
+        "summon_choices": [
+          {
+            "do_casting": true,
+            "cast_duration": 6,
+            "cooldown_time": 1,
+            "min_activation_range": 5,
+            "weight": 1,
+            "particle_color": "#ff00c8",
+            "sequence": [
+              {
+                "delay": 1,
+                "base_delay": 1,
+                "entity_type": "thump989:shadowfire",
+                "entity_lifespan": 28,
+                "target": "self",
+                "size": 15,
+                "num_entities_spawned": 15,
+                "shape": "line",
+                "delay_per_summon": 0.25
+              },
+              {
+                "delay": 0,
+                "base_delay": 0,
+                "entity_type": "thump989:curse_bomb",
+                "entity_lifespan": -1,
+                "target": "self",
+                "size": 4,
+                "num_entities_spawned": 4,
+                "shape": "circle",
+                "delay_per_summon": 0.1
+              }
+            ]
+          },
+          {
+            "do_casting": true,
+            "cast_duration": 5,
+            "cooldown_time": 1,
+            "min_activation_range": 5,
+            "weight": 1,
+            "particle_color": "#7c7512",
+            "sequence": [
+              {
+                "delay": 1,
+                "base_delay": 1,
+                "entity_type": "thump989:curse_bomb",
+                "entity_lifespan": -1,
+                "target": "self",
+                "size": 1,
+                "num_entities_spawned": 1,
+                "shape": "line",
+                "delay_per_summon": 0.1
+              },
+              {
+                "delay": 0,
+                "base_delay": 0,
+                "entity_type": "thump989:curse_bomb",
+                "entity_lifespan": -1,
+                "target": "self",
+                "size": 19,
+                "num_entities_spawned": 5,
+                "shape": "line",
+                "delay_per_summon": 0.1
+              }
+            ]
+          },
+          {
+            "cast_duration": 3,
+            "cooldown_time": 3,
+            "max_activation_range": 4,
+            "do_casting": true,
+            "weight": 1,
+            "particle_color": "#9240e4",
+            "sequence": [
+              {
+                "delay": 1,
+                "base_delay": 1,
+                "delay_per_summon": 0,
+                "entity_lifespan": 28,
+                "num_entities_spawned": 1,
+                "shape": "circle",
+                "size": 0,
+                "entity_type": "thump989:shadowfire",
+                "target": "self"
+              },
+              {
+                "delay": 1,
+                "base_delay": 1,
+                "delay_per_summon": 0,
+                "entity_lifespan": 28,
+                "num_entities_spawned": 6,
+                "shape": "circle",
+                "size": 2,
+                "entity_type": "thump989:shadowfire",
+                "target": "self"
+              },
+              {
+                "delay": 1,
+                "base_delay": 1,
+                "delay_per_summon": 0,
+                "entity_lifespan": 28,
+                "num_entities_spawned": 10,
+                "shape": "circle",
+                "size": 3,
+                "entity_type": "thump989:shadowfire",
+                "target": "self"
+              },
+              {
+                "delay": 1,
+                "base_delay": 1,
+                "delay_per_summon": 0,
+                "entity_lifespan": -1,
+                "num_entities_spawned": 5,
+                "shape": "circle",
+                "size": 4,
+                "entity_type": "thump989:curse_bomb",
+                "target": "self"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

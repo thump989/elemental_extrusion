@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:sinister_witch_blast",
+      "materials": {
+        "default": "entity_beam_additive"
+      },
+      "textures": {
+        "default": "textures/entity/sinister_witch_blast"
+      },
+      "geometry": {
+        "default": "geometry.sinister_witch_blast"
+      },
+      "particle_effects": {
+        "blast": "thump989:sinister_blast_idle"
+      },
+      "animations": {
+        "basic": "animation.sinister_witch_blast.idle"
+      },
+      "scripts": {
+        "animate": ["basic"]
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

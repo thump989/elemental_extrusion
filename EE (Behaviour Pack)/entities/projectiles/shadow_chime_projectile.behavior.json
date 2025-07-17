@@ -1,0 +1,107 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:shadow_chime_projectile",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:transient": {},
+      "minecraft:type_family": {
+        "family": ["shadowchime"]
+      },
+      "minecraft:tameable": {
+        "probability": 1
+      },
+      "minecraft:mob_effect": {
+        "cooldown_time": 0,
+        "effect_range": 2,
+        "effect_time": 10,
+        "mob_effect": "weakness",
+        "entity_filter": [
+          {
+            "any_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "value": "monster"
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:projectile": {
+        "anchor": 2,
+        "gravity": 0,
+        "inertia": 1,
+        "liquid_inertia": 1,
+        "power": 1.3,
+        "ignored_entities": ["minecraft:player"],
+        "on_hit": {
+          "mob_effect": {
+            "durationeasy": 120,
+            "durationhard": 120,
+            "durationnormal": 120,
+            "duration": 120,
+            "amplifier": 1,
+            "effect": "slowness"
+          },
+          "impact_damage": {
+            "damage": 11,
+            "knockback": false,
+            "destroy_on_hit": true,
+            "destroy_on_hit_requires_damage": true
+          },
+          "stick_in_ground": {}
+        }
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "event": "thump989:projectile_attack",
+            "target": "self",
+            "filters": {
+              "test": "on_ground",
+              "subject": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      },
+      "thump989:projectile_attack": {
+        "queue_command": {
+          "command": [
+            "particle thump989:chime_splash",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:moth_icicle_projectile",
+      "materials": {
+        "default": "entity_beam_additive"
+      },
+      "textures": {
+        "default": "textures/entity/moth_icicle_projectile"
+      },
+      "animations": {
+        "basic": "animation.projectile.move"
+      },
+      "scripts": {
+        "animate": ["basic"]
+      },
+      "geometry": {
+        "default": "geometry.moth_icicle_projectile"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

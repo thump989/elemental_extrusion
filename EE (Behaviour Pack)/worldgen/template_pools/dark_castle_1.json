@@ -1,0 +1,18 @@
+{
+  "format_version": "1.21.20",
+  "minecraft:template_pool": {
+    "description": {
+      "identifier": "thump989:castle1"
+    },
+    "elements": [
+      {
+        "element": {
+          "element_type": "minecraft:single_pool_element",
+          "location": "dark_castle_1",
+          "processors": "thump989:jigsaw_replacement"
+        },
+        "weight": 1
+      }
+    ]
+  }
+}

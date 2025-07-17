@@ -1,0 +1,52 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:block": {
+    "description": {
+      "identifier": "thump989:spider_egg_cluster",
+      "menu_category": {
+        "category": "nature"
+      }
+    },
+    "components": {
+      "minecraft:collision_box": false,
+      "minecraft:selection_box": true,
+      "minecraft:tick": {
+        "interval_range": [160, 360],
+        "looping": true
+      },
+      "thump989:spider_egg_cluster_destroy": {},
+      "thump989:block_spawner": {
+        "entity": "thump989:spiderling",
+        "spawn_cap": 7,
+        "spawn_cap_distance": 35
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1
+      },
+      "minecraft:light_dampening": 0,
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 30
+      },
+      "minecraft:flammable": {
+        "destroy_chance_modifier": 35,
+        "catch_chance_modifier": 7
+      },
+      "minecraft:geometry": "geometry.spider_egg_cluster",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "spider_egg_cluster",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:map_color": "#feffb2",
+      "minecraft:liquid_detection": {
+        "detection_rules": [
+          {
+            "liquid_type": "water",
+            "on_liquid_touches": "popped"
+          }
+        ]
+      }
+    }
+  }
+}

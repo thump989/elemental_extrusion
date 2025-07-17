@@ -1,0 +1,319 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "set_book_contents",
+
+              "title": "§dGuide Book",
+              "author": "thump989",
+
+              "pages": [
+                "Welcome to the §l§6Elemental Extrusion§r Addon! This collection of Guide Books will assist you in your adventure through this modified Minecraft experience.\n\n§8Created By: thump989\nProgramming and character design assistance: David",
+                "This Guide Book contains sets of goals designed to assist getting you into addon content. Achievements begin on the next page.",
+                "§2Colourful Quartz\n§rDiscover an amethyst geode underground",
+                "§2Clear Body\n§rCraft a Mystic Extractor from Lapis and Amethyst, and use it to obtain Pure Magic",
+                "§2It's Alive!?\n§rDefeat a Blemish in the deepslate caves",
+                "§2Deep Sea Scuffle\n§rDefeat a Brine in ocean caves",
+                "§2Mobility +1\n§rCraft a Grapple Basket Hook",
+                "§2A Cosmic Mystery\n§rFind a strange block in a Mesa Observatory",
+                "§5Professional Glazer\n§rFind a hidden Recipe Book inside a mysterious tower within the Pale Garden",
+                "§2Cannon Event\n§rCraft a Cannon Kit, and use it to place a Cannon",
+                "§2Very Shellfish\n§rObtain a Pearl from a Clam or Giant Clam",
+                "§2Wizard's Apprentice\n§rCraft a Magic Tome from Pure Magic",
+                "§5Wizard's Journeyman\n§rCraft 5 unique Magic Tomes",
+                "§6Master Wizard\n§rCraft one of each type of Magic Tome",
+                "§2Make Haste!\n§rUse a Block of Gold in a Brewing Stand to make Haste Potions",
+                "§2Inner Focus§r\nCraft any Dimensional Focus",
+                "§2Spiteful Metal\n§rVenture into the Deep Dark and obtain Malumite, a mysterious pink ore than can only be mined with a Netherite Hoe",
+                "§2A Bad Omen\n§rVenture into a Trial Chamber with Bad Omen applied",
+                "§2Heavy Handed\n§rUse any elemental rod and a Heavy Core to create a Mace",
+                "§5Mace-tery\n§rCraft every kind of Mace",
+                "§2Elemental Conquerer\n§rCraft a Minister Conjure from elemental rods and an Eye of Ender, and overcome it in battle",
+                "§5Elemental Warlord\n§rDefeat all four Ministers",
+                "§2Forbidden Alchemy\n§rCreate a potion from an elemental gem",
+                "§6New World Order\n§rUse a gem from each Minister to unlock a new realm of crafting",
+                "§5Magic Overwhelming\n§rUse an elemental gem to create a Staff",
+                "§2Horrifying Beauty\n§rVenture into the End, and take the heart of a powerful flying monster",
+                "§2Remnant of the Fallen\n§rDiscover a dark fortress in the Plains",
+                "§5Ghostbuster\n§rFind all the hidden keys in the Dark Castle and unlock its secret vault",
+                "§2Labor Crisis\n§rUse Spectral Matter to make any Spectral Enhancer, then buy an Enchanted Book from it",
+                "§5A Cosmic Mystery: Solved\n§rBuild a Stellar Reactor in the End to lure out a powerful foe",
+                "§6Ore of Yore\n§rFind Cobalt, a truly ancient ore in the very deepest depths of the Overworld",
+                "§6Geostronomy\n§rUse the magic powers of a Cosmic Drill to extract Raw Cobalt from Cobalt Ore, and smelt it in a Blast Furnace",
+                "§5It Bugs Me\n§rFind a bug-filled tower in the Icy Plains, and defeat the extraordinary foe atop",
+                "§6Secrets of the Small\n§rFind the secret chest on every floor in the Bug Tower",
+                "§6Lord of the Undead\n§rFind a foreboding graveyard in the Taiga Forests",
+                "§l§6Former Lord of the Undead\n§rDefeat the Lord of the Undead in the Graveyard"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "set_book_contents",
+
+              "title": "§dBlock Guide",
+              "author": "thump989",
+
+              "pages": [
+                "This Guide Book contains information on most Blocks in the Addon",
+                "§2Fish Trap§r\nWhen placed in water, the Fish Trap will periodically fill with fish. Interact with it to empty it",
+                "§2Cheese Press§r\nUse a Milk Bucket on the Cheese Press to get Cheese. Combine this Cheese with Pure Magic to get Mystic Cheese, which cures most negative effects when eaten",
+                "§2Sieve§r\nPlace a Sand or Gravel block on top of the Sieve to get a random Archaeology item",
+                "§2Cannon Kit\n§rPlaces a Cannon. Cannons have 35 health, 15 armour, and shoot 5 damage cannonballs twice a seconds. When they lose all their health, they disable, and recover for 60 seconds. Use an Iron Ingot to speed up recovery while disabled, or",
+                "to heal it while active. Give a Cannon an Emerald Block to make its cannonballs stronger, and to make enemies killed by it drop exp. It loses these properties if it is disabled. Use a Cannon Wrench on an active Cannon to turn it back into a Cannon Kit",
+                "§2Golden Apple Seed§r\nA magical seed only found on Lush floating islands. Plant in farmland to eventually grow an Enchanted Golden Apple. This plant cannot be bonemealed",
+                "§2Dimensional Focuses\n§rCan be used as waypoints. Interact with it to gain a Dimensional Locator, which will teleport you to the corresponding Focus from anywhere in that dimension. Only one Focus per type may exist in a dimension at any time",
+                "§2Malumite Ore§r\nA strange pink metal found within Sculk growths. Malumite ore can only be mined with a Netherite Hoe, and is smelted using Soul Fire",
+                "§2Mystic Workbench§r\nA better Crafting Table infused with the magical powers of the elements. Can be used to craft higher tier gear, as well as some normally uncraftable items",
+                "§2Dark Totem§r\nA powerful artifact harnessing the power of the Totem of Undying and Malumite. When interacted with, it grants the user Health Boost 5, giving 20 extra health",
+                "§2Cosmic Drill§r\nA powerful drill that uses space magic to duplicate ores. Will produce raw metals and minerals corresponding to the block the drill is placed on. Rarer ores take longer to drill",
+                "§2Cobalt Ore§r\nAn incredibly rare ore only found in the very deepest depths of the Overworld. Use a Malumite Pickaxe to obtain the block, and use a Cosmic Drill to extract Raw Cobalt. Smelt in a Blast Furnace",
+                "§2Stellar Reactor Core§r\nA powerful energy source used to enchance the image of telescopes. When placed in a specific block configuration in the End, it will summon a powerful guardian of the stars"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "set_name",
+
+              "name": "§r§dWeapons Guide"
+            },
+            {
+              "function": "set_book_contents",
+
+              "title": "§dWeapon Guide",
+              "author": "thump989",
+
+              "pages": [
+                "This Guide Book contains information on all weapons in the Addon. Everything is listed, so beware of spoilers.",
+                "§2Vampire Dagger§r\nRestores 1 health on melee attack\nDurability: 150\nRepair Item: Bat Fang\nEnchantable?: Sword",
+                "§2Arcane Tome§r\nRapidly fires projectiles that deal Magic damage\nDamage: 3\nDurability: 500. Tomes only consume durability on use\nEnchantable?: Bow",
+                "§2Lightning Tome§r\nOn Use: Send out an electrical orb that damages all nearby monsters\nDamage: 2 Override to enemies within 8 blocks\nDurability: 50\nEnchantable?: Bow",
+                "§2Necromantic Tome§r\nOn Use: Spawns 4 Necro Skeletons to fight for you. After 45 seconds, they will decay\nSkeleton Stats: §8Hp; 15, Damage; 3§r\nDurability: 50\nEnchantable?: Mending and Unbreaking",
+                "§2Reagant Tome§r\nOn Use: Causes an effect burst at the targeted block. All mobs within the blast have their current effects amplified and extended slightlty\nBurst Range: 5\nCooldown: 35 Seconds\nDurability: 50\nEnchantable?: Mending and Unbreaking",
+                "§2Extinction Tome§r\nOn Use: Fires a Wither Skull. They deal 6 damage and inflict Wither on contact. Explosion deals 2 damage\nDurability: 1000\nEnchantable?: Bow",
+                "§2Blazing Mace§r\nOn Hit: Attacks on burning targets consumes the fire, dealing more damage the longer the mob had left to burn\nDurability: 500\nRepair Item: Blaze Rod\nEnchantable?: Axe",
+                "§2Blemish Mace§r\nOn Use: Creates an earthquake on the target. Deals 3 instances of 8 damage\nCooldown: 12.5 Seconds\nDurability: 500\nRepair Item: Blemish Rod\nEnchantable?: Sword",
+                "§2Brine Mace§r\nOn Hit: Restores one health\nDurability: 500\nRepair Item: Brine Rod\nEnctantable?: Sword",
+                "§2Magic Missile Tome§r\nOn Use: Charge for 0.75 seconds to unleash a powerful magic blast that deals 18 magic damage\nDurability: 1000\nEnchantable?: Bow",
+                "§2Magic Boomerang Tome§r\nOn Use: Charge for 0.6 seconds to shoot a piercing boomerang that deals 7 Magic Damage and reverses flight direction after a short time\nDurability: 1000\nEnchantable?: Bow",
+                "§2Toxic Dartstorm§r\nOn Use: Fires a spread of 7 darts that inflict Fatal Poison for 5 seconds. Darts each deal 3 Override damage\nDurability: 1000\nEnchantable?: Bow",
+                "§2Necromantic Tome DX§r\nOn Use: Summons Necro Wither Skeletons to fight for you. They decay after 45 seconds\nSkeleton Stats:§8 HP; 25, fire immune. Damage; 8, inflicts wither.§r\nDurability: 150\nEnchantable?: Mending and Unbreaking",
+                "§2Arcane Tome DX§r\nOn Use: Rapidly fire projectiles that deal 6 Magic damage\nDurability: 5000\nEnchantable?: Bow",
+                "§2Extinction Tome DX§r\nOn Use: Fires a Dangerous Wither Skull. They deal 9 damage and inflict Wither on contact. Explosion deals 4 damage\nDurability: 5000\nEnchantable?: Bow",
+                "§2Magic Blade§r\nOn Hit: Spawns 5 exp orbs\nRepair Item: Pure Magic\nDurability: 251\nEnchantable?: Sword",
+                "§2Fire Staff§r\nOn Use: Launch an explosive fireball. Deals a maximum 12 damage. Also burns with melee attacks\nCooldown: 3 Seconds\nStaffs do not have durability, and cannot be enchanted",
+                "§2Earth Staff§r\nOn Use: Provides Resistance for 30 seconds\nCooldown: 45 Seconds",
+                "§2Water Staff§r\nOn Use: Heals the user and allies within 6 blocks for 6 health while removing fire. Inflicts Weakness 2 and Slowness 2 on melee attack\nCooldown: 7 Seconds",
+                "§2Air Staff§r\nOn Use: Fires a wind charge that deals 6 damage on direct hit",
+                "§2Stormsower Trident§r\nAfter shooting 12 times, the Trident unleashes 8 Lightning Orbs in all directions around the holder. Normal projectiles deal 13 Magic damage, and emit electricity on hit\nDurability: Infinite\nEnchantable?: Sword",
+                "§2Stellar Tempest Tome§r\nOn Use: Rains down stars above the target. Stars deal 10 damage and inflict Weakness for 10 seconds\nCooldown: 20 Seconds\nDurability: 5000\nEnchantable?: Mending and Unbreaking",
+                "§2Astral Mace§r\nOn Hit: Causes stars to rain down around the hit entity. Stars deal 10 damage and inflict Weakness for 10 seconds\nDurability: 2500\nRepair Item: Astral Rod\nEnchantable?: Sword",
+                "§2Astral Staff§r\nOn Use: Spawns a friendly astral coral atop the target block. It has 20 health, and heals all nearby players for 2 health every 8 seconds. Lasts 120 seconds\nCooldown: 25 Seconds",
+                "§2Shadow Chime§r\nOn Use: Fires a musical projectile that inflicts Weakness and Slowness, and deals 11 damage\nDurability: 500\nEnchantable?: Mending and Unbreaking",
+                "§2Demon Core§r\nOn Use: Inflicts Fatal Poison 2 for 20 seconds on all enemies within 8 blocks\nCooldown: 25 Seconds",
+                "§2Stygian Scope§r\nOn Use: Deals 15 Override damage instantly to the targeted entity\nCooldown: 3 Seconds",
+                "§2Frostwinds Staff§r\nOn Use: Fire a piercing frostwind that deals 11 damage, inflicts Slowness 2, and creates a wind burst on contact with a block. If wearing the Rimehood, the firing and projectile speed are doubled",
+                "§2Icicle Glaive§r\nMelee attacks restore durability. On Use: Consumes all durability to create an ice aura around the user, dealing 8 Override damage and inflicting Slowness over a 10 block range. Charge speed is doubled while wearing the Rimehood",
+                "§2Dereliction Scythe§r\nOn Use: Deals 15 contact damage to all enemies within 3 blocks of the user, and heals 1 health for each entity hit\nCooldown: 1.5 Seconds\nEnchantable?: Sword",
+                "§2Tome of Tempted Fate§r\nOn Use: Removes all non-Health Boost effects, and sets the users health to one. Grants Resistance 200 and Strength 5 for 10 seconds, making the user immune to almost all damage\nCooldown: 2 Minutes",
+                "§2Blazing Meteor Staff§r\nOn Use: Slows movement to charge for 2.25 seconds. On complete charge, unleashes a supremely powerful fireball that deals 50 fire damage, and burns enemies for 20 seconds\nEnchantable?: No"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "set_name",
+
+              "name": "§r§dTools, Armour, and Accessories Guide"
+            },
+            {
+              "function": "set_book_contents",
+
+              "title": "§dWeapon Guide",
+              "author": "thump989",
+
+              "pages": [
+                "This Guide Book contains information on all tools, armour, and accessories in the Addon. Everything is listed, so beware of spoilers.",
+                "§dArmour\n§rDespite the UI showing only showing 20 armour points, you may have up to 30",
+                "§2Malumite Armour & Tools§r: Malumite items have 3,278 durability\nHelmet: 4 Armour\nChestplate: 9 Armour\nLeggings: 8 Armour\nBoots: 4 Armour\nWearing the full set makes the wearer immune to Darkness and Blindness, and grants Night Vision",
+                "§2Cobalt Armour & Tools§r\nCobalt items have 6,556 durability\nHelmet: 6 Armour\nChestplate: 10 Armour\nLeggings: 8 Armour\nBoots: 6 Armour\nWearing the full set gives the wearer Swiftness and Strength",
+                "§2Accessories:§r\nAccessories are equipped in the Offhand Slot",
+                "§2Honeycomb Ring:§r\nMakes the holder immune to Slowness, Weakness, Poisons, and Wither",
+                "§2Endless Waffle:§r\nGrants Regeneration, and fills the holder's hunger. Made from Butter",
+                "§2Runner's Baton:§r\nGrants Swiftness and Jump Boost",
+                "§2Spirit of the Turtle:§r\nGrants Resistance, but also gives the holder Slowness II",
+                "§2Voidskipper Heart:§r\nPrevents other Voidskippers from attacking you",
+                "§2Faux Moth Wings:§r\nGrants the holder a double jump. If equipped while wearing the Rimehood, the holder gains Slow Falling",
+                "§2Ominous Talisman:§r\nCauses all attacks to inflict Trial Omen for 45 seconds. Ominous Sentries will not target the wearer",
+                "§dTools:§r\nTools are items with special non-combat or combat adjacent abilities",
+                "§2Grapple Basket Hook:§r\nFires out a grappling hook attached to a basket. Ride in the basket, and it will rapidly move towards the hook's current position. The basket goes away after 20 seconds",
+                "§2Mystic Extractor:§r\nOn Use: Deals 5 Magic damage to the holder, and converts all their levels into Pure Magic. You get 1 Pure Magic for every 3 levels",
+                "§2Cannon Wrench:§r\nUse on an active Cannon to turn it back into a Cannon Kit",
+                "§2Homeworld Locator:§r\nUse to return to your Spawn Point, even if you are in a different dimension",
+                "§2Universal Focuses:§r\nUse on a block to calibrate the Focus to that location. Using the cooresponding Universal Locator will teleport you to that location, even between dimensions Only one location may be saved per Universal Focus",
+                "§2Lifeweaver Tome§r\nOn Use: Grants Absorption, and 5 seconds of Regeneration\nDurability: 250\nEnchantable?: Mending and Unbreaking\nCooldown: 40 Seconds",
+                "§2Lifeweaver Tome DX§r\nOn Use: Grants Absorption and Regeneration 3 for 7 seconds\nCooldown: 40 Seconds\nDurability: 150\nEnchantable?: Mending and Unbreaking",
+                "§2Cure-All Tome§r\nOn Use: Cures the user of all negative effects, even Omens\nDurability: 250\nEnchantable?: Mending and Unbreaking\nCooldown: 6 Seconds",
+                "§2Flight Tome§r\nOn Use: Launches the user about 20 blocks upwards\nDurability: 250\nEnchantable?: Mending and Unbreaking\nCooldown: 7 Seconds",
+                "§2Teleportation Tome§r\nOn Use: Teleport to the targeted block. Teleport fails if the target is further than 50 blocks away, or if the target block has a non-air block above it\nCooldown: 30 Seconds\nDurability: 50\nEnchantable?: Mending and Unbreaking",
+                "§2Spectral Enhancers:§r\nPlaces a Spectral Enhancer. They will convert 10 Spectral Matter and a book into an Enchanted Book. Different Spectral Enhancers offer different books",
+                "§2Glowworm Queen:§r\nPlaces Glowworm Larvae blocks. The larvae glow as bright Glowstone. Repair the Glowworm Queen with Glow Lichen\n Durability: 500",
+                "§2Mosquito Needle:§r\nOn Use: deals 6 Override damage, and removes all negative effects. If effects are removed, gain Regeneration III for 6 seconds",
+                "§2Rimehood:§r\nProvides 3 Armour, and enhances the power of other gear made from Caldpteron Scales",
+                "§2Sceptre of the Watcher§r\nOn Use: Spawns an Ominous Sentry at the targeted position. Can deal damage to and defeat Ominous Sentries. Inflicts Trial Omen on melee attacks\nCooldown: 20 seconds",
+                "§2Phantore Bonemail:§r\nProvides 8 Armour. While worn, completely absorbs Magic and Override damage dealt to the wearer\nDurability: 10,000\nEnchantable?: Chestplate"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "set_book_contents",
+
+              "title": "§dBestiary",
+              "author": "thump989",
+
+              "pages": [
+                "This Guidebook contains information on almost all mobs found within the Addon. Page breaks with warning are included to prevent spoilers.",
+                "§2Notes on damage types:§r\nMagic: Magic damage ignores defence, but is still reduced by Protection\nOverride: Similar to Magic, but completely ignores invulnerability frames",
+                "§2Butterfly§r\nPassive flying mob that spawns in many biomes",
+                "§2Clam§r\nFreshwater bivalve that spawns in rivers, lakes, and swamps. They very rarely drop Pearls",
+                "§2Titan Beetle§r\nGiant beetles that spawn in Mega Taiga forests. They eat mushrooms and leaflitter off the ground, occasionally finding valuable treasure. Can be bred with mushrooms, and will lay their egg on Podzol or Spruce Logs",
+                "§2Nautilus§r\nCephalopods that live in cold and polar waters. Hide in their tough shells at the first sign of danger. Drops a Nautilus Shell",
+                "§2Giant Clam§r\nTitanic clams that live in coral reefs. Once they lose some health, they'll retreat into their shells, and become nearly indestructible. Magic and fire attacks can bypass their defences. May drop Pearls",
+                "§2Spiderling§r\nTiny spider hatchlings that spawn from Giant Spider Eggs scattered across the overworld. Destroying the Egg Cluster within will release even more spiders, so beware\nHealth: 10\nAttack: 3",
+                "§2Blemish§r\nEarth elementals that spawn on Deepslate undergorund. They can attack from long range by creating spikes underneath their targets\nHealth:30\nAttack(Melee):4\nEffect: Mining Fatigue; 30s\nAttack(Spikes): 5\nDrops Blemish Rods",
+                "§2Brine§r\nWater elementals that spawn in deep oceans. They release a burst of projectiles at close range, and shoot destructible homing bubbles at long range\nHealth: 30\nAttack(Spread):7\nAttack(Homing):10\nDrops Brine Rods",
+                "§2Voidskipper§r\nExtremely deadly flying monster that spawns in the End. Attacks by releasing a huge spray of explosive needles\nHealth: 30\nDamage(Needle Impact): 7\nAttack(Needle Explosion): 5 Override\nEffect: Direct hit and explosion cause Slowness 5",
+                "§2Wisp§r\nBlue spectral entities that guard the Castle. Sometimes spawns as a ranged variant\nHealth: 35\nAttack(Melee): 11\nAttack(Ranged):11; burns for 8 seconds\nWisps are immune to fire\nDrops Spectral Matter",
+                "§2Polterabra§r\nHaunted candles that launch seeking fireballs\nHealth: 35\nAttack: 12, burns for 10 seconds\nDrops Gold Ingots and Candles",
+                "§2Mimic§r\nMonsters that disguise themselves as chests. Should you be fooled by one, it will roar, dealing damage\nHealth: 35\nAttack(Roar): 15\nAttack(Melee): 12\nDrops loot found in Dungeon chests\nArmour: 15",
+                "§2Glowworm§r\nBugs that use dangling glowing vines to entice and capture prey. Some of these vines contain their eggs, and will spawn more Glowworms\nHealth: 20\nAttack: 7; inflicts Infested for 20 seconds",
+                "§2Giant Fly§r\nBugs that inhabit acidic swamps. They lay their eggs in bushes, which will spawn more Giant Flies\nHealth: 25\nAttack: 9; inflicts Weakness for 45 seconds",
+                "§2Radioactive Shrimp§r\nExtremely toxic aquatic pests of unkown origin. Their Radiocative Coral nest heats up the entire tower. Their eggs are hidden in Radioactive Coral outcrops\nHealth: 30\nAttack: 9; inflicts Fatal Poison for 7 seconds",
+                "§2Somberfish§r\nRelative of the Silverfish that typically lives in the deepest reaches of the earth. They disguise their eggs as ore\nHealth: 30\nAttack 11; inflicts Darkness for 60 seconds. They can see through walls",
+                "§2Caldpteron Caterpillar§r\nLarval form of the mighty Caldpteron. Though slow, they protect themselves with a veil of frost that harms anything that gets too close\nHealth: 40\nAttack(Frostveil):3 Freezing\nAttack(Melee): 16, inflicts Slowness for 60 seconds",
+                "§2Ominous Sentry§r\nIndestructible blocks that attack anything in their sights afflicted with Trial Omen\nAttack: 15, burns for 8 seconds",
+                "§2Mystic Zombie§r\nZombies infused with powerful magic. They gain power over time, eventually switching to a ranged mode\nHealth: 45\nAttack(Melee): 16, inflicts Trail Omen for 20 seconds\nAttack(Ranged):15, burns for 10 seconds\nArmour: 15",
+                "§2Dark Skeletons§r\nSkeletons infused with powerful magic. Attacks by summoning magical Shadowfires, or creating Curse Bombs that afflict a permanent effect when they explode\nHealth: 20\nAttack(Shadowfire): 6 Magic, burns for 7 seconds",
+                "§2Metalsnare Pigman§r\nZombie Pigmen with strange metal-based magic. Surrounded by four metal chips that absorb a single physical hit. Restores one chip on melee attack. Melee attacks have much longer range than usual\nHealth: 65\nAttack: 17\nArmour: 30",
+                "§2Sinister Witch§r\nWitches with powerful magical attacks. Summons Mystic zombies, Curse Bombs, and creates special homing magical projectiles\nHealth: 50; may drink various potions\nAttack: 10 Magic"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "set_book_contents",
+
+              "title": "§8Changelog",
+              "author": "thump989",
+
+              "pages": [
+                "This Guide Book contains information on any changes made to content within the Addon",
+                "2.1.0 Changes:\n§2Entities§r\nBlemish: Reduced sight range (32>20), reduced damage dealt by Spike attack (8>5), and Blemish should now lose their target when they cannot see it",
+                "Brine: Bubble Spray attack can now be used on land, at reduced efficacy. Brine now only spawn above ground in deep oceans",
+                "Spiderling: Spiderlings can no longer swim, and avoid water. They will now drop Spider Eyes regardless if a player killed them",
+                "Titan Beetle: Now has new functionality. Can be fed leaves or leaf litter to eventually find treasure. Some of the available loot is Explorer Maps that will locate the Bug Tower, Dark Castle, or the Graveyard",
+                "Thunder Tome: The Lightning Ball now only attacks monsters instead of most mobs\nMost Sword-like Weapons will now mine Cobweb faster\nHoneycomb Ring only grants Regeneration one instead of Regeneration two",
+                "Crafting Recipes that used wood can now use all variants of wood",
+                "2.1.1\n§2Entities:§r\nWisp: Now counts as undead\nAll Minister Bosses now have 15 Armour Points\nEarth Minister: No longer can use Spike Summon attacks",
+                "§2Items:§r\nAll Melee Weapons: No longer consume double durability on melee hit\nBlemish Mace: Spike Summon ability has longer range (35>50), no longer consumes durability, and the spike deals damage immediately",
+                "Grapple Basket: Now has a bottom texture",
+                "Brine Mace: Heals less on attack, and has one less attack power\nBlazing Mace: Splash damage is stronger (3>5)\nShadow Chime:Deals more damage (8>9), and is more accurate",
+                "2.1.2\n§rItems: Fire Staff and Extinction Tome explosion no longer damage players, or destroy items\nExtinction Tome: Deals 6 damage on hit, and 3 with the explosion\nFire Staff: Deals 12 damage on hit, and 6 with the explosion",
+                "§2Entities:§r\nCannon: Now has 15 Armour, and cannot be killed. Will disable upon reaching fatal health, and will deactivate. Will slowly regenerate back to full health, upon which it will become active again",
+                "Interact with the Cannon while it is active to get the Cannon Kit back and remove the Cannon",
+                "2.1.3: Fixed various bugs.",
+                "2.1.4\n§2Items:\n§rAll Tomes are now Enchantable with Mending and Unbreaking, and the Astral Mace is now craftable",
+                "2.2.0\n§2Entities:§r Wisp: Fixed Hitbox\nCannon: Give the Cannon an Emerald Block to tame it, causing it to shoot stronger cannonballs, and making exp drop from killed enemeies. The Cannon loses these properties if it is destroyed",
+                "§2Items:§r\nAstral Staff: Cooldown reduced to 25 seconds, and Coral lifespan doubled\nEarth Staff: Reworked. Provides 30 seconds of Resistance on use. 45 second cooldown",
+                "Magic Missile Tome, Magic Boomerang Tome, Extinction Tome, Toxic Dartstorm Tome, Fire Staff, and the Stormsower Trident all had their ranged attack speed greatly increased\nWater Staff: Heals 6 health instead of 8",
+                "Blemish Mace: Reworked. Causes a quake on the target, dealing three instances of 8 damage. 12.5 second cooldown\nSceptre of the Watcher: Inflicts 15 seconds of Trial Omen on melee attack",
+                "Ominous Talisman: Trial Omen duration increased to 45 seconds\nDemon Core: Cooldown reduced to 25 seconds\nFrostwinds Staff: Windburst knockback increased slightly",
+                "§2New Items:§r\nRunner's Baton: Provides permanent Swiftness and immunity to Slowness\nSpirit of the Turtle: Provides permanent Resistance, but also causes permanent Slowness II",
+                "2.2.1\n§2Blocks:§r\nCosmic Drill now drills copper ore\n§2Items:§r\nBlazing Meteor Staff: Use duration reduced to 2.25 seconds, and blast size increased by one block",
+                "2.2.2\nFixed various bugs",
+                "2.2.3\nAdded descriptions to various items, and explained how to make the Mystic Extractor. Added the Can of Knowledge, which gives recipies for the Mystic Workbench",
+                "2.2.4\nFixed some bugs\nNew Item: Endless Waffle: Fills hunger while equipped",
+                "2.2.5\nFixed yet more bugs, and made many small QoL improvements\nAdded Item: Cannon Wrench: Used to remove Cannons. Cannon Kits now stack to 16",
+                "2.2.6 & 2.2.7\nFixed even more bugs, and an error left in 2.2.6 by mistake",
+                "2.3.0 - Changes\n-Gave descriptions to many more items, explaining their use\n-Resprited Pure Magic to prevent confusion with XP Orbs\n-Malumite Ore generates 50% more often\n-Explosive Projectile explosions properly credit damage to the player",
+                "-Fire Gems can now be used as powerful Furnace fuel\n-The Astral Minister no longer drops Nether Stars, instead dropping Cosmic Stars. Cosmic Stars replace Nether Stars in the recipies for the Cosmic Drill and the Stellar Tempest Tome",
+                "-Removed the redundant 'Other' Spectral Enhancer. The remaining Spectral Enhancers have had their models updated, and their Trade Screens now use the modern version. Improved the particle effect as well",
+                "-Fixed Air Minister's behaviour in the second phase\n-Earth Minister now emits particles while burrowed, and it's burrow transition animation has been fixed\nCan of Knowledge recipe unlocks from Pure Magic\n-Cannon Wrench stacks to 64",
+                "2.3.0 - Additions\n-Extinction Tome DX: An upgraded Extinction Tome that deals more damage\n-Homeworld Locator: An item that teleports you to your spawn point, even if you are in a different dimension",
+                "2.3.1 (2.3.0 Part 2) - Changes\n-Fixed inventory display of Spawner Blocks from the Bug Tower\n-Re-textured Radioactive Coral and Radioactive Coral Block",
+                "-Made changes to a few Offhanqd Items:\nHoneycomb Ring: No longer provides Regeneration, but makes the holder immune to many more effects\nEndless Waffle: Now grants Regeneration in addition to Saturation",
+                "Runner's Baton: No longer grants immunity to Slowness. Grants Jump Boost in addition to Swiftness\n-Made a new Guidebook for accessories and tools\n-Re-textured the Homeworld Locator\n-All Locator items now have particle and sound effects",
+                "-Fixed Z-fighting on Titan Beetle model\n-Improved the loot found within Dead Floating Islands\n-Glowworm Larvae no longer break on the sides of blocks\n-Minister Conjures and Cannon Kits can no longer be used on Monster Spawners",
+                "-Removed the Iron Axe and Wooden Hoe from the Sieve loot pool to prevent it clogging inventories and chests",
+                "Additions\n-Added four new tools, Universal Focuses. Made from elemental gems, these Focuses save the coordinates of the block they were used on and create 16 Locators. The Locators will teleport you to the block the corresponding Focus was used on",
+                "2.3.2 - Changes\n-Malumite Ore now must be mined with a Netherite Hoe to drop Raw Malumite. Drops are now also affected by the Fortune Enchantment\nCobalt now only drops with a Malumite Pickaxe\n-Cosmic Drill recipe now requires a Malumite Ingot",
+                "-Malumite and Cobalt Armour sets now provide special effects when the entire set is worn\nMalumite Armour makes the wearer immune to Darkness and Blindness, while giving permanent Night Vision\nCobalt Armour provides permanent Strength and Swiftness",
+                "-Malumite and Cobalt Armour are now Trimmable\n-Cobalt Sword inflicts Slowness on hit\n-Astral Mace deals 11 damage instead of 12\n-The Cure-All Tome now requires the Mystic Workbench to craft",
+                "-Glowworm Larvae are no longer supported on the sides of blocks\n-Improved Cosmic Drill model and texture\n-Improved Celestial Padding Texture\n-Re-Textured Stellar Obsidian\n-Nautilus can now be tempted and bred with Raw Cod. They can also be leashed",
+                "-Cannons no longer hurt each other\n-Cannons and Minister Conjures are once again consumed on use\n-Re-textured and re-modeled the Giant Clam\n-Removed useless models and textures for 'dummy' entities\n-Demon Core no longer poisons Cannons",
+                "-Gave Stormsower Trident a use animation\n-Fixed bugs with Cannon\n-Fire Attacks no longer briefly set fire immune mobs on fire\n-Most projectiles now despawn on world unload, preventing them from building up in unloaded areas",
+                "-Added additional particles to Caldpteron during takeoff and landing\n-Added a failsafe to the Grapple Basket to force it to despawn in cases where it detatches from the hook",
+                "0.1.2\n-Changed Version number to be consistent with internal version\n-Updated Add-On to be compatible with 1.21.90 - Chase the Skies\n-Cannon Kits no longer consume the entire stack on use\n-Fixed Stellar Reactor Core Recipe not needing a Cosmic Star",
+                "-Improved the AI behaviour of the Fire Minister in its second phase\n-Water Minister will stop moving for longer during its second phase\n-Shooting Stars spawn less often in the End\n-§2Vibrant Visuals§r compatibility coming soon",
+                "0.2.3\n-Added Vibrant Visuals support to all entites. Blocks will be coming soon\n-Sinister Witches no longer throw poison potions"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

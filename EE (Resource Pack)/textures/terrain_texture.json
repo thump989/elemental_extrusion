@@ -1,0 +1,194 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "shadowfire": {
+      "textures": "textures/entity/shadowfire"
+    },
+    "test_bricks": {
+      "textures": "textures/blocks/test_brick"
+    },
+    "stellar_obsidian_outer": {
+      "textures": "textures/blocks/stellar_obsidian_outer"
+    },
+    "grave_dirt": {
+      "textures": "textures/blocks/grave_dirt"
+    },
+    "phantores_grave_top_inactive": {
+      "textures": "textures/blocks/phantores_grave/phantores_grave_top_inacvtive"
+    },
+    "phantores_grave_top_active": {
+      "textures": "textures/blocks/phantores_grave/phantores_grave_top_open"
+    },
+    "phantores_grave_top_3": {
+      "textures": "textures/blocks/phantores_grave/phantores_grave_top_3"
+    },
+    "phantores_grave_top_2": {
+      "textures": "textures/blocks/phantores_grave/phantores_grave_top_2"
+    },
+    "phantores_grave_top_1": {
+      "textures": "textures/blocks/phantores_grave/phantores_grave_top_1"
+    },
+    "phantores_grave_top_0": {
+      "textures": "textures/blocks/phantores_grave/phantores_grave_top_0"
+    },
+    "sinister_witch_spawner": {
+      "textures": "textures/blocks/sinister_witch_spawner"
+    },
+    "dark_skeleton_spawner": {
+      "textures": "textures/blocks/dark_skeleton_spawner"
+    },
+    "metalsnare_spawner": {
+      "textures": "textures/blocks/metalsnare_spawner"
+    },
+    "ominous_sentry_spawner": {
+      "textures": "textures/blocks/ominous_sentry_spawner"
+    },
+    "phantom_bricks": {
+      "textures": "textures/blocks/phantom_bricks"
+    },
+    "titan_beetle_egg": {
+      "textures": "textures/blocks/titan_beetle_egg"
+    },
+    "royal_caldpteron_egg_used": {
+      "textures": "textures/blocks/royal_caldpteron_egg"
+    },
+    "royal_caldpteron_egg": {
+      "textures": "textures/blocks/royal_caldpteron_egg_used"
+    },
+    "glowworm_larva": {
+      "textures": "textures/blocks/glowworm_larva"
+    },
+    "caldpteron_egg": {
+      "textures": "textures/blocks/caldpteron_egg"
+    },
+    "somberfish_eggs": {
+      "textures": "textures/blocks/somberfish_eggs"
+    },
+    "radioactive_coral": {
+      "textures": "textures/blocks/radioactive_coral"
+    },
+    "radioactive_coral_block": {
+      "textures": "textures/blocks/radioactive_coral_block/radioactive_default"
+    },
+    "fly_bush": {
+      "textures": "textures/blocks/fly_bush"
+    },
+    "glowworm_egg_vine": {
+      "textures": "textures/blocks/glowworm_egg_vine"
+    },
+    "glowworm_vine": {
+      "textures": "textures/blocks/glowworm_vine"
+    },
+    "castle_vault_empty": {
+      "textures": "textures/blocks/castle_vault/castle_vault_empty"
+    },
+    "castle_vault_active": {
+      "textures": "textures/blocks/castle_vault/castle_vault_active"
+    },
+    "castle_vault_3": {
+      "textures": "textures/blocks/castle_vault/castle_vault_3"
+    },
+    "castle_vault_2": {
+      "textures": "textures/blocks/castle_vault/castle_vault_2"
+    },
+    "castle_vault_1": {
+      "textures": "textures/blocks/castle_vault/castle_vault_1"
+    },
+    "castle_vault_0": {
+      "textures": "textures/blocks/castle_vault/castle_vault_0"
+    },
+    "mimic_spawner": {
+      "textures": "textures/blocks/mimic_spawner"
+    },
+    "spider_egg_cluster": {
+      "textures": "textures/blocks/spider_egg_cluster"
+    },
+    "wisp_spawner": {
+      "textures": "textures/blocks/wisp_spawner"
+    },
+    "polterabra_spawner": {
+      "textures": "textures/blocks/polterabra_spawner"
+    },
+    "golden_apple_sapling_8": {
+      "textures": "textures/blocks/golden_apple_sapling/golden_apple_sapling_8"
+    },
+    "golden_apple_sapling_7": {
+      "textures": "textures/blocks/golden_apple_sapling/golden_apple_sapling_7"
+    },
+    "golden_apple_sapling_6": {
+      "textures": "textures/blocks/golden_apple_sapling/golden_apple_sapling_6"
+    },
+    "golden_apple_sapling_5": {
+      "textures": "textures/blocks/golden_apple_sapling/golden_apple_sapling_5"
+    },
+    "golden_apple_sapling_4": {
+      "textures": "textures/blocks/golden_apple_sapling/golden_apple_sapling_4"
+    },
+    "golden_apple_sapling_3": {
+      "textures": "textures/blocks/golden_apple_sapling/golden_apple_sapling_3"
+    },
+    "golden_apple_sapling_2": {
+      "textures": "textures/blocks/golden_apple_sapling/golden_apple_sapling_2"
+    },
+    "golden_apple_sapling_1": {
+      "textures": "textures/blocks/golden_apple_sapling/golden_apple_sapling_1"
+    },
+    "celestial_padding": {
+      "textures": "textures/blocks/celestial_padding"
+    },
+    "stellar_obsidian": {
+      "textures": "textures/blocks/stellar_obsidian"
+    },
+    "stellar_reactor_core_active": {
+      "textures": "textures/blocks/stellar_reactor_core_active"
+    },
+    "stellar_reactor_core": {
+      "textures": "textures/blocks/stellar_reactor_core"
+    },
+    "sieve": {
+      "textures": "textures/blocks/sieve"
+    },
+    "fish_trap_active": {
+      "textures": "textures/blocks/fish_trap_active"
+    },
+    "fish_trap": {
+      "textures": "textures/blocks/fish_trap"
+    },
+    "cheese_press": {
+      "textures": "textures/blocks/cheese_press"
+    },
+    "cobalt_ore": {
+      "textures": "textures/blocks/cobalt_ore"
+    },
+    "cosmic_drill": {
+      "textures": "textures/blocks/cosmic_drill"
+    },
+    "mystic_workbench_top": {
+      "textures": "textures/blocks/mystic_workbench/mystic_workbench_top"
+    },
+    "mystic_workbench_bottom": {
+      "textures": "textures/blocks/mystic_workbench/mystic_workbench_bottom"
+    },
+    "mystic_workbench_north": {
+      "textures": "textures/blocks/mystic_workbench/mystic_workbench_north"
+    },
+    "mystic_workbench_east": {
+      "textures": "textures/blocks/mystic_workbench/mystic_workbench_east"
+    },
+    "mystic_workbench_south": {
+      "textures": "textures/blocks/mystic_workbench/mystic_workbench_south"
+    },
+    "mystic_workbench_west": {
+      "textures": "textures/blocks/mystic_workbench/mystic_workbench_west"
+    },
+    "dark_totem": {
+      "textures": "textures/blocks/dark_totem"
+    },
+    "malumite_ore": {
+      "textures": "textures/blocks/malumite_ore"
+    }
+  }
+}

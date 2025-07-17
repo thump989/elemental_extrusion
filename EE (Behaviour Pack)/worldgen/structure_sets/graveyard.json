@@ -1,0 +1,21 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:structure_set": {
+    "description": {
+      "identifier": "thump989:graveyard"
+    },
+    "placement": {
+      "type": "minecraft:random_spread",
+      "salt": 8899888,
+      "separation": 4,
+      "spacing": 80,
+      "spread_type": "linear"
+    },
+    "structures": [
+      {
+        "structure": "thump989:graveyard",
+        "weight": 1
+      }
+    ]
+  }
+}

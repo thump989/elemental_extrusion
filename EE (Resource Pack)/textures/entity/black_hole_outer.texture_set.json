@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "black_hole_outer",
+		"metalness_emissive_roughness": "black_hole_outer_mer"
+	}
+}

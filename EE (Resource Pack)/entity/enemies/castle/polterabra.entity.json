@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:polterabra",
+      "materials": {
+        "default": "conduit_wind",
+        "arms": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/polterabra",
+        "arms": "textures/entity/polterabra_arm"
+      },
+      "particle_effects": {
+        "polterabra_arm_flame": "thump989:polterabra_arm_flame"
+      },
+      "animations": {
+        "billboard": "animation.actor.billboard",
+        "particle": "animation.polterabra_arm.particle"
+      },
+      "scripts": {
+        "animate": ["billboard", "particle"]
+      },
+      "geometry": {
+        "default": "geometry.polterabra",
+        "arms": "geometry.polterabra_arms"
+      },
+      "render_controllers": [
+        "controller.render.polterabra",
+        "controller.render.polterabra_arm"
+      ],
+      "spawn_egg": {
+        "base_color": "#876250",
+        "overlay_color": "#ff1a00"
+      }
+    }
+  }
+}

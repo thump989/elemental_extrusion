@@ -1,0 +1,26 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "thump989:toxic_dart",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/toxic_dart"
+			},
+			"animations": {
+				"move": "animation.projectile.move"
+			},
+			"scripts": {
+				"animate": [
+					"move"
+				]
+			},
+			"geometry": {
+				"default": "geometry.toxic_dart"
+			},
+			"render_controllers": ["controller.render.default"]
+		}
+	}
+}

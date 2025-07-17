@@ -1,0 +1,243 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:grappling_hook_dummy",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "failsafe": "animation.grapple_despawn",
+        "grapple_retract": "animation.grapple_retract"
+      },
+      "properties": {
+        "thump989:grapplebasket_timer": {
+          "client_sync": true,
+          "default": 20,
+          "range": [0, 20],
+          "type": "int"
+        }
+      },
+      "scripts": {
+        "animate": [
+          "failsafe",
+          {
+            "grapple_retract": "q.has_player_rider"
+          }
+        ]
+      }
+    },
+    "components": {
+      "minecraft:timer": {
+        "time": 1,
+        "looping": true,
+        "time_down_event": {
+          "event": "thump989:grapplebasket_decrease",
+          "target": "self"
+        }
+      },
+      "minecraft:mob_effect_immunity": {
+        "mob_effects": [
+          "absorption",
+          "bad_omen",
+          "blindness",
+          "conduit_power",
+          "darkness",
+          "fatal_poison",
+          "fire_resistance",
+          "haste",
+          "health_boost",
+          "hunger",
+          "infested",
+          "instant_damage",
+          "instant_health",
+          "invisibility",
+          "jump_boost",
+          "levitation",
+          "mining_fatigue",
+          "nausea",
+          "night_vision",
+          "oozing",
+          "poison",
+          "raid_omen",
+          "regeneration",
+          "resistance",
+          "saturation",
+          "slow_falling",
+          "slowness",
+          "speed",
+          "strength",
+          "trial_omen",
+          "village_hero",
+          "water_breathing",
+          "weakness",
+          "weaving",
+          "wind_charged",
+          "wither"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:leashable": {
+        "can_be_stolen": false,
+        "hard_distance": 150,
+        "max_distance": 1000,
+        "on_unleash": {
+          "event": "thump989:instant_despawn",
+          "target": "self"
+        },
+        "soft_distance": 100
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "event": "thump989:has_rider",
+            "target": "self",
+            "filters": {
+              "test": "rider_count",
+              "value": 0,
+              "operator": ">"
+            }
+          },
+          {
+            "event": "thump989:instant_despawn",
+            "target": "self",
+            "filters": {
+              "test": "int_property",
+              "domain": "thump989:grapplebasket_timer",
+              "operator": "equals",
+              "subject": "self",
+              "value": 0
+            }
+          }
+        ]
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:dimension_bound": {},
+      "minecraft:rideable": {
+        "seats": [],
+        "controlling_seat": 0,
+        "crouching_skip_interact": true,
+        "family_types": ["player"],
+        "interact_text": "",
+        "passenger_max_width": 0,
+        "pull_in_entities": true,
+        "rider_can_interact": false,
+        "seat_count": 1
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:unridden": {
+        "minecraft:physics": {
+          "has_collision": true,
+          "has_gravity": true,
+          "push_towards_closest_space": false
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "event": "thump989:has_rider",
+              "target": "self",
+              "filters": {
+                "test": "rider_count",
+                "value": 0,
+                "operator": ">"
+              }
+            },
+            {
+              "event": "thump989:instant_despawn",
+              "target": "self",
+              "filters": {
+                "test": "int_property",
+                "domain": "thump989:grapplebasket_timer",
+                "operator": "equals",
+                "subject": "self",
+                "value": 0
+              }
+            }
+          ]
+        }
+      },
+      "self:ridden": {
+        "minecraft:physics": {
+          "has_collision": true,
+          "has_gravity": false,
+          "push_towards_closest_space": false
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "event": "thump989:no_rider",
+              "target": "self",
+              "filters": {
+                "test": "rider_count",
+                "value": 0,
+                "operator": "=="
+              }
+            },
+            {
+              "event": "thump989:instant_despawn",
+              "target": "self",
+              "filters": {
+                "test": "int_property",
+                "domain": "thump989:grapplebasket_timer",
+                "operator": "equals",
+                "subject": "self",
+                "value": 0
+              }
+            }
+          ]
+        }
+      },
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:no_rider": {
+        "remove": {
+          "component_groups": ["self:ridden"]
+        },
+        "add": {
+          "component_groups": ["self:unridden"]
+        }
+      },
+      "thump989:has_rider": {
+        "remove": {
+          "component_groups": ["self:unridden"]
+        },
+        "add": {
+          "component_groups": ["self:ridden"]
+        }
+      },
+      "thump989:grapplebasket_decrease": {
+        "set_property": {
+          "thump989:grapplebasket_timer": "q.property('thump989:grapplebasket_timer')-1"
+        }
+      },
+      "thump989:instant_despawn": {
+        "queue_command": {
+          "command": ["scriptevent thump989:grappledummy_end death"]
+        }
+      }
+    }
+  }
+}

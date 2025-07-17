@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thum989:ice_spike_dummy",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/dummy_blank"
+      },
+      "geometry": {
+        "default": "geometry.dummy_blank"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

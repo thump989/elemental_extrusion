@@ -1,0 +1,14 @@
+{
+	"format_version": "1.17.41",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "thump989:leather_flesh"
+		},
+		"tags": ["campfire","soul_campfire","smoker"],
+		"input": "minecraft:rotten_flesh",
+		"output": {
+			"item": "minecraft:leather",
+			"count": 1
+		}
+	}
+}

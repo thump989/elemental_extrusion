@@ -1,0 +1,61 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:grappling_hook_hook",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:dimension_bound": {},
+      "minecraft:leashable": {
+        "can_be_stolen": false,
+        "hard_distance": 1000,
+        "max_distance": 1000,
+        "soft_distance": 1000
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:projectile": {
+        "hit_ground_sound": "bow.hit",
+        "power": 1,
+        "gravity": 0.025,
+        "anchor": 0,
+        "offset": [0, 0, 0],
+        "on_hit": {
+          "stick_in_ground": {}
+        }
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "conditional_values": [],
+        "default_values": {
+          "use_motion_prediction_hints": true
+        }
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      }
+    }
+  }
+}

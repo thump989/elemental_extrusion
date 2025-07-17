@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:giant_fly",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/giant_fly/giant_fly"
+      },
+      "geometry": {
+        "default": "geometry.giant_fly"
+      },
+      "animations": {
+        "flying": "animation.giant_fly.flying",
+        "bobbing": "animation.giant_fly.fly.bobbing"
+      },
+      "scripts": {
+        "animate": ["flying", "bobbing"]
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#000000",
+        "overlay_color": "#570000"
+      }
+    }
+  }
+}

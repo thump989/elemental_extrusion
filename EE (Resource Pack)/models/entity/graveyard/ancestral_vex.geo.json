@@ -1,0 +1,101 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.ancestral_vex",
+				"texture_width": 64,
+				"texture_height": 128,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-4, 12, -2], "size": [8, 12, 4], "uv": [16, 16]},
+						{"origin": [-4, 12, -2], "size": [8, 12, 4], "inflate": 0.1, "uv": [33, 45]},
+						{"origin": [-4, 2.90278, -1.48947], "size": [8, 9, 4], "inflate": 0.1, "pivot": [0, 0.25278, 0.51053], "rotation": [2.5, 0, 0], "uv": [33, 61]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-4, 24, -4], "size": [8, 8, 8], "uv": [0, 0]},
+						{"origin": [-4, 24, -4], "size": [8, 8, 8], "inflate": 0.2, "uv": [0, 45]}
+					]
+				},
+				{
+					"name": "rightArm",
+					"parent": "body",
+					"pivot": [-5, 22, 0],
+					"cubes": [
+						{"origin": [-8, 12, -2], "size": [4, 12, 4], "uv": [40, 16]}
+					]
+				},
+				{
+					"name": "rightItem",
+					"parent": "rightArm",
+					"pivot": [-6, 14, 0],
+					"binding": "'rightitem'"
+				},
+				{
+					"name": "leftArm",
+					"parent": "body",
+					"pivot": [5, 22, 0],
+					"mirror": true,
+					"cubes": [
+						{"origin": [4, 12, -2], "size": [4, 12, 4], "uv": [40, 16]}
+					]
+				},
+				{
+					"name": "leg0",
+					"parent": "body",
+					"pivot": [-1.9, 12, 0.25],
+					"cubes": [
+						{"origin": [-2.9, 3, -1.75], "size": [6, 10, 4], "uv": [32, 0]}
+					]
+				},
+				{
+					"name": "leftwing",
+					"parent": "body",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [0, 12, 0], "size": [20, 12, 1], "uv": [0, 32], "mirror": true}
+					]
+				},
+				{
+					"name": "leftwing2",
+					"parent": "leftwing",
+					"pivot": [0, 24, 0],
+					"rotation": [-12.45891, -27.51235, 25.56145],
+					"mirror": true,
+					"cubes": [
+						{"origin": [0, 12, 0], "size": [20, 12, 1], "uv": [0, 32]}
+					]
+				},
+				{
+					"name": "rightwing",
+					"parent": "body",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-20, 12, 0], "size": [20, 12, 1], "uv": [0, 32]}
+					]
+				},
+				{
+					"name": "rightwing2",
+					"parent": "rightwing",
+					"pivot": [0, 24, 0],
+					"rotation": [-12.4589, 27.5123, -25.5614],
+					"cubes": [
+						{"origin": [-20, 12, 0], "size": [20, 12, 1], "uv": [0, 32]}
+					]
+				}
+			]
+		}
+	]
+}

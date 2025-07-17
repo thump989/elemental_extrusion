@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:grappling_hook_hook",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/grappling_hook_hook"
+      },
+      "animations": {
+        "move": "animation.projectile.move"
+      },
+      "enable_attachables": true,
+      "scripts": {
+        "animate": ["move"]
+      },
+      "geometry": {
+        "default": "geometry.grappling_hook_hook"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

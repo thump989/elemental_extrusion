@@ -1,0 +1,46 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "thump989:spider_nest_feature",
+      "places_feature": "thump989:spider_nest"
+    },
+    "conditions": {
+      "grounded": {},
+      "placement_pass": "first_pass",
+      "minecraft:biome_filter": {
+        "all_of": [
+          { "test": "has_biome_tag", "operator": "==", "value": "overworld" },
+          {
+            "test": "has_biome_tag",
+            "operator": "!=",
+            "value": "ocean"
+          },
+          {
+            "test": "has_biome_tag",
+            "operator": "!=",
+            "value": "frozen"
+          },
+          {
+            "test": "has_biome_tag",
+            "operator": "!=",
+            "value": "river"
+          }
+        ]
+      }
+    },
+    "distribution": {
+      "iterations": 1,
+      "x": {
+        "extent": [0, 16],
+        "distribution": "uniform"
+      },
+      "y": "q.heightmap(v.worldx, v.worldz)",
+      "z": {
+        "extent": [0, 16],
+        "distribution": "uniform"
+      },
+      "scatter_chance": 0.1
+    }
+  }
+}

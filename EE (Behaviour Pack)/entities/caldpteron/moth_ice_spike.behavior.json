@@ -1,0 +1,144 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:moth_ice_spike",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:cannot_be_attacked": {},
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:transient": {},
+      "minecraft:knockback_resistance": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:timer": {
+        "time": 1,
+        "looping": true,
+        "time_down_event": {
+          "event": "thump989:icespike_attack",
+          "target": "self"
+        }
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:despawn_timer": {
+        "minecraft:timer": {
+          "time": 0.3,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:instant_despawn",
+            "target": "self"
+          }
+        }
+      },
+      "self:leader_ready": {
+        "minecraft:timer": {
+          "time": 0.25,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:icespike_leader_attack",
+            "target": "self"
+          }
+        }
+      },
+      "self:leader": {
+        "minecraft:timer": {
+          "time": 0.75,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:icespike_recursive",
+            "target": "self"
+          }
+        }
+      },
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:icespike_leader": {
+        "add": {
+          "component_groups": ["self:leader"]
+        }
+      },
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": [
+            "tp @s ~ ~ ~ facing @e[type=thum989:ice_spike_dummy,c=1] "
+          ]
+        }
+      },
+      "thump989:icespike_attack": {
+        "add": {
+          "component_groups": ["self:despawn_timer"]
+        },
+        "queue_command": {
+          "command": [
+            "playsound mob.icecube.spawn @a ~ ~ ~",
+            "damage @e[family=player,r=1] 13 freezing entity @s",
+            "damage @e[family=irongolem,r=1] 13 freezing entity @s",
+            "damage @e[family=wolf,r=1] 13 freezing entity @s"
+          ]
+        }
+      },
+      "thump989:icespike_leader_attack": {
+        "add": {
+          "component_groups": ["self:despawn_timer"]
+        },
+        "queue_command": {
+          "command": [
+            "playsound mob.icecube.spawn @a ~ ~ ~",
+            "damage @e[family=player,r=1] 13 freezing entity @s",
+            "damage @e[family=irongolem,r=1] 13 freezing entity @s",
+            "damage @e[family=wolf,r=1] 13 freezing entity @s",
+            "summon thump989:moth_ice_spike ^ ^ ^4",
+            "summon thump989:moth_ice_spike ^ ^ ^-4"
+          ]
+        }
+      },
+      "thump989:icespike_recursive": {
+        "add": {
+          "component_groups": ["self:leader_ready"]
+        },
+        "queue_command": {
+          "command": [
+            "summon thump989:moth_ice_spike ^ ^ ^2",
+            "summon thump989:moth_ice_spike ^ ^ ^-2"
+          ]
+        }
+      }
+    }
+  }
+}

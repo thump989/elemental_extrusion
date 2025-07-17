@@ -1,0 +1,208 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.caldpteron.flying_controller": {
+			"states": {
+				"default": {
+					"animations": ["wing_fly1", "body_fly_idle", "head_idle"],
+					"transitions": [
+						{"summon_icecube": "q.is_casting && q.property('thump989:moth_cast_mode')=='fly_icecube'"},
+						{"summon_icespikes": "q.is_casting && q.property('thump989:moth_cast_mode')=='fly_icespikes'"},
+						{"ranged_shot": "q.facing_target_to_range_attack && q.property('thump989:moth_cast_mode')=='none' "}
+					],
+					"blend_transition": 1,
+					"blend_via_shortest_path": true
+				},
+				"summon_icecube": {
+					"animations": ["wing_fly1", "body_fly_summon", "head_idle"],
+					"particle_effects": [
+						{
+							"effect": "summon_icecube_air",
+							"locator": "rangedattack"
+						}
+					],
+					"transitions": [
+						{"default": "!q.is_casting || !q.property('thump989:moth_cast_mode')=='fly_icecube'"}
+					],
+					"blend_transition": 1,
+					"blend_via_shortest_path": true
+				},
+				"summon_icespikes": {
+					"animations": ["wing_fly1", "body_fly_summon", "head_idle"],
+					"particle_effects": [
+						{
+							"effect": "summon_spikes_air",
+							"locator": "rangedattack"
+						}
+					],
+					"transitions": [
+						{"default": "!q.is_casting || !q.property('thump989:moth_cast_mode')=='fly_icespikes'"}
+					],
+					"blend_transition": 1,
+					"blend_via_shortest_path": true
+				},
+				"ranged_shot": {
+					"animations": ["wing_fly1", "body_fly_rangedattack_idle", "head_idle"],
+					"particle_effects": [
+						{
+							"effect": "ranged_charge",
+							"locator": "rangedattack"
+						}
+					],
+					"transitions": [
+						{"default": "!q.facing_target_to_range_attack || !q.property('thump989:moth_cast_mode')=='none' "}
+					],
+					"blend_transition": 1
+				}
+			}
+		},
+		"controller.animation.caldpteron.root_controller": {
+			"states": {
+				"default": {
+					"transitions": [
+						{"flying": "q.property('thump989:moth_is_grounded')==false"},
+						{"grounded": "q.property('thump989:moth_is_grounded')==true"}
+					]
+				},
+				"flying": {
+					"animations": ["flying_controller"],
+					"transitions": [
+						{"fly_to_ground": "q.property('thump989:moth_is_grounded')==true"}
+					],
+					"blend_transition": 0.3
+				},
+				"fly_to_ground": {
+					"animations": ["all_land", "head_idle"],
+					"transitions": [
+						{"grounded": "q.all_animations_finished"}
+					]
+				},
+				"grounded": {
+					"animations": ["grounded_controller"],
+					"transitions": [
+						{"ground_to_fly": "q.property('thump989:moth_is_grounded')==false"}
+					]
+				},
+				"ground_to_fly": {
+					"animations": ["take_off", "head_idle"],
+					"transitions": [
+						{"flying": "q.all_animations_finished"}
+					]
+				}
+			}
+		},
+		"controller.animation.caldpteron.grounded_controller": {
+			"states": {
+				"default": {
+					"animations": ["body_ground_idle", "ground_wing_idle", "head_idle", "walk_controller"],
+					"transitions": [
+						{"cast_icecube": "q.is_casting && q.property('thump989:moth_cast_mode')=='ground_icecube'"},
+						{"cast_icespikes": "q.is_casting && q.property('thump989:moth_cast_mode')=='ground_icespikes'"},
+						{"roar": "q.is_roaring"},
+						{"cast_areaattack": "q.property('thump989:moth_cast_mode')=='ground_areaattack'"}
+					],
+					"blend_transition": 1,
+					"blend_via_shortest_path": true
+				},
+				"cast_icecube": {
+					"animations": ["head_ground_casting", "ground_wing_casting", "body_legs_casting"],
+					"particle_effects": [
+						{
+							"effect": "summon_icecube_ground",
+							"locator": "lefthorn"
+						},
+						{
+							"effect": "summon_icecube_ground",
+							"locator": "righthorn"
+						}
+					],
+					"transitions": [
+						{"default": "!q.is_casting || !q.property('thump989:moth_cast_mode')=='ground_icecube'"}
+					],
+					"blend_transition": 1,
+					"blend_via_shortest_path": true
+				},
+				"cast_icespikes": {
+					"animations": ["head_ground_casting", "ground_wing_casting", "body_legs_casting"],
+					"particle_effects": [
+						{
+							"effect": "summon_spikes_ground",
+							"locator": "lefthorn"
+						},
+						{
+							"effect": "summon_spikes_ground",
+							"locator": "righthorn"
+						}
+					],
+					"transitions": [
+						{"default": "!q.is_casting || !q.property('thump989:moth_cast_mode')=='ground_icespikes'"}
+					],
+					"blend_transition": 1
+				},
+				"roar": {
+					"animations": ["wings_roar", "body_roar", "head_idle"],
+					"transitions": [
+						{"default": "q.all_animations_finished"}
+					],
+					"blend_transition": 1,
+					"blend_via_shortest_path": true
+				},
+				"cast_areaattack": {
+					"animations": ["head_idle", "ground_wing_areaattack", "body_legs_casting"],
+					"particle_effects": [
+						{
+							"effect": "areaattack"
+						},
+						{
+							"effect": "icerain",
+							"locator": "lefthorn"
+						},
+						{
+							"effect": "icerain",
+							"locator": "righthorn"
+						},
+						{
+							"effect": "areaattack"
+						},
+						{
+							"effect": "areaattack"
+						},
+						{
+							"effect": "areaattack"
+						},
+						{
+							"effect": "areaattack_outer"
+						},
+						{
+							"effect": "areaattack_outer"
+						}
+					],
+					"transitions": [
+						{"default": "q.property('thump989:moth_cast_mode')=='none'"}
+					],
+					"blend_transition": 1,
+					"blend_via_shortest_path": true
+				}
+			}
+		},
+		"controller.animation.caldpteron.walk_controller": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": ["body_legs_idle"],
+					"transitions": [
+						{"walking": "q.ground_speed > 1.0"}
+					],
+					"blend_transition": 0.2
+				},
+				"walking": {
+					"animations": ["body_ground_walk"],
+					"transitions": [
+						{"idle": "q.ground_speed < 0.5"}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

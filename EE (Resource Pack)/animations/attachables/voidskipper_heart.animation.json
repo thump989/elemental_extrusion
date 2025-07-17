@@ -1,0 +1,45 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.voidskipper_heart.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [90, 56, -32],
+					"position": [9, 18, 5],
+					"scale": 0
+				},
+				"heart": {
+					"scale": 1
+				}
+			}
+		},
+		"animation.voidskipper_heart.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [15, 0, 0],
+					"position": ["5.5 + math.sin(q.anim_time*90)*6", 56.05193, "8.27749 - math.sin(q.anim_time*180)*6"],
+					"scale": 0.85
+				}
+			}
+		},
+		"animation.voidskipper_heart.idle": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"heart": {
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.5417": [1, 1, 1],
+						"0.625": [1.1, 1.1, 1.1],
+						"0.7083": [1, 1, 1],
+						"0.8333": [1, 1, 1],
+						"0.9167": [1.1, 1.1, 1.1],
+						"1.0": [1, 1, 1]
+					}
+				}
+			}
+		}
+	}
+}

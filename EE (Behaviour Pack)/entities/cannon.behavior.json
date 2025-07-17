@@ -1,0 +1,432 @@
+{
+  "format_version": "1.21.80",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:cannon",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "thump989:cannon_regen": {
+          "client_sync": true,
+          "default": 60,
+          "range": [0, 60],
+          "type": "int"
+        }
+      },
+      "runtime_identifier": "minecraft:player"
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:type_family": {
+        "family": ["mob", "player", "inanimate", "ordinance"]
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/spawn_equipment/faux_armour.json",
+        "slot_drop_chance": [
+          {
+            "drop_chance": 0,
+            "slot": "slot.armor.chest"
+          }
+        ]
+      },
+      "minecraft:health": {
+        "value": 35,
+        "max": 35
+      },
+      "minecraft:is_collidable": {},
+      "minecraft:collision_box": {
+        "height": 1,
+        "width": 0.9
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:healable": {
+        "force_use": false,
+        "items": [
+          {
+            "item": "minecraft:iron_ingot",
+            "heal_amount": 10
+          }
+        ]
+      },
+      "minecraft:navigation.walk": {},
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:jump.static": {
+        "jump_power": 0
+      },
+      "minecraft:tameable": {
+        "probability": 1,
+        "tame_items": ["minecraft:emerald_block"],
+        "tame_event": {
+          "event": "thump989:tamed",
+          "target": "self"
+        }
+      },
+      "minecraft:shooter": {
+        "def": "thump989:cannonball"
+      },
+      "minecraft:on_death": {
+        "target": "self",
+        "event": "thump989:death_event"
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:tamed": {
+        "minecraft:shooter": {
+          "def": "thump989:emerald_cannonball"
+        },
+        "minecraft:is_tamed": {}
+      },
+      "self:disabled": {
+        "minecraft:health": {
+          "max": 35
+        },
+        "minecraft:type_family": {
+          "family": ["mob", "ordinance", "inamimate"]
+        },
+        "minecraft:cannot_be_attacked": {},
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "event": "thump989:activate",
+              "target": "self",
+              "filters": {
+                "test": "int_property",
+                "value": 0,
+                "operator": "==",
+                "subject": "self",
+                "domain": "thump989:cannon_regen"
+              }
+            }
+          ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": "no"
+            }
+          ]
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "play_sounds": "deny",
+              "cooldown": 0,
+              "swing": true,
+              "use_item": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "any_of": [
+                        {
+                          "test": "has_equipment",
+                          "subject": "other",
+                          "domain": "hand",
+                          "value": "minecraft:iron_ingot"
+                        }
+                      ]
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    }
+                  ]
+                },
+                "target": "self",
+                "event": "thump989:give_iron"
+              }
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 1,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:regen",
+            "target": "self"
+          }
+        },
+        "minecraft:mob_effect_immunity": {
+          "mob_effects": [
+            "absorption",
+            "bad_omen",
+            "blindness",
+            "conduit_power",
+            "darkness",
+            "fatal_poison",
+            "fire_resistance",
+            "haste",
+            "health_boost",
+            "hunger",
+            "infested",
+            "instant_damage",
+            "instant_health",
+            "jump_boost",
+            "levitation",
+            "mining_fatigue",
+            "nausea",
+            "night_vision",
+            "oozing",
+            "poison",
+            "raid_omen",
+            "resistance",
+            "saturation",
+            "slow_falling",
+            "slowness",
+            "speed",
+            "strength",
+            "trial_omen",
+            "village_hero",
+            "water_breathing",
+            "weakness",
+            "weaving",
+            "wind_charged",
+            "wither",
+            "invisibility"
+          ]
+        }
+      },
+      "self:active": {
+        "minecraft:type_family": {
+          "family": ["mob", "player", "ordinance", "inamimate"]
+        },
+        "minecraft:health": {
+          "value": 35,
+          "max": 35
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": [
+                  {
+                    "test": "is_family",
+                    "value": "ordinance",
+                    "subject": "damager"
+                  }
+                ]
+              },
+              "deals_damage": "no"
+            },
+            {
+              "on_damage": {
+                "event": "thump989:disable",
+                "filters": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "deals_damage": "no"
+            }
+          ]
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "play_sounds": "deny",
+              "spawn_items": {
+                "table": "loot_tables/entity/cannon.json"
+              },
+              "on_interact": {
+                "filters": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "value": "thump989:cannon_wrench",
+                    "domain": "hand"
+                  }
+                ],
+                "target": "self",
+                "event": "thump989:interact"
+              }
+            }
+          ]
+        },
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "instant_health",
+              "amplifier": 250,
+              "duration": 1,
+              "visible": true
+            }
+          ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:mob_effect_immunity": {
+          "mob_effects": ["levitation", "slow_falling", "invisibility"]
+        },
+        "minecraft:behavior.ranged_attack": {
+          "attack_interval": 0.6,
+          "ranged_fov": 360,
+          "y_max_head_rotation": 180,
+          "attack_radius": 25,
+          "swing": true,
+          "priority": 0
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "scan_interval": 10,
+          "priority": 2,
+          "within_radius": 25,
+          "must_see": true,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "monster"
+                }
+              ],
+              "max_dist": 25
+            }
+          ]
+        }
+      },
+      "self:transform": {
+        "minecraft:transformation": {
+          "drop_equipment": false,
+          "drop_inventory": false,
+          "into": "thump989:cannon",
+          "keep_level": false,
+          "keep_owner": true,
+          "delay": 0,
+          "preserve_equipment": true
+        }
+      },
+      "self:transform_emerald": {
+        "minecraft:transformation": {
+          "drop_equipment": false,
+          "drop_inventory": false,
+          "into": "thump989:cannon<thump989:transform_emerald>",
+          "keep_level": false,
+          "keep_owner": true,
+          "delay": 0,
+          "preserve_equipment": true
+        }
+      },
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:tamed": {
+        "add": {
+          "component_groups": ["self:tamed"]
+        }
+      },
+      "thump989:regen": {
+        "set_property": {
+          "thump989:cannon_regen": "q.property('thump989:cannon_regen')-1"
+        }
+      },
+      "thump989:give_iron": {
+        "set_property": {
+          "thump989:cannon_regen": "q.property('thump989:cannon_regen')-15"
+        }
+      },
+      "thump989:interact": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      },
+      "thump989:activate": {
+        "queue_command": {
+          "command": ["effect @s clear regeneration"]
+        },
+        "remove": {
+          "component_groups": ["self:disabled"]
+        },
+        "add": {
+          "component_groups": ["self:active"]
+        }
+      },
+      "thump989:disable": {
+        "queue_command": {
+          "command": [
+            "particle minecraft:huge_explosion_emitter",
+            "playsound random.explode @a ~ ~ ~"
+          ]
+        },
+        "first_valid": [
+          {
+            "add": {
+              "component_groups": ["self:transform"]
+            },
+            "filters": [
+              {
+                "test": "has_component",
+                "value": "minecraft:tamed",
+                "operator": "!="
+              }
+            ]
+          },
+          {
+            "add": {
+              "component_groups": ["self:transform_emerald"]
+            }
+          }
+        ]
+      },
+      "thump989:transform_emerald": {
+        "queue_command": {
+          "command": [
+            "particle minecraft:huge_explosion_emitter",
+            "playsound random.explode @a ~ ~ ~"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:disabled", "self_tamed"]
+        }
+      },
+      "minecraft:entity_transformed": {
+        "queue_command": {
+          "command": [
+            "particle minecraft:huge_explosion_emitter",
+            "playsound random.explode @a ~ ~ ~"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:disabled"]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["self:active"]
+        }
+      },
+      "thump989:death_event": {
+        "queue_command": {
+          "command": ["particle minecraft:huge_explosion_emitter"]
+        }
+      }
+    }
+  }
+}

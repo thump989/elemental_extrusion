@@ -1,0 +1,48 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.sinister_witch.root_controller": {
+			"states": {
+				"default": {
+					"animations": ["arms_fold"],
+					"transitions": [
+						{"casting": "q.is_casting"},
+						{"ranged_attack": "q.facing_target_to_range_attack"}
+					]
+				},
+				"casting": {
+					"animations": ["cast", "arms_out"],
+					"particle_effects": [
+						{
+							"effect": "spell",
+							"locator": "left_hand"
+						},
+						{
+							"effect": "spell",
+							"locator": "right_hand"
+						}
+					],
+					"transitions": [
+						{"default": "!q.is_casting"}
+					]
+				},
+				"ranged_attack": {
+					"animations": ["projectile_shoot", "arms_out"],
+					"particle_effects": [
+						{
+							"effect": "ranged_attack",
+							"locator": "left_hand"
+						},
+						{
+							"effect": "ranged_attack",
+							"locator": "right_hand"
+						}
+					],
+					"transitions": [
+						{"default": "!q.facing_target_to_range_attack"}
+					]
+				}
+			}
+		}
+	}
+}

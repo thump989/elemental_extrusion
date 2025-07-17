@@ -1,0 +1,17 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.phantore": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "overlay_color": {
+        "r": 1
+      },
+      "textures": ["texture.default"]
+    }
+  }
+}

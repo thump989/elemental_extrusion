@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:blemish",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/blemish"
+      },
+      "geometry": {
+        "default": "geometry.blemish"
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "move": "animation.blemish.move",
+        "move_2": "animation.blemish.move_2",
+        "move_3": "animation.blemish.move_3",
+        "casting": "animation.blemish.casting",
+        "controller": "controller.animation.blemish.controller"
+      },
+      "scripts": {
+        "animate": ["move", "move_2", "move_3", "look_at_target", "controller"]
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#272727",
+        "overlay_color": "#4d4d4d"
+      }
+    }
+  }
+}

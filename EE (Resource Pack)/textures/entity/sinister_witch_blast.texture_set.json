@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "sinister_witch_blast",
+		"metalness_emissive_roughness": "sinister_witch_blast_mer"
+	}
+}

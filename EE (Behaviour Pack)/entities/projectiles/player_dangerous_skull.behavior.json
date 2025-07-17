@@ -1,0 +1,109 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:player_dangerous_skull",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:wither_skull_dangerous",
+      "properties": {
+        "thump989:blast_damage": {
+          "client_sync": true,
+          "default": 4,
+          "range": [0, 7],
+          "type": "int"
+        },
+        "thump989:blast_radius": {
+          "client_sync": true,
+          "default": 2.5,
+          "range": [0.0, 7.0],
+          "type": "float"
+        }
+      }
+    },
+    "component_groups": {
+      "minecraft:exploding": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "breaks_blocks": false,
+          "fuse_lit": true,
+          "power": 1,
+          "damage_scaling": 2,
+          "knockback_scaling": 0.5,
+          "causes_fire": false,
+          "destroy_affected_by_griefing": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.15,
+        "height": 0.15
+      },
+      "minecraft:type_family": {
+        "family": ["inanimate", "explosive_projectile"]
+      },
+      "minecraft:variant": {
+        "value": 2
+      },
+      "minecraft:mark_variant": {
+        "value": 3
+      },
+      "minecraft:transient": {},
+      "minecraft:tameable": {
+        "probability": 1
+      },
+      "minecraft:scale": {
+        "value": 1.1
+      },
+      "minecraft:projectile": {
+        "multiple_targets": false,
+        "on_hit": {
+          "stick_in_ground": {},
+          "impact_damage": {
+            "damage": 9,
+            "knockback": true
+          },
+          "mob_effect": {
+            "effect": "wither",
+            "durationeasy": 1000,
+            "durationnormal": 1000,
+            "durationhard": 1000,
+            "amplifier": 1
+          }
+        },
+        "power": 1.2,
+        "gravity": 0.0,
+        "uncertainty_base": 7.5,
+        "uncertainty_multiplier": 1,
+        "ignored_entities": ["minecraft:player"],
+        "anchor": 1,
+        "offset": [0, -0.1, 0],
+        "inertia": 1.0,
+        "liquid_inertia": 1.0,
+        "stop_on_hurt": true,
+        "shoot_target": false
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 7,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "add": {
+          "component_groups": ["minecraft:exploding"]
+        }
+      }
+    }
+  }
+}

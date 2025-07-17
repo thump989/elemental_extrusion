@@ -1,0 +1,39 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:mystic_workbench"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["CFC", "WLE", "CAC"],
+    "key": {
+      "C": "minecraft:crying_obsidian",
+      "F": "thump989:fire_gem",
+      "W": "thump989:water_gem",
+      "E": "thump989:earth_gem",
+      "A": "thump989:air_gem",
+      "L": "minecraft:lapis_lazuli"
+    },
+    "unlock": [
+      {
+        "item": "thump989:fire_gem"
+      },
+      {
+        "item": "thump989:water_gem"
+      },
+      {
+        "item": "thump989:earth_gem"
+      },
+      {
+        "item": "thump989:air_gem"
+      }
+    ],
+    "result": [
+      {
+        "item": "thump989:mystic_workbench",
+
+        "count": 1
+      }
+    ]
+  }
+}

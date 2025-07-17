@@ -1,0 +1,154 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:block": {
+    "description": {
+      "identifier": "thump989:phantores_grave",
+      "menu_category": {
+        "category": "nature"
+      },
+      "states": {
+        "thump989:phantore_grave_state": [0, 1, 2, 3, 4, 5]
+      }
+    },
+    "components": {
+      "minecraft:collision_box": true,
+      "minecraft:selection_box": true,
+      "minecraft:destructible_by_mining": false,
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:geometry": {
+        "culling": "thump989:culling_fullblock",
+        "identifier": "minecraft:geometry.full_block"
+      },
+      "minecraft:material_instances": {
+        "up": {
+          "texture": "phantores_grave_top_0",
+          "render_method": "opaque"
+        },
+        "*": {
+          "texture": "phantom_bricks",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:light_emission": 0,
+      "minecraft:light_dampening": 15,
+      "minecraft:map_color": "#2b365f",
+      "minecraft:liquid_detection": {
+        "detection_rules": [
+          {
+            "liquid_type": "water",
+            "can_contain_liquid": false,
+            "on_liquid_touches": "blocking"
+          }
+        ]
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('thump989:phantore_grave_state')==0",
+        "components": {
+          "thump989:phantore_grave_key": {},
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "phantores_grave_top_0",
+              "render_method": "opaque"
+            },
+            "*": {
+              "texture": "phantom_bricks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('thump989:phantore_grave_state')==1",
+        "components": {
+          "thump989:phantore_grave_key": {},
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "phantores_grave_top_1",
+              "render_method": "opaque"
+            },
+            "*": {
+              "texture": "phantom_bricks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('thump989:phantore_grave_state')==2",
+        "components": {
+          "thump989:phantore_grave_key": {},
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "phantores_grave_top_2",
+              "render_method": "opaque"
+            },
+            "*": {
+              "texture": "phantom_bricks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('thump989:phantore_grave_state')==3",
+        "components": {
+          "thump989:phantore_grave_key_last": {},
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "phantores_grave_top_3",
+              "render_method": "opaque"
+            },
+            "*": {
+              "texture": "phantom_bricks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('thump989:phantore_grave_state')==4",
+        "components": {
+          "thump989:summon_phantore": {},
+          "minecraft:light_emission": 15,
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "phantores_grave_top_active",
+              "render_method": "alpha_test",
+              "face_dimming": false,
+              "ambient_occlusion": false
+            },
+            "*": {
+              "texture": "phantom_bricks",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('thump989:phantore_grave_state')==5",
+        "components": {
+          "thump989:summon_phantore_recharge": {},
+          "minecraft:tick": {
+            "interval_range": [36000, 36000],
+            "looping": true
+          },
+          "minecraft:light_emission": 7,
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "phantores_grave_top_inactive",
+              "render_method": "alpha_test",
+              "face_dimming": false,
+              "ambient_occlusion": false
+            },
+            "*": {
+              "texture": "phantom_bricks",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

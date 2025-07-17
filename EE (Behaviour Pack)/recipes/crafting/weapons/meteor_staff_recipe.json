@@ -1,0 +1,25 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:meteor_staff"
+    },
+    "tags": ["mystic_workbench"],
+    "pattern": ["CGC", "CFC", "CCC"],
+    "key": {
+      "C": "thump989:cursed_soulbone",
+      "F": "thump989:fire_staff",
+      "G": "thump989:fire_gem"
+    },
+    "unlock": [
+      {
+        "item": "thump989:cursed_soulbone"
+      }
+    ],
+    "result": [
+      {
+        "item": "thump989:blazing_asteroid_staff"
+      }
+    ]
+  }
+}

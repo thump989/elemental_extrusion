@@ -1,0 +1,20 @@
+{
+  "pools": [
+    {
+      "rolls": 3,
+      "entries": [
+        {
+          "type": "item",
+          "conditions": [
+            {
+              "condition": "random_chance_with_looting",
+              "chance": 0.5,
+              "looting_multiplier": 0.15
+            }
+          ],
+          "name": "thump989:bat_fang"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:wisp",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "glowlayer": "breeze_wind_charge"
+      },
+      "textures": {
+        "default": "textures/entity/wisp/wisp_head",
+        "mustasche": "textures/entity/wisp/wisp_head_mustache",
+        "wisp_fire": "textures/entity/wisp/wisp"
+      },
+      "particle_effects": {
+        "wisp_fire": "thump989:wisp_fire",
+        "wisp_body": "thump989:wisp_body"
+      },
+      "animations": {
+        "idle": "animation.wisp.idle",
+        "look_at": "animation.common.look_at_target",
+        "particle": "animation.wisp.particle"
+      },
+      "scripts": {
+        "animate": ["particle", "idle", "look_at"]
+      },
+      "geometry": {
+        "default": "geometry.wisp",
+        "wisp_fire": "geometry.wisp_fire"
+      },
+      "render_controllers": [
+        "controller.render.wisp",
+        "controller.render.fire_wisp"
+      ],
+      "spawn_egg": {
+        "base_color": "#00e6ff",
+        "overlay_color": "#00a1ff"
+      }
+    }
+  }
+}

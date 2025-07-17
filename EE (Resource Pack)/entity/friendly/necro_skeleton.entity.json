@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:necro_skeleton",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/necro_skeleton"
+      },
+      "geometry": {
+        "default": "geometry.necro_skeleton"
+      },
+      "scripts": {
+        "animate": [
+          "look_at_target",
+          "walk_controller",
+          "attack_controller",
+          "spawn_controller"
+        ]
+      },
+      "animations": {
+        "look_at_target": "animation.humanoid.look_at_target.default",
+        "spawn": "animation.necro_skeleton.spawn",
+        "walk": "animation.necro_skeleton.walk",
+        "idle": "animation.necro_skeleton.idle",
+        "attack": "animation.necro_skeleton.attack",
+        "walk_controller": "controller.animation.necro_skeleton.move_controller",
+        "attack_controller": "controller.animation.necro_skeleton.attack_controller",
+        "spawn_controller": "controller.animation.necro_skeleton.spawn_controller"
+      },
+      "render_controllers": ["controller.render.default"],
+      "enable_attachables": true
+    }
+  }
+}

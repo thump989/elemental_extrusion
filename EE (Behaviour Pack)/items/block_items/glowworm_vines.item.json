@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:glowworm_vine",
+      "menu_category": {
+        "category": "nature"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 64,
+      "minecraft:block_placer": {
+        "block": "thump989:glowworm_vine",
+        "replace_block_item": true
+      },
+      "minecraft:icon": "glowworm_vines"
+    }
+  }
+}

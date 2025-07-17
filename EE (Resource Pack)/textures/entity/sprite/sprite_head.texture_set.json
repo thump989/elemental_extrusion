@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "sprite_head",
+		"metalness_emissive_roughness": "sprite_head_mer"
+	}
+}

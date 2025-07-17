@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "glowworm_queen",
+    "metalness_emissive_roughness_subsurface": "glowworm_queen_mer"
+  }
+}

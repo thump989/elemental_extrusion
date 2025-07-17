@@ -1,0 +1,76 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:staff_meteor",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:tameable": {
+        "probability": 1
+      },
+      "minecraft:projectile": {
+        "anchor": 1,
+        "catch_fire": true,
+        "inertia": 1,
+        "liquid_inertia": 1,
+        "ignored_entities": ["minecraft:player"],
+        "on_fire_time": 20,
+        "stop_on_hurt": true,
+        "should_bounce": true,
+        "multiple_targets": false,
+        "on_hit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "thump989:projectile_attack",
+              "target": "self"
+            }
+          },
+          "stick_in_ground": {},
+          "on_fire_time": 20,
+          "impact_damage": {
+            "damage": 50,
+            "knockback": true
+          }
+        }
+      },
+      "minecraft:transient": {}
+    },
+    "component_groups": {
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      },
+      "thump989:projectile_attack": {
+        "queue_command": {
+          "command": [
+            "scriptevent thump989:staff_fireball_explode staff_fireexplode1",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

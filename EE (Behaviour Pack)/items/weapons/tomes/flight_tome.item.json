@@ -1,0 +1,33 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:flight_tome",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "flight_tome",
+      "minecraft:rarity": "uncommon",
+      "minecraft:durability": {
+        "max_durability": 250,
+        "damage_chance": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "minecraft:enchantable": {
+        "slot": "bow",
+        "value": 25
+      },
+      "minecraft:cooldown": {
+        "category": "flight_tome",
+        "duration": 5
+      },
+      "thump989:flight_tome": {},
+      "thump989:deny_melee_damage": {}
+    }
+  }
+}

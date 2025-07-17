@@ -1,0 +1,14 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.arcane_bullet.particle": {
+			"animation_length": 0.25,
+			"particle_effects": {
+				"0.1667": {
+					"effect": "arcane_bullet",
+					"locator": "locator"
+				}
+			}
+		}
+	}
+}

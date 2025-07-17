@@ -1,0 +1,51 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:vampire_dagger"
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "vampire_dagger",
+      "minecraft:cooldown": {
+        "category": "vampire_dagger",
+        "duration": 0.5
+      },
+      "minecraft:damage": 4,
+      "thump989:vampire_dagger": {},
+      "thump989:reduce_melee_damage": {},
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:enchantable": {
+        "slot": "sword",
+        "value": 10
+      },
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": {
+              "tags": "q.any_tag('minecraft:is_sword_item_destructible')"
+            },
+            "speed": 12
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "damage_chance": {
+          "min": 0,
+          "max": 100
+        },
+        "max_durability": 300
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": ["thump989:bat_fang"],
+            "repair_amount": 62
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "tiers": [
+    {
+      "trades": [
+        {
+          "wants": [
+            {
+              "item": "thump989:spectral_matter",
+              "quantity": 10
+            },
+            {
+              "item": "minecraft:book",
+              "quantity": 1
+            }
+          ],
+          "gives": [
+            {
+              "item": "minecraft:enchanted_book",
+              "quantity": 1,
+              "functions": [
+                {
+                  "function": "specific_enchants",
+                  "enchants": [
+                    {
+                      "id": "efficiency",
+                      "level": 5
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "max_uses": -1,
+          "reward_exp": false,
+          "trader_exp": 0
+        },
+        {
+          "wants": [
+            {
+              "item": "thump989:spectral_matter",
+              "quantity": 10
+            },
+            {
+              "item": "minecraft:book",
+              "quantity": 1
+            }
+          ],
+          "gives": [
+            {
+              "item": "minecraft:enchanted_book",
+              "quantity": 1,
+              "functions": [
+                {
+                  "function": "specific_enchants",
+                  "enchants": [
+                    {
+                      "id": "silk_touch",
+                      "level": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "max_uses": -1,
+          "reward_exp": false,
+          "trader_exp": 0
+        },
+        {
+          "wants": [
+            {
+              "item": "thump989:spectral_matter",
+              "quantity": 10
+            },
+            {
+              "item": "minecraft:book",
+              "quantity": 1
+            }
+          ],
+          "gives": [
+            {
+              "item": "minecraft:enchanted_book",
+              "quantity": 1,
+              "functions": [
+                {
+                  "function": "specific_enchants",
+                  "enchants": [
+                    {
+                      "id": "fortune",
+                      "level": 3
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "max_uses": -1,
+          "reward_exp": false,
+          "trader_exp": 0
+        },
+        {
+          "wants": [
+            {
+              "item": "thump989:spectral_matter",
+              "quantity": 10
+            },
+            {
+              "item": "minecraft:book",
+              "quantity": 1
+            }
+          ],
+          "gives": [
+            {
+              "item": "minecraft:enchanted_book",
+              "quantity": 1,
+              "functions": [
+                {
+                  "function": "specific_enchants",
+                  "enchants": [
+                    {
+                      "id": "luck_of_the_sea",
+                      "level": 3
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "max_uses": -1,
+          "reward_exp": false,
+          "trader_exp": 0
+        },
+        {
+          "wants": [
+            {
+              "item": "thump989:spectral_matter",
+              "quantity": 10
+            },
+            {
+              "item": "minecraft:book",
+              "quantity": 1
+            }
+          ],
+          "gives": [
+            {
+              "item": "minecraft:enchanted_book",
+              "quantity": 1,
+              "functions": [
+                {
+                  "function": "specific_enchants",
+                  "enchants": [
+                    {
+                      "id": "lure",
+                      "level": 3
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "max_uses": -1,
+          "reward_exp": false,
+          "trader_exp": 0
+        },
+        {
+          "wants": [
+            {
+              "item": "thump989:spectral_matter",
+              "quantity": 10
+            },
+            {
+              "item": "minecraft:book",
+              "quantity": 1
+            }
+          ],
+          "gives": [
+            {
+              "item": "minecraft:enchanted_book",
+              "quantity": 1,
+              "functions": [
+                {
+                  "function": "specific_enchants",
+                  "enchants": [
+                    {
+                      "id": "unbreaking",
+                      "level": 3
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "max_uses": -1,
+          "reward_exp": false,
+          "trader_exp": 0
+        },
+        {
+          "wants": [
+            {
+              "item": "thump989:spectral_matter",
+              "quantity": 10
+            },
+            {
+              "item": "minecraft:book",
+              "quantity": 1
+            }
+          ],
+          "gives": [
+            {
+              "item": "minecraft:enchanted_book",
+              "quantity": 1,
+              "functions": [
+                {
+                  "function": "specific_enchants",
+                  "enchants": [
+                    {
+                      "id": "mending",
+                      "level": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "max_uses": -1,
+          "reward_exp": false,
+          "trader_exp": 0
+        }
+      ]
+    }
+  ]
+}

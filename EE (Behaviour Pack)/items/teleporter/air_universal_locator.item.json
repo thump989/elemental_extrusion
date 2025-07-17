@@ -1,0 +1,40 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:air_universal_locator",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 64,
+      "minecraft:icon": "air_universal_locator",
+      "thump989:universe_teleport_warning": {
+        "property_type": "air_focus",
+        "dimension_property_type": "air_dimension",
+        "use_message": "§5Air Universal Focus§e is calibrated to:§b ",
+        "fail_message": "§cAir Universal Focus has not been calibrated!"
+      },
+      "thump989:universe_teleport_locator": {
+        "property_type": "air_focus",
+        "dimension_property_type": "air_dimension",
+        "fail_message": "§cAir Universal Focus has not been calibrated!"
+      },
+      "thump989:locator_particle": {
+        "particle_id": "thump989:air_locator_particle"
+      },
+      "minecraft:use_modifiers": {
+        "movement_modifier": 1,
+        "use_duration": 3
+      },
+      "minecraft:use_animation": {
+        "value": "brush"
+      },
+      "minecraft:cooldown": {
+        "category": "teleporter",
+        "duration": 3
+      }
+    }
+  }
+}

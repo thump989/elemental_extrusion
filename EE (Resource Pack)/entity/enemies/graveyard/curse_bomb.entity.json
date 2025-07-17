@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:curse_bomb",
+      "materials": {
+        "default": "entity_alphatest",
+        "outer": "entity_beam_additive"
+      },
+      "textures": {
+        "default": "textures/entity/curse_bomb/curse_bomb",
+        "weakness": "textures/entity/curse_bomb/curse_bomb_weakness",
+        "weaving": "textures/entity/curse_bomb/curse_bomb_weaving",
+        "darkness": "textures/entity/curse_bomb/curse_bomb_darkness",
+        "hunger": "textures/entity/curse_bomb/curse_bomb_hunger",
+        "trialomen": "textures/entity/curse_bomb/curse_bomb_trialomen",
+        "wither": "textures/entity/curse_bomb/curse_bomb_wither"
+      },
+      "animations": {
+        "billboard": "animation.actor.billboard",
+        "explode": "animation.curse_bomb.explode",
+        "spawn": "animation.curse_bomb.spawn",
+        "basic": "animation.curse_bomb.idle"
+      },
+      "scripts": {
+        "should_update_bones_and_effects_offscreen": "(1.0)",
+        "animate": ["billboard", "basic", "explode", "spawn"]
+      },
+      "geometry": {
+        "default": "geometry.curse_bomb",
+        "outer": "geometry.curse_bomb_outer"
+      },
+      "render_controllers": [
+        "controller.render.effect_inner",
+        "controller.render.cube_outer"
+      ],
+      "spawn_egg": {
+        "base_color": "#ffffff",
+        "overlay_color": "#001eff"
+      }
+    }
+  }
+}

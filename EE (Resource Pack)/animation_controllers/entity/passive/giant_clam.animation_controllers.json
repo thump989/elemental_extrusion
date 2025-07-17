@@ -1,0 +1,29 @@
+{
+  "format_version": "1.19.0",
+  "animation_controllers": {
+    "controller.animation.giant_clam.root_controller": {
+      "states": {
+        "default": {
+          "animations": ["idle"],
+          "particle_effects": [
+            {
+              "effect": "bubble",
+              "locator": "bubble3"
+            }
+          ],
+          "transitions": [
+            { "close": "q.property('thump989:giant_clam_closed')==true" }
+          ]
+        },
+        "close": {
+          "animations": ["close"],
+          "transitions": [
+            { "default": "q.property('thump989:giant_clam_closed')==false" }
+          ],
+          "blend_transition": 1,
+          "blend_via_shortest_path": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:earth_minister_projectile",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "animations": {
+        "basic": "animation.earth_minister_projectile.move",
+        "move": "animation.projectile.move"
+      },
+      "scripts": { "animate": [{ "basic": "q.is_moving" }, "move"] },
+      "textures": {
+        "blackstone": "textures/entity/earth_minister_projectile/earth_minister_projectile_blackstone",
+        "deepslate": "textures/entity/earth_minister_projectile/earth_minister_projectile_deepslate",
+        "stone": "textures/entity/earth_minister_projectile/earth_minister_projectile_stone",
+        "iron": "textures/entity/earth_minister_projectile/earth_minister_projectile_iron_ore",
+        "deepslate_iron": "textures/entity/earth_minister_projectile/earth_minister_projectile_deepslate_iron_ore",
+        "diamond": "textures/entity/earth_minister_projectile/earth_minister_projectile_diamond_ore"
+      },
+      "geometry": {
+        "default": "geometry.earth_minister_projectile"
+      },
+      "render_controllers": ["controller.render.earth_projectile"]
+    }
+  }
+}

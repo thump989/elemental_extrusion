@@ -1,0 +1,29 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:cosmic_drill"
+    },
+    "tags": ["mystic_workbench"],
+    "pattern": ["CBC", "ONO", "OMO"],
+    "key": {
+      "C": "minecraft:copper_block",
+      "B": "minecraft:copper_bulb",
+      "O": "minecraft:obsidian",
+      "N": "thump989:cosmic_star",
+      "M": "thump989:malumite_bar"
+    },
+    "unlock": [
+      {
+        "item": "thump989:mystic_workbench"
+      },
+      { "item": "thump989:cube_of_knowledge" }
+    ],
+    "result": [
+      {
+        "item": "thump989:cosmic_drill",
+        "count": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:wither_rose"
+    },
+    "tags": ["mystic_workbench"],
+    "pattern": ["PPP", "PSP", "PPP"],
+    "key": {
+      "P": "minecraft:poppy",
+      "S": "minecraft:wither_skeleton_skull"
+    },
+    "unlock": [
+      {
+        "item": "thump989:mystic_workbench"
+      },
+      { "item": "thump989:cube_of_knowledge" }
+    ],
+    "result": [
+      {
+        "item": "minecraft:wither_rose",
+        "count": 8
+      }
+    ]
+  }
+}

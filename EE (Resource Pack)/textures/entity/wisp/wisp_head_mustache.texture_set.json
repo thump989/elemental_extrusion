@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "wisp_head_mustache",
+		"metalness_emissive_roughness": "wisp_head_mustache_mer"
+	}
+}

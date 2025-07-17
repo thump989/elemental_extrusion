@@ -1,0 +1,45 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Elemental Extrusion",
+		"description": "Survival Addon Behavior Pack",
+		"uuid": "228dbf95-0913-447e-97cb-6e4fb4259627",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 21, 9]
+	},
+	"metadata": {
+		"authors": ["thump989", "David"],
+		"generated_with": {
+			"blockbench_item_wizard": ["1.1.0", "1.2.0", "1.2.1"],
+			"blockbench_block_wizard": ["1.2.2", "1.3.0", "1.4.0", "1.4.1"],
+			"blockbench_entity_wizard": ["1.5.1", "1.7.0"]
+		},
+		"product_type": "addon"
+	},
+	"modules": [
+		{
+			"description": "Behavior",
+			"version": [1, 0, 0],
+			"uuid": "4a9f39e3-5117-48c7-a128-49d859498da3",
+			"type": "data"
+		},
+		{
+			"description": "Script",
+			"entry": "scripts/main.js",
+			"language": "javascript",
+			"type": "script",
+			"version": [1, 0, 0],
+			"uuid": "20786cfb-8d24-43d3-9d20-34b1db10f21d"
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "b9975fa1-81d5-46fc-b73f-883107d1f8be",
+			"version": [1, 0, 0]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.0.0"
+		}
+	]
+}

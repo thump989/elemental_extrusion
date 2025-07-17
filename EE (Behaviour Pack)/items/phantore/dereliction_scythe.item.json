@@ -1,0 +1,42 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:dereliction_scythe",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "dereliction_scythe",
+      "minecraft:damage": 17,
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:hand_equipped": true,
+      "thump989:scythe_attack": {},
+      "minecraft:enchantable": {
+        "slot": "sword",
+        "value": 250
+      },
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": {
+              "tags": "q.any_tag('minecraft:is_sword_item_destructible')"
+            },
+            "speed": 20
+          }
+        ]
+      },
+      "minecraft:use_modifiers": {
+        "movement_modifier": 1,
+        "use_duration": 0
+      },
+      "minecraft:cooldown": {
+        "category": "scythe",
+        "duration": 0.9
+      }
+    }
+  }
+}

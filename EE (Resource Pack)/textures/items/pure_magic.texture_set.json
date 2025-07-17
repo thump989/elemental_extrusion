@@ -1,0 +1,8 @@
+
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "pure_magic",
+    "metalness_emissive_roughness_subsurface": "pure_magic_mer"
+  }
+}

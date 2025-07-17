@@ -1,0 +1,27 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:arcane_tome_dx"
+    },
+    "tags": ["mystic_workbench"],
+    "pattern": ["LGL", "PBP", "PPP"],
+    "key": {
+      "P": "thump989:pure_magic",
+      "B": "thump989:arcane_tome",
+      "L": "minecraft:diamond_block",
+      "G": "minecraft:emerald_block"
+    },
+    "unlock": [
+      {
+        "item": "thump989:mystic_workbench"
+      },
+      { "item": "thump989:cube_of_knowledge" }
+    ],
+    "result": [
+      {
+        "item": "thump989:arcane_tome_dx"
+      }
+    ]
+  }
+}

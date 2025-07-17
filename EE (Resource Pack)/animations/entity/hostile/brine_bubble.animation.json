@@ -1,0 +1,19 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.brine_bubble.particle": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"position": [0, 0, 5]
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "brine_bubbleshot",
+					"locator": "bubble"
+				}
+			}
+		}
+	}
+}

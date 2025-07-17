@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.thunder_orb.idle": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": ["q.anim_time*-120", "q.anim_time*120", "q.anim_time*120"]
+				},
+				"cube": {
+					"rotation": ["q.anim_time*120", "q.anim_time*-120", "q.anim_time*120"]
+				},
+				"cube2": {
+					"rotation": ["q.anim_time*-120", "q.anim_time*-120", "q.anim_time*-120"]
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "ambient_thunder_1",
+					"locator": "locator"
+				}
+			}
+		}
+	}
+}

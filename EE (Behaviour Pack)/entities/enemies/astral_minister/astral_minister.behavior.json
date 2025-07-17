@@ -1,0 +1,517 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:astral_minister",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "thump989:is_dying": {
+          "client_sync": true,
+          "default": false,
+          "type": "bool"
+        },
+        "thump989:blackhole_timer": {
+          "client_sync": true,
+          "default": 0,
+          "range": [0, 30],
+          "type": "int"
+        },
+        "thump989:is_spawning": {
+          "client_sync": true,
+          "default": true,
+          "type": "bool"
+        },
+        "thump989:is_spawning_black_hole": {
+          "client_sync": true,
+          "default": false,
+          "type": "bool"
+        },
+        "thump989:is_starstorming": {
+          "client_sync": true,
+          "default": false,
+          "type": "bool"
+        },
+        "thump989:is_coraling": {
+          "client_sync": true,
+          "default": false,
+          "type": "bool"
+        },
+        "thump989:star_attack": {
+          "client_sync": true,
+          "default": false,
+          "type": "bool"
+        },
+        "thump989:coral_attack": {
+          "client_sync": true,
+          "default": false,
+          "type": "bool"
+        }
+      },
+      "animations": {
+        "coral_spawn": "animation.astral_minister.coral_spawn",
+        "timer": "animation.astral_minister.blackhole_timer",
+        "star_rain": "animation.astral_minister.star_rain"
+      },
+      "scripts": {
+        "animate": [
+          "timer",
+          {
+            "coral_spawn": "q.property('thump989:coral_attack')==true"
+          },
+          {
+            "star_rain": "q.property('thump989:star_attack')==true"
+          }
+        ]
+      }
+    },
+    "components": {
+      "minecraft:equipment": {
+        "table": "loot_tables/spawn_equipment/faux_armour.json",
+        "slot_drop_chance": [
+          {
+            "drop_chance": 0,
+            "slot": "slot.armor.chest"
+          }
+        ]
+      },
+      "minecraft:scale": {
+        "value": 2
+      },
+      "minecraft:mob_effect_immunity": {
+        "mob_effects": ["poison", "fatal_poison"]
+      },
+      "minecraft:type_family": {
+        "family": ["mob", "monster", "boss", "astral_minister"]
+      },
+      "minecraft:boss": {
+        "hud_range": 55,
+        "name": "§l§fAstral Minister",
+        "should_darken_sky": false
+      },
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:navigation.walk": {},
+      "minecraft:movement.generic": {
+        "max_turn": 30
+      },
+      "minecraft:jump.static": {},
+      "minecraft:behavior.nearest_attackable_target": {
+        "scan_interval": 10,
+        "priority": 2,
+        "within_radius": 32,
+        "entity_types": {
+          "max_dist": 32,
+          "filters": [
+            {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "axolotl"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wolf"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "minecraft:follow_range": {
+        "value": 48,
+        "max": 48
+      },
+      "minecraft:health": {
+        "value": 800,
+        "min": 1,
+        "max": 800
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "event": "thump989:defeat",
+            "target": "self",
+            "filters": {
+              "test": "actor_health",
+              "subject": "self",
+              "operator": "<=",
+              "value": 1
+            }
+          }
+        ]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:attack_selection": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": "yes"
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 4,
+          "looping": true,
+          "time_down_event": {
+            "filters": [
+              {
+                "test": "has_target",
+                "value": true,
+                "subject": "self"
+              }
+            ],
+            "event": "thump989:astral_minister_random_attack",
+            "target": "self"
+          }
+        }
+      },
+      "self:blackhole_attack": {
+        "minecraft:timer": {
+          "time": 7,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:blackhole_attack_end",
+            "target": "self"
+          }
+        }
+      },
+      "self:starstorm_duration": {
+        "minecraft:timer": {
+          "time": 15,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:starstorm_end",
+            "target": "self"
+          }
+        }
+      },
+      "self:starstorm_initiate": {
+        "minecraft:timer": {
+          "time": 4,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:starstorm_start",
+            "target": "self"
+          }
+        }
+      },
+      "self:coral_duration": {
+        "minecraft:timer": {
+          "time": 2.9,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:coral_end",
+            "target": "self"
+          }
+        }
+      },
+      "self:coral_initiate": {
+        "minecraft:timer": {
+          "time": 1.25,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:coral_start",
+            "target": "self"
+          }
+        }
+      },
+      "self:ranged_attack": {
+        "minecraft:timer": {
+          "time": 15,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:ranged_attack_end",
+            "target": "self"
+          }
+        },
+        "minecraft:shooter": {
+          "def": "thump989:astral_shot"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "attack_radius": 35,
+          "speed_multiplier": 0,
+          "attack_interval": 3,
+          "burst_interval": 0.5,
+          "burst_shots": 3,
+          "swing": true
+        }
+      },
+      "self:spawning": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": "no"
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 3.25,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:boss_initiate",
+            "target": "self"
+          }
+        }
+      },
+      "self:dying": {
+        "minecraft:environment_sensor": {},
+        "minecraft:boss": {
+          "hud_range": 0,
+          "name": "",
+          "should_darken_sky": false
+        },
+        "minecraft:timer": {
+          "time": 2.5,
+          "looping": false,
+          "time_down_event": {
+            "event": "thump989:defeat_ready",
+            "target": "self"
+          }
+        }
+      },
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:blackhole_timer": {
+        "set_property": {
+          "thump989:blackhole_timer": "q.property('thump989:blackhole_timer')-1"
+        }
+      },
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      },
+      "thump989:defeat_ready": {
+        "queue_command": {
+          "command": [
+            "playsound random.explode @a ~ ~ ~",
+            "fill ~25 ~-1 ~25 ~-25 ~-1 ~-25 end_stone replace thump989:celestial_padding",
+            "fill ~25 ~-1 ~25 ~-25 ~10 ~-25 obsidian replace thump989:stellar_obsidian",
+            "summon thump989:astral_crate",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      },
+      "thump989:defeat": {
+        "set_property": {
+          "thump989:is_starstorming": true,
+          "thump989:is_spawning_black_hole": false,
+          "thump989:is_coraling": false,
+          "thump989:star_attack": false,
+          "thump989:coral_attack": false,
+          "thump989:is_dying": true
+        },
+        "remove": {
+          "component_groups": [
+            "self:attack_selection",
+            "self:blackhole_attack",
+            "self:starstorm_initiate",
+            "self:starstorm_duration",
+            "self:coral_duration",
+            "self:coral_initiate",
+            "self:ranged_attack"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "kill @e[type=thump989:astral_coral]",
+            "kill @e[type=thump989:minister_star]"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:dying"]
+        }
+      },
+      "thump989:astral_minister_random_attack": {
+        "randomize": [
+          {
+            "remove": {
+              "component_groups": ["self:attack_selection"]
+            },
+            "filters": [
+              {
+                "test": "int_property",
+                "value": 0,
+                "operator": "==",
+                "domain": "thump989:blackhole_timer"
+              }
+            ],
+            "add": {
+              "component_groups": ["self:blackhole_attack"]
+            },
+            "set_property": {
+              "thump989:is_spawning_black_hole": true,
+              "thump989:blackhole_timer": 30
+            },
+            "weight": 1
+          },
+          {
+            "remove": {
+              "component_groups": ["self:attack_selection"]
+            },
+            "add": {
+              "component_groups": ["self:ranged_attack"]
+            },
+            "weight": 1
+          },
+          {
+            "remove": {
+              "component_groups": ["self:attack_selection"]
+            },
+            "add": {
+              "component_groups": ["self:starstorm_initiate"]
+            },
+            "set_property": {
+              "thump989:is_starstorming": true
+            },
+            "weight": 1
+          },
+          {
+            "remove": {
+              "component_groups": ["self:attack_selection"]
+            },
+            "add": {
+              "component_groups": ["self:coral_initiate"]
+            },
+            "set_property": {
+              "thump989:is_coraling": true
+            },
+            "weight": 2
+          }
+        ]
+      },
+      "thump989:boss_initiate": {
+        "queue_command": {
+          "command": [
+            "particle minecraft:huge_explosion_emitter ~ ~-2 ~",
+            "fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air replace diamond_block",
+            "fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air replace purpur_block",
+            "fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air replace thump989:stellar_reactor_core",
+            "playsound random.explode @a ~ ~ ~"
+          ]
+        },
+        "set_property": {
+          "thump989:is_spawning": false
+        },
+        "remove": {
+          "component_groups": ["self:spawning"]
+        },
+        "add": {
+          "component_groups": ["self:attack_selection"]
+        }
+      },
+      "thump989:boss_spawn": {
+        "add": {
+          "component_groups": ["self:spawning"]
+        }
+      },
+      "thump989:blackhole_attack_end": {
+        "queue_command": {
+          "command": [
+            "scriptevent thump989:astral_minister_blackhole blackhole_spawn"
+          ]
+        },
+        "remove": {
+          "component_groups": ["self:blackhole_attack"]
+        },
+        "set_property": {
+          "thump989:is_spawning_black_hole": false
+        },
+        "add": {
+          "component_groups": ["self:attack_selection"]
+        }
+      },
+      "thump989:ranged_attack_end": {
+        "remove": {
+          "component_groups": ["self:ranged_attack"]
+        },
+        "add": {
+          "component_groups": ["self:attack_selection"]
+        }
+      },
+      "thump989:coral_end": {
+        "remove": {
+          "component_groups": ["self:coral_duration"]
+        },
+        "set_property": {
+          "thump989:is_coraling": false,
+          "thump989:coral_attack": false
+        },
+        "add": {
+          "component_groups": ["self:attack_selection"]
+        }
+      },
+      "thump989:coral_start": {
+        "remove": {
+          "component_groups": ["self:coral_initiate"]
+        },
+        "add": {
+          "component_groups": ["self:coral_duration"]
+        },
+        "set_property": {
+          "thump989:coral_attack": true
+        }
+      },
+      "thump989:starstorm_end": {
+        "remove": {
+          "component_groups": ["self:starstorm_duration"]
+        },
+        "set_property": {
+          "thump989:is_starstorming": false,
+          "thump989:star_attack": false
+        },
+        "add": {
+          "component_groups": ["self:attack_selection"]
+        }
+      },
+      "thump989:starstorm_start": {
+        "remove": {
+          "component_groups": ["self:starstorm_initiate"]
+        },
+        "add": {
+          "component_groups": ["self:starstorm_duration"]
+        },
+        "set_property": {
+          "thump989:star_attack": true
+        }
+      }
+    }
+  }
+}

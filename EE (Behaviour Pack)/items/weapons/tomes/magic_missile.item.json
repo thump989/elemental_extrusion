@@ -1,0 +1,48 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:magic_missile",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "magic_missile",
+      "minecraft:rarity": "rare",
+      "minecraft:durability": {
+        "max_durability": 1000,
+        "damage_chance": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "magic_missile",
+        "duration": 0.1
+      },
+      "minecraft:enchantable": {
+        "slot": "bow",
+        "value": 25
+      },
+      "thump989:deny_melee_damage": {},
+      "thump989:charge_projectile_generic": {
+        "projectile_entity": "thump989:magic_missile",
+        "projectile_count": 1,
+        "projectile_speed": 3,
+        "uncertainty": 0,
+        "shoot_sound": "beacon.power",
+        "sound_volume": 0.5,
+        "sound_pitch": 2
+      },
+      "minecraft:use_modifiers": {
+        "movement_modifier": 0.5,
+        "use_duration": 0.75
+      },
+      "minecraft:use_animation": {
+        "value": "brush"
+      }
+    }
+  }
+}

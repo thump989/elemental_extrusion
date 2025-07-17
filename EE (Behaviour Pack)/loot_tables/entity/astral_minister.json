@@ -1,0 +1,85 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "thump989:stellar_reactor_core"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "thump989:astral_gem"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "thump989:astral_rod",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 10,
+      "entries": [
+        {
+          "type": "item",
+          "conditions": [
+            {
+              "condition": "random_chance_with_looting",
+              "chance": 0.5,
+              "looting_multiplier": 0.15
+            }
+          ],
+          "name": "thump989:cosmic_star"
+        }
+      ]
+    },
+    {
+      "rolls": 20,
+      "entries": [
+        {
+          "type": "item",
+          "conditions": [
+            {
+              "condition": "random_chance_with_looting",
+              "chance": 0.5,
+              "looting_multiplier": 0.15
+            }
+          ],
+          "name": "thump989:astral_rod"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "conditions": [
+            {
+              "condition": "random_chance_with_looting",
+              "chance": 0.05,
+              "looting_multiplier": 0.025
+            }
+          ],
+          "name": "minecraft:heavy_core"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:stellar_tome"
+    },
+    "tags": ["mystic_workbench"],
+    "pattern": ["GLG", "PBP", "PPP"],
+    "key": {
+      "P": "thump989:pure_magic",
+      "B": "minecraft:book",
+      "L": "thump989:cosmic_star",
+      "G": "minecraft:prismarine_crystals"
+    },
+    "unlock": [
+      {
+        "item": "thump989:cosmic_star"
+      }
+    ],
+    "result": [
+      {
+        "item": "thump989:stellar_tempest_tome"
+      }
+    ]
+  }
+}

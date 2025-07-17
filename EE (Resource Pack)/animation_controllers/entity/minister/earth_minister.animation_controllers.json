@@ -1,0 +1,49 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.earth_minister.controller": {
+			"states": {
+				"default": {
+					"animations": ["move", "move_2", "move_3"],
+					"transitions": [
+						{"burrowing": "q.property('thump989:is_burrowed')==true"}
+					],
+					"blend_transition": 0.5,
+					"blend_via_shortest_path": true
+				},
+				"burrowing": {
+					"animations": ["burrow"],
+					"transitions": [
+						{"burrowed": "q.all_animations_finished"}
+					]
+				},
+				"burrowed": {
+					"animations": ["burrow_idle"],
+					"particle_effects": [
+						{
+							"effect": "burrow_idle"
+						}
+					],
+					"transitions": [
+						{"burrowed_attack": "q.is_roaring"},
+						{"unburrow": "q.property('thump989:is_burrowed')==false"}
+					]
+				},
+				"burrowed_attack": {
+					"animations": ["burrowed_attack"],
+					"transitions": [
+						{"burrowed": "!q.is_roaring"}
+					]
+				},
+				"unburrow": {
+					"animations": ["unburrow"],
+					"transitions": [
+						{"default": "q.all_animations_finished"}
+					],
+					"blend_transition": 0.5,
+					"blend_via_shortest_path": true
+				}
+			}
+		}
+	}
+}

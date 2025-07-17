@@ -1,0 +1,40 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:icicle_glaive",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "icicle_glaive",
+      "minecraft:damage": 15,
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:durability": {
+        "max_durability": 300
+      },
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": {
+              "tags": "q.any_tag('minecraft:is_sword_item_destructible')"
+            },
+            "speed": 12
+          }
+        ]
+      },
+      "thump989:icicle_glaive_use": {},
+      "thump989:icicle_glaive_charge": {},
+      "thump989:deny_melee_damage": {},
+      "minecraft:rarity": "epic",
+      "minecraft:cooldown": {
+        "category": "glaive",
+        "duration": 1
+      }
+    }
+  }
+}

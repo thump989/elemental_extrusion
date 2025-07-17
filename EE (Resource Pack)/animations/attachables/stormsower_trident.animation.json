@@ -1,0 +1,53 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.stormsower_trident.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [66, 60, -60],
+					"position": [3, 23, 4]
+				},
+				"pole": {
+					"rotation": [26.34817, 1.77488, 208.40575],
+					"position": [-6.13436, -1.91123, -2.33932]
+				}
+			}
+		},
+		"animation.stormsower_trident.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [90, 0, 0],
+					"position": [0.5, 22.5, -0.5]
+				},
+				"pole": {
+					"rotation": [86.45998, -3.53329, -44.89078],
+					"position": [0, 0.07451, -18.06224]
+				}
+			}
+		},
+		"animation.stormsower_trident.third_person_charge": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [90, 0, 0],
+					"position": [0.5, 22.5, -0.5]
+				},
+				"pole": {
+					"rotation": [-256.46614, 1.03805, 134.95488],
+					"position": [0, 0.07451, -18.06224]
+				}
+			}
+		},
+		"animation.stormsower_trident.first_person_wield": {
+			"loop": true,
+			"bones": {
+				"pole": {
+					"rotation": [-187.6734, -26.48829, -268.19143],
+					"position": ["-3.2546908025-variable.charge_amount*2", -4.0992, -4.18785]
+				}
+			}
+		}
+	}
+}

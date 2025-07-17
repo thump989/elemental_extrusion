@@ -1,0 +1,49 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.toxic_dart",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0.175, 0],
+					"cubes": [
+						{
+							"origin": [0, -1.925, -0.35],
+							"size": [0, 4.55, 5.6],
+							"uv": {
+								"north": {"uv": [16, 0], "uv_size": [0, 13]},
+								"east": {"uv": [0, 0], "uv_size": [16, 13]},
+								"south": {"uv": [32, 0], "uv_size": [0, 13]},
+								"west": {"uv": [16, 0], "uv_size": [16, 13]},
+								"up": {"uv": [16, -16], "uv_size": [0, 16]},
+								"down": {"uv": [16, 0], "uv_size": [0, -16]}
+							}
+						},
+						{
+							"origin": [-0.175, -2.1, -0.35],
+							"size": [0, 4.55, 5.6],
+							"pivot": [-0.175, 0.175, 2.45],
+							"rotation": [0, 0, -90],
+							"uv": {
+								"north": {"uv": [16, 0], "uv_size": [0, 13]},
+								"east": {"uv": [0, 0], "uv_size": [16, 13]},
+								"south": {"uv": [32, 0], "uv_size": [0, 13]},
+								"west": {"uv": [16, 0], "uv_size": [16, 13]},
+								"up": {"uv": [16, -16], "uv_size": [0, 16]},
+								"down": {"uv": [16, 0], "uv_size": [0, -16]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,115 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.astral_minister.starstorm": {
+			"states": {
+				"default": {
+					"animations": ["starstorm_inactive"],
+					"transitions": [
+						{"active": "q.property('thump989:is_starstorming')==true"}
+					],
+					"blend_transition": 1
+				},
+				"active": {
+					"animations": ["starstorm_active"],
+					"transitions": [
+						{"duration": "q.all_animations_finished"}
+					]
+				},
+				"duration": {
+					"animations": ["starstorm_duration"],
+					"transitions": [
+						{"default": "q.property('thump989:is_starstorming')==false"}
+					],
+					"blend_transition": 3,
+					"blend_via_shortest_path": true
+				}
+			}
+		},
+		"controller.animation.astral_minister.spawn_controller": {
+			"states": {
+				"default": {
+					"transitions": [
+						{"spawning": "q.property('thump989:is_spawning')==true"},
+						{"empty": "q.property('thump989:is_spawning')==false"}
+					]
+				},
+				"spawning": {
+					"animations": ["spawn"],
+					"transitions": [
+						{"empty": "q.all_animations_finished"}
+					]
+				},
+				"empty": {}
+			}
+		},
+		"controller.animation.astral_minister.coral": {
+			"states": {
+				"default": {
+					"transitions": [
+						{"coraling": "q.property('thump989:is_coraling')==true"},
+						{"blackhole": "q.property('thump989:is_spawning_black_hole')==true"}
+					],
+					"blend_transition": 1
+				},
+				"coraling": {
+					"animations": ["coral_attack"],
+					"transitions": [
+						{"default": "q.all_animations_finished"}
+					]
+				},
+				"blackhole": {
+					"animations": ["black_hole"],
+					"particle_effects": [
+						{
+							"effect": "black_hole_charge"
+						}
+					],
+					"transitions": [
+						{"default": "q.property('thump989:is_spawning_black_hole')==false"}
+					],
+					"blend_transition": 1,
+					"blend_via_shortest_path": true
+				}
+			}
+		},
+		"controller.animation.astral_minister.particle": {
+			"states": {
+				"default": {
+					"transitions": [
+						{"particle": "q.facing_target_to_range_attack"}
+					]
+				},
+				"particle": {
+					"particle_effects": [
+						{
+							"effect": "astral_minister_idle"
+						}
+					],
+					"transitions": [
+						{"default": "!q.facing_target_to_range_attack"}
+					]
+				}
+			}
+		},
+		"controller.animation.astral_minister.root_controller": {
+			"states": {
+				"default": {
+					"animations": ["idle", "idle_2", "starstorm_controller", "spawn_controller", "coral_controller", "particle_controller"],
+					"transitions": [
+						{"defeat": "q.property('thump989:is_dying')==true"}
+					]
+				},
+				"defeat": {
+					"animations": ["starstorm_inactive", "dying"],
+					"transitions": [
+						{"hold": "q.all_animations_finished"}
+					]
+				},
+				"hold": {
+					"animations": ["starstorm_inactive", "die_loop"]
+				}
+			}
+		}
+	}
+}

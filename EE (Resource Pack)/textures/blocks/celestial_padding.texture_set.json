@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "celestial_padding",
+		"metalness_emissive_roughness": "celestial_padding_mer"
+	}
+}

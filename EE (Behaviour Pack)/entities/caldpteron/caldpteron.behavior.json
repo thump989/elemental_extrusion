@@ -1,0 +1,1500 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:caldpteron",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "thump989:moth_score": {
+          "client_sync": true,
+          "default": 0,
+          "range": [0, 10],
+          "type": "int"
+        },
+        "thump989:moth_test": {
+          "client_sync": true,
+          "default": 0,
+          "range": [0, 10],
+          "type": "int"
+        },
+        "thump989:moth_is_grounded": {
+          "client_sync": true,
+          "default": false,
+          "type": "bool"
+        },
+        "thump989:moth_cast_mode": {
+          "client_sync": true,
+          "default": "none",
+          "type": "enum",
+          "values": [
+            "none",
+            "fly_icecube",
+            "fly_icespikes",
+            "ground_icecube",
+            "ground_icespikes",
+            "ground_areaattack"
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:equipment": {
+        "table": "loot_tables/spawn_equipment/faux_armour_10.json",
+        "slot_drop_chance": [
+          {
+            "drop_chance": 0,
+            "slot": "slot.armor.chest"
+          }
+        ]
+      },
+      "minecraft:absorption": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:experience_reward": {
+        "on_death": 800
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entity/caldpteron.json"
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:health": {
+        "value": 3000,
+        "max": 3000
+      },
+      "minecraft:type_family": {
+        "family": ["mob", "monster", "arthropod", "boss", "caldpteron"]
+      },
+      "minecraft:boss": {
+        "hud_range": 55,
+        "name": "§l§bCaldpteron",
+        "should_darken_sky": false
+      },
+      "minecraft:dimension_bound": {},
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:home": {
+        "restriction_radius": 15,
+        "restriction_type": "all_movement",
+        "home_block_list": []
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:collision_box": {
+        "height": 2,
+        "width": 0.75
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1.25,
+            "height": 3,
+            "pivot": [0, 0.5, 0]
+          }
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:fly_icicle_shot": {
+        "minecraft:timer": {
+          "time": [6, 12],
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:moth_air_attack_select",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 3,
+          "reselect_targets": true,
+          "scan_interval": 10,
+          "within_radius": 64.0,
+          "target_search_height": 80.0,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 64
+            }
+          ]
+        },
+        "minecraft:shooter": {
+          "def": "thump989:moth_icicle_projectile"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "attack_radius": 64,
+          "burst_interval": 0.55,
+          "burst_shots": 5,
+          "attack_interval": 4,
+          "swing": true,
+          "priority": 1
+        },
+        "minecraft:navigation.float": {},
+        "minecraft:behavior.float_wander": {
+          "xz_dist": 10,
+          "priority": 0,
+          "use_home_position_restriction": true,
+          "y_dist": 7,
+          "y_offset": 1,
+          "must_reach": true,
+          "random_reselect": false
+        },
+        "minecraft:can_fly": {},
+        "minecraft:jump.static": {
+          "jump_power": 0.42
+        },
+        "minecraft:movement": {
+          "value": 0.025
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "self:fly_summon_icecube": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 3,
+          "reselect_targets": true,
+          "scan_interval": 10,
+          "within_radius": 64.0,
+          "target_search_height": 80.0,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 64
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 7,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:moth_air_attack_select",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.summon_entity": {
+          "summon_choices": [
+            {
+              "cast_duration": 5,
+              "cooldown_time": 15,
+              "do_casting": true,
+              "max_activation_range": 64,
+              "min_activation_range": 0,
+              "weight": 1,
+              "sequence": [
+                {
+                  "delay": 1,
+                  "base_delay": 1,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 5,
+                  "entity_type": "thump989:moth_summon_dummy",
+                  "num_entities_spawned": 1,
+                  "shape": "circle",
+                  "size": 0,
+                  "target": "target"
+                },
+                {
+                  "delay": 2,
+                  "base_delay": 2,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": -1,
+                  "entity_type": "thump989:moth_ice_block",
+                  "num_entities_spawned": 14,
+                  "shape": "circle",
+                  "size": 3,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.25,
+                  "base_delay": 0.25,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": -1,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 4,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 1,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.25,
+                  "base_delay": 0.25,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": -1,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 7,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 2,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.25,
+                  "base_delay": 0.25,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 10,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 3,
+                  "target": "target"
+                }
+              ]
+            }
+          ]
+        },
+        "minecraft:navigation.float": {},
+        "minecraft:behavior.float_wander": {
+          "xz_dist": 10,
+          "priority": 0,
+          "use_home_position_restriction": true,
+          "y_dist": 7,
+          "y_offset": 1,
+          "must_reach": true,
+          "random_reselect": false
+        },
+        "minecraft:can_fly": {},
+        "minecraft:jump.static": {
+          "jump_power": 0.42
+        },
+        "minecraft:movement": {
+          "value": 0.025
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "self:fly_summon_icespikes": {
+        "minecraft:timer": {
+          "time": 7,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:moth_air_attack_select",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 3,
+          "reselect_targets": true,
+          "scan_interval": 10,
+          "within_radius": 64.0,
+          "target_search_height": 80.0,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 64
+            }
+          ]
+        },
+        "minecraft:behavior.summon_entity": {
+          "summon_choices": [
+            {
+              "cast_duration": 5,
+              "cooldown_time": 15,
+              "do_casting": true,
+              "max_activation_range": 64,
+              "min_activation_range": 0,
+              "weight": 1,
+              "sequence": [
+                {
+                  "delay": 0,
+                  "base_delay": 0,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thum989:ice_spike_dummy",
+                  "num_entities_spawned": 1,
+                  "shape": "circle",
+                  "size": 0,
+                  "target": "self"
+                },
+                {
+                  "delay": 0.25,
+                  "base_delay": 0.25,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_summon_dummy",
+                  "num_entities_spawned": 1,
+                  "shape": "circle",
+                  "size": 0,
+                  "target": "target"
+                },
+                {
+                  "delay": 2,
+                  "base_delay": 2,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": -1,
+                  "entity_type": "thump989:moth_ice_block",
+                  "num_entities_spawned": 7,
+                  "shape": "circle",
+                  "size": 2,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.25,
+                  "base_delay": 0.25,
+                  "delay_per_summon": 0.1,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "summon_event": "thump989:icespike_leader",
+                  "num_entities_spawned": 35,
+                  "summon_cap_radius": 0,
+                  "shape": "line",
+                  "size": 35,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        "minecraft:navigation.float": {},
+        "minecraft:behavior.float_wander": {
+          "xz_dist": 10,
+          "priority": 0,
+          "use_home_position_restriction": true,
+          "y_dist": 7,
+          "y_offset": 1,
+          "must_reach": true,
+          "random_reselect": false
+        },
+        "minecraft:can_fly": {},
+        "minecraft:jump.static": {
+          "jump_power": 0.42
+        },
+        "minecraft:movement": {
+          "value": 0.025
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "self:flying_idle": {
+        "minecraft:navigation.float": {},
+        "minecraft:knockback_resistance": {
+          "value": 1,
+          "max": 1
+        },
+        "minecraft:timer": {
+          "time": 2,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:moth_air_attack_select",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.float_wander": {
+          "xz_dist": 10,
+          "priority": 0,
+          "use_home_position_restriction": true,
+          "y_dist": 7,
+          "y_offset": 1,
+          "must_reach": true,
+          "random_reselect": false
+        },
+        "minecraft:can_fly": {},
+        "minecraft:jump.static": {
+          "jump_power": 0.42
+        },
+        "minecraft:movement": {
+          "value": 0.025
+        }
+      },
+      "self:landing": {
+        "minecraft:knockback_resistance": {
+          "value": 1,
+          "max": 1
+        },
+        "minecraft:navigation.walk": {},
+        "minecraft:behavior.float_wander": {
+          "xz_dist": 10,
+          "priority": 0,
+          "float_duration": [0, 0],
+          "use_home_position_restriction": true,
+          "y_dist": 7,
+          "y_offset": -10,
+          "must_reach": false,
+          "random_reselect": false
+        },
+        "minecraft:jump.static": {
+          "jump_power": 0.42
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "event": "thump989:moth_landed",
+              "target": "self",
+              "filters": {
+                "test": "on_ground",
+                "subject": "self"
+              }
+            }
+          ]
+        },
+        "minecraft:movement": {
+          "value": 0.025
+        }
+      },
+      "self:grounded_idle": {
+        "minecraft:knockback_resistance": {
+          "value": 0.85,
+          "max": 0.85
+        },
+        "minecraft:navigation.generic": {},
+        "minecraft:jump.static": {
+          "jump_power": 0.42
+        },
+        "minecraft:variable_max_auto_step": {
+          "base_value": 2
+        },
+        "minecraft:timer": {
+          "time": 2,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:moth_ground_melee",
+            "target": "self"
+          }
+        },
+        "minecraft:movement.basic": {
+          "max_turn": 30
+        },
+        "minecraft:movement": {
+          "value": 0.275
+        }
+      },
+      "self:grounded_roar": {
+        "minecraft:timer": {
+          "time": 0.8,
+          "looping": false,
+          "time_down_event": {
+            "event": "thump989:moth_prime_ice",
+            "target": "self"
+          }
+        },
+        "minecraft:navigation.generic": {},
+        "minecraft:jump.static": {
+          "jump_power": 0.42
+        },
+        "minecraft:variable_max_auto_step": {
+          "base_value": 2
+        },
+        "minecraft:movement.basic": {
+          "max_turn": 30
+        },
+        "minecraft:movement": {
+          "value": 0.275
+        },
+        "minecraft:behavior.knockback_roar": {
+          "attack_time": 0.8,
+          "cooldown_time": 3,
+          "duration": 2.2,
+          "on_roar_end": {
+            "event": "thump989:moth_ground_melee",
+            "target": "self"
+          },
+          "knockback_damage": 15,
+          "knockback_horizontal_strength": 2,
+          "knockback_range": 8,
+          "knockback_vertical_strength": 2,
+          "knockback_filters": [
+            {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wolf"
+                }
+              ]
+            }
+          ],
+          "damage_filters": [
+            {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wolf"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "self:grounded_icespike_summon": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 3,
+          "reselect_targets": true,
+          "scan_interval": 10,
+          "within_radius": 64.0,
+          "target_search_height": 80.0,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 64
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 7,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:moth_ground_melee",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.summon_entity": {
+          "summon_choices": [
+            {
+              "cast_duration": 5,
+              "cooldown_time": 15,
+              "do_casting": true,
+              "max_activation_range": 64,
+              "min_activation_range": 0,
+              "weight": 1,
+              "sequence": [
+                {
+                  "delay": 1,
+                  "base_delay": 1,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 4,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 1,
+                  "target": "self"
+                },
+                {
+                  "delay": 0,
+                  "base_delay": 0,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 4,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 1,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.5,
+                  "base_delay": 0.5,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 7,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 2,
+                  "target": "self"
+                },
+                {
+                  "delay": 0,
+                  "base_delay": 0,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 7,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 2,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.5,
+                  "base_delay": 0.5,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 10,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 3,
+                  "target": "self"
+                },
+                {
+                  "delay": 0,
+                  "base_delay": 0,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 10,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 3,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.5,
+                  "base_delay": 0.5,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 13,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 4,
+                  "target": "self"
+                },
+                {
+                  "delay": 0,
+                  "base_delay": 0,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 13,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 4,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.5,
+                  "base_delay": 0.5,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 16,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 5,
+                  "target": "self"
+                },
+                {
+                  "delay": 0,
+                  "base_delay": 0,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 16,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 5,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.5,
+                  "base_delay": 0.5,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 19,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 6,
+                  "target": "self"
+                },
+                {
+                  "delay": 0,
+                  "base_delay": 0,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 19,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 6,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.5,
+                  "base_delay": 0.5,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 22,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 7,
+                  "target": "self"
+                },
+                {
+                  "delay": 0,
+                  "base_delay": 0,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 22,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 7,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.5,
+                  "base_delay": 0.5,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 25,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 8,
+                  "target": "self"
+                },
+                {
+                  "delay": 0,
+                  "base_delay": 0,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 25,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 8,
+                  "target": "target"
+                },
+                {
+                  "delay": 1.5,
+                  "base_delay": 1.5,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": -1,
+                  "entity_type": "thump989:moth_ice_block",
+                  "num_entities_spawned": 20,
+                  "shape": "circle",
+                  "size": 9,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1,
+          "max": 1
+        },
+        "minecraft:navigation.generic": {},
+        "minecraft:jump.static": {
+          "jump_power": 0.42
+        },
+        "minecraft:variable_max_auto_step": {
+          "base_value": 2
+        },
+        "minecraft:movement.basic": {
+          "max_turn": 30
+        },
+        "minecraft:movement": {
+          "value": 0.275
+        }
+      },
+      "self:grounded_icecube_summon": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 3,
+          "reselect_targets": true,
+          "scan_interval": 10,
+          "within_radius": 64.0,
+          "target_search_height": 80.0,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 64
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 7,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:moth_ground_melee",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.summon_entity": {
+          "summon_choices": [
+            {
+              "cast_duration": 5,
+              "cooldown_time": 15,
+              "do_casting": true,
+              "max_activation_range": 64,
+              "min_activation_range": 0,
+              "weight": 1,
+              "sequence": [
+                {
+                  "delay": 1,
+                  "base_delay": 1,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 5,
+                  "entity_type": "thump989:moth_summon_dummy",
+                  "num_entities_spawned": 1,
+                  "shape": "circle",
+                  "size": 0,
+                  "target": "target"
+                },
+                {
+                  "delay": 2,
+                  "base_delay": 2,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": -1,
+                  "entity_type": "thump989:moth_ice_block",
+                  "num_entities_spawned": 14,
+                  "shape": "circle",
+                  "size": 3,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.25,
+                  "base_delay": 0.25,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": -1,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 4,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 1,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.25,
+                  "base_delay": 0.25,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": -1,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 7,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 2,
+                  "target": "target"
+                },
+                {
+                  "delay": 0.25,
+                  "base_delay": 0.25,
+                  "delay_per_summon": 0,
+                  "entity_lifespan": 7,
+                  "entity_type": "thump989:moth_ice_spike",
+                  "num_entities_spawned": 10,
+                  "summon_cap_radius": 0,
+                  "shape": "circle",
+                  "size": 3,
+                  "target": "target"
+                }
+              ]
+            }
+          ]
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1,
+          "max": 1
+        },
+        "minecraft:navigation.generic": {},
+        "minecraft:jump.static": {
+          "jump_power": 0.42
+        },
+        "minecraft:variable_max_auto_step": {
+          "base_value": 2
+        },
+        "minecraft:movement.basic": {
+          "max_turn": 30
+        },
+        "minecraft:movement": {
+          "value": 0.275
+        }
+      },
+      "self:grounded_melee": {
+        "minecraft:knockback_resistance": {
+          "value": 0.85,
+          "max": 0.85
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 3,
+          "reselect_targets": true,
+          "scan_interval": 10,
+          "within_radius": 64.0,
+          "target_search_height": 80.0,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 64
+            }
+          ]
+        },
+        "minecraft:attack": {
+          "damage": 16,
+          "effect_name": "slowness",
+          "effect_duration": 10
+        },
+        "minecraft:timer": {
+          "time": [4, 10],
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:moth_ground_attack_select",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.melee_attack": {
+          "melee_fov": 90,
+          "track_target": false,
+          "attack_types": "example",
+          "random_stop_interval": 0,
+          "reach_multiplier": 2,
+          "attack_once": false,
+          "require_complete_path": false,
+          "cooldown_time": 2
+        },
+        "minecraft:navigation.generic": {},
+        "minecraft:jump.static": {
+          "jump_power": 0.42
+        },
+        "minecraft:variable_max_auto_step": {
+          "base_value": 2
+        },
+        "minecraft:movement.basic": {
+          "max_turn": 30
+        },
+        "minecraft:movement": {
+          "value": 0.275
+        }
+      },
+      "self:grounded_areaattack": {
+        "minecraft:knockback_resistance": {
+          "value": 0.85,
+          "max": 0.85
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 3,
+          "reselect_targets": true,
+          "scan_interval": 10,
+          "within_radius": 64.0,
+          "target_search_height": 80.0,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 64
+            }
+          ]
+        },
+        "minecraft:attack": {
+          "damage": 16,
+          "effect_name": "slowness",
+          "effect_duration": 10
+        },
+        "minecraft:timer": {
+          "time": [9, 15],
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:moth_ground_melee",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.melee_attack": {
+          "melee_fov": 90,
+          "track_target": false,
+          "attack_types": "example",
+          "random_stop_interval": 0,
+          "speed_multiplier": 0.2,
+          "reach_multiplier": 2,
+          "attack_once": false,
+          "require_complete_path": false,
+          "cooldown_time": 2
+        },
+        "minecraft:mob_effect": {
+          "cooldown_time": 1,
+          "effect_range": 9,
+          "effect_time": 1,
+          "mob_effect": "regeneration",
+          "entity_filter": [
+            {
+              "test": "is_family",
+              "subject": "other",
+              "value": "moth_spawn"
+            }
+          ]
+        },
+        "minecraft:area_attack": {
+          "damage_per_tick": 9,
+          "damage_range": 9,
+          "damage_cooldown": 1.5,
+          "entity_filter": [
+            {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wolf"
+                }
+              ]
+            }
+          ],
+          "cause": "freezing"
+        },
+        "minecraft:navigation.generic": {},
+        "minecraft:jump.static": {
+          "jump_power": 0.42
+        },
+        "minecraft:variable_max_auto_step": {
+          "base_value": 2
+        },
+        "minecraft:movement.basic": {
+          "max_turn": 30
+        },
+        "minecraft:movement": {
+          "value": 0.275
+        }
+      },
+      "self:grounded_takeoff": {
+        "minecraft:knockback_resistance": {
+          "value": 0.5,
+          "max": 0.5
+        },
+        "minecraft:timer": {
+          "time": 0.6,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:takeoff_initiate",
+            "target": "self"
+          }
+        },
+        "minecraft:navigation.generic": {},
+        "minecraft:jump.static": {
+          "jump_power": 0.42
+        },
+        "minecraft:variable_max_auto_step": {
+          "base_value": 2
+        },
+        "minecraft:movement.basic": {
+          "max_turn": 30
+        },
+        "minecraft:movement": {
+          "value": 0.275
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": ["weather rain"]
+        },
+        "add": {
+          "component_groups": ["self:flying_idle"]
+        }
+      },
+      "thump989:moth_fly_ranged_shot": {
+        "reset_target": {},
+        "remove": {
+          "component_groups": [
+            "self:fly_summon_icespikes",
+            "self:fly_summon_icecube"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:fly_icicle_shot"]
+        },
+        "set_property": {
+          "thump989:moth_cast_mode": "none",
+          "thump989:moth_score": "q.property('thump989:moth_score')+1",
+          "thump989:moth_is_grounded": false
+        }
+      },
+      "thump989:moth_fly_summon_icespikes": {
+        "reset_target": {},
+        "remove": {
+          "component_groups": [
+            "self:fly_icicle_shot",
+            "self:fly_summon_icecube"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:fly_summon_icespikes"]
+        },
+        "set_property": {
+          "thump989:moth_cast_mode": "fly_icespikes",
+          "thump989:moth_score": "q.property('thump989:moth_score')+1",
+          "thump989:moth_is_grounded": false
+        }
+      },
+      "thump989:moth_fly_summon_icecube": {
+        "reset_target": {},
+        "remove": {
+          "component_groups": [
+            "self:fly_icicle_shot",
+            "self:fly_summon_icespikes"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:fly_summon_icecube"]
+        },
+        "set_property": {
+          "thump989:moth_cast_mode": "fly_icecube",
+          "thump989:moth_score": "q.property('thump989:moth_score')+1",
+          "thump989:moth_is_grounded": false
+        }
+      },
+      "thump989:moth_land": {
+        "reset_target": {},
+        "remove": {
+          "component_groups": [
+            "self:fly_icicle_shot",
+            "self:fly_summon_icespikes",
+            "self:fly_summon_icecube"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:landing"]
+        },
+        "set_property": {
+          "thump989:moth_cast_mode": "none",
+          "thump989:moth_score": 0,
+          "thump989:moth_is_grounded": false
+        }
+      },
+      "thump989:moth_landed": {
+        "reset_target": {},
+        "set_property": {
+          "thump989:moth_is_grounded": true,
+          "thump989:moth_score": 0
+        },
+        "remove": {
+          "component_groups": ["self:landing"]
+        },
+        "add": {
+          "component_groups": ["self:grounded_idle"]
+        }
+      },
+      "thump989:takeoff_initiate": {
+        "reset_target": {},
+        "queue_command": {
+          "command": "scriptevent thump989:caldpteron impulse"
+        },
+        "remove": {
+          "component_groups": ["self:grounded_takeoff"]
+        },
+        "add": {
+          "component_groups": ["self:flying_idle"]
+        },
+        "set_property": {
+          "thump989:moth_is_grounded": false,
+          "thump989:moth_score": 0
+        }
+      },
+      "thump989:moth_takeoff": {
+        "reset_target": {},
+        "remove": {
+          "component_groups": [
+            "self:grounded_icespike_summon",
+            "self:grounded_icecube_summon",
+            "self:grounded_melee",
+            "self:grounded_areaattack"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:grounded_takeoff"]
+        },
+        "set_property": {
+          "thump989:moth_cast_mode": "none",
+          "thump989:moth_score": 0,
+          "thump989:moth_is_grounded": false
+        }
+      },
+      "thump989:moth_ground_summon_icespike": {
+        "reset_target": {},
+        "remove": {
+          "component_groups": [
+            "self:grounded_icecube_summon",
+            "self:grounded_roar",
+            "self:grounded_melee",
+            "self:grounded_areaattack"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:grounded_icespike_summon"]
+        },
+        "set_property": {
+          "thump989:moth_cast_mode": "ground_icespikes",
+          "thump989:moth_score": "q.property('thump989:moth_score')+1",
+          "thump989:moth_is_grounded": true
+        }
+      },
+      "thump989:moth_ground_summon_icecube": {
+        "reset_target": {},
+        "remove": {
+          "component_groups": [
+            "self:grounded_icespike_summon",
+            "self:grounded_roar",
+            "self:grounded_melee",
+            "self:grounded_areaattack"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:grounded_icecube_summon"]
+        },
+        "set_property": {
+          "thump989:moth_cast_mode": "ground_icecube",
+          "thump989:moth_score": "q.property('thump989:moth_score')+1",
+          "thump989:moth_is_grounded": true
+        }
+      },
+      "thump989:moth_roar": {
+        "remove": {
+          "component_groups": [
+            "self:grounded_icecube_summon",
+            "self:grounded_icespike_summon",
+            "self:grounded_melee",
+            "self:grounded_areaattack"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:grounded_roar"]
+        },
+        "set_property": {
+          "thump989:moth_cast_mode": "none",
+          "thump989:moth_score": "q.property('thump989:moth_score')+1",
+          "thump989:moth_is_grounded": true
+        }
+      },
+      "thump989:moth_ground_areaattack": {
+        "reset_target": {},
+        "remove": {
+          "component_groups": [
+            "self:grounded_icespike_summon",
+            "self:grounded_icecube_summon",
+            "self:grounded_roar",
+            "self:grounded_melee"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:grounded_areaattack"]
+        },
+        "set_property": {
+          "thump989:moth_cast_mode": "ground_areaattack",
+          "thump989:moth_score": "q.property('thump989:moth_score')+1",
+          "thump989:moth_is_grounded": true
+        }
+      },
+      "thump989:moth_ground_melee": {
+        "reset_target": {},
+        "remove": {
+          "component_groups": [
+            "self:grounded_icespike_summon",
+            "self:grounded_roar",
+            "self:grounded_icecube_summon",
+            "self:grounded_areaattack"
+          ]
+        },
+        "add": {
+          "component_groups": ["self:grounded_melee"]
+        },
+        "set_property": {
+          "thump989:moth_cast_mode": "none",
+          "thump989:moth_is_grounded": true
+        }
+      },
+      "thump989:moth_air_attack_select": {
+        "sequence": [
+          {
+            "remove": {
+              "component_groups": ["self:flying_idle"]
+            }
+          },
+          {
+            "filters": [
+              {
+                "test": "int_property",
+                "domain": "thump989:moth_score",
+                "value": 6,
+                "operator": ">="
+              }
+            ],
+            "trigger": "thump989:moth_land"
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "filters": [
+                  {
+                    "test": "int_property",
+                    "subject": "self",
+                    "domain": "thump989:moth_score",
+                    "value": 6,
+                    "operator": "<"
+                  }
+                ],
+                "trigger": "thump989:moth_fly_ranged_shot"
+              },
+              {
+                "weight": 1,
+                "filters": [
+                  {
+                    "test": "int_property",
+                    "domain": "thump989:moth_score",
+                    "value": 6,
+                    "operator": "<"
+                  }
+                ],
+                "trigger": "thump989:moth_fly_summon_icecube"
+              },
+              {
+                "weight": 1,
+                "filters": [
+                  {
+                    "test": "int_property",
+                    "domain": "thump989:moth_score",
+                    "value": 6,
+                    "operator": "<"
+                  }
+                ],
+                "trigger": "thump989:moth_fly_summon_icespikes"
+              }
+            ]
+          }
+        ]
+      },
+      "thump989:moth_ground_attack_select": {
+        "sequence": [
+          {
+            "remove": {
+              "component_groups": ["self:grounded_idle"]
+            }
+          },
+          {
+            "filters": [
+              {
+                "test": "int_property",
+                "domain": "thump989:moth_score",
+                "value": 4,
+                "operator": ">="
+              }
+            ],
+            "trigger": "thump989:moth_takeoff"
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "filters": [
+                  {
+                    "test": "int_property",
+                    "domain": "thump989:moth_score",
+                    "value": 4,
+                    "operator": "<"
+                  }
+                ],
+                "trigger": "thump989:moth_ground_summon_icecube"
+              },
+              {
+                "weight": 1,
+                "filters": [
+                  {
+                    "test": "int_property",
+                    "domain": "thump989:moth_score",
+                    "value": 4,
+                    "operator": "<"
+                  }
+                ],
+                "trigger": "thump989:moth_ground_areaattack"
+              },
+              {
+                "weight": 1,
+                "filters": [
+                  {
+                    "test": "int_property",
+                    "domain": "thump989:moth_score",
+                    "value": 4,
+                    "operator": "<"
+                  }
+                ],
+                "trigger": "thump989:moth_roar"
+              },
+              {
+                "weight": 1,
+                "filters": [
+                  {
+                    "test": "int_property",
+                    "domain": "thump989:moth_score",
+                    "value": 4,
+                    "operator": "<"
+                  }
+                ],
+                "trigger": "thump989:moth_ground_summon_icespike"
+              }
+            ]
+          }
+        ]
+      },
+      "thump989:moth_prime_ice": {
+        "queue_command": {
+          "command": [
+            "event entity @e[type=thump989:moth_ice_block] thump989:ice_explode"
+          ]
+        }
+      }
+    }
+  }
+}

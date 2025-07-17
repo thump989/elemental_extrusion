@@ -1,0 +1,64 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.blemish.move": {
+			"loop": true,
+			"bones": {
+				"roation1": {
+					"rotation": [
+						"math.cos(query.life_time * -360.0        ) * 9.0",
+						"2.0 + math.cos((0 * 2 + query.life_time * 20.0) * 14.32)",
+						"math.sin(query.life_time * -360.0        ) * 9.0"
+					]
+				},
+				"roation2": {
+					"rotation": [
+						"math.cos(query.life_time * -360.0        ) * 9.0",
+						"2.0 + math.cos((0 * 2 + query.life_time * 20.0) * 14.32)",
+						"math.sin(query.life_time * -360.0        ) * 9.0"
+					]
+				},
+				"roation3": {
+					"rotation": [
+						"math.cos(query.life_time * -360.0        ) * 9.0",
+						"2.0 + math.cos((0 * 2 + query.life_time * 20.0) * 14.32)",
+						"math.sin(query.life_time * -360.0        ) * 9.0"
+					]
+				}
+			}
+		},
+		"animation.blemish.move_2": {
+			"loop": true,
+			"bones": {
+				"roation1": {
+					"rotation": [0, "q.life_time*-100", 0]
+				},
+				"roation2": {
+					"rotation": [0, "math.sin(q.life_time*150)*180", 0]
+				},
+				"roation3": {
+					"rotation": [0, "q.life_time*100", 0]
+				}
+			}
+		},
+		"animation.blemish.move_3": {
+			"loop": true,
+			"bones": {
+				"roation1": {
+					"position": [0, "math.sin(q.life_time*150)*10", 0]
+				},
+				"roation3": {
+					"position": [0, "math.sin(q.life_time*150)*-10", 0]
+				}
+			}
+		},
+		"animation.blemish.casting": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"position": [0, "math.sin(q.life_time*150)*10", 0]
+				}
+			}
+		}
+	}
+}

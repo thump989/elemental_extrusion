@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:dark_skeleton",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/dark_skeleton"
+      },
+      "geometry": {
+        "default": "geometry.dark_skeleton"
+      },
+      "spawn_egg": {
+        "base_color": "#250b46",
+        "overlay_color": "#e8e8e8"
+      },
+      "particle_effects": {
+        "spell": "minecraft:evoker_spell"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+        ],
+        "animate": ["look_at_target_default", "move", "cast_controller"]
+      },
+      "animations": {
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "move": "animation.dark_skeleton.move",
+        "cast": "animation.dark_skeleton.cast",
+        "cast_controller": "controller.animation.dark_skeleton.cast_controller"
+      },
+      "render_controllers": ["controller.render.default"],
+      "enable_attachables": true
+    }
+  }
+}

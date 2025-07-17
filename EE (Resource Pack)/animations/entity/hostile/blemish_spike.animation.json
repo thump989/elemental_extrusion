@@ -1,0 +1,97 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.blemish_spike.animate": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 2.4167,
+			"bones": {
+				"root": {
+					"position": {
+						"0.0": [0, -16, 0],
+						"1.4167": [0, -16, 0],
+						"1.5": [0, 0, 0],
+						"1.9167": [0, 0, 0],
+						"2.4167": [0, -16, 0]
+					},
+					"scale": {
+						"0.0": [0, 0, 0],
+						"1.4167": [0, 0, 0],
+						"1.5": [1, 1, 1],
+						"1.9167": [1, 1, 1],
+						"2.4167": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "spike_prep",
+					"locator": "locator"
+				},
+				"1.3333": {
+					"effect": "spike_burst",
+					"locator": "locator"
+				}
+			}
+		},
+		"animation.blemish_spike.animate2": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 2.4167,
+			"bones": {
+				"root": {
+					"position": {
+						"0.0": [0, -16, 0],
+						"1.4167": [0, -16, 0],
+						"1.5": [0, 0, 0],
+						"1.9167": [0, 0, 0],
+						"2.4167": [0, -16, 0]
+					},
+					"scale": {
+						"0.0": [0, 0, 0],
+						"1.4167": [0, 0, 0],
+						"1.5": [1, 1, 1],
+						"1.9167": [1, 1, 1],
+						"2.4167": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "spike_prep",
+					"locator": "locator"
+				},
+				"1.3333": {
+					"effect": "spike_burst_2",
+					"locator": "locator"
+				}
+			}
+		},
+		"animation.blemish_spike.animate3": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1.0833,
+			"bones": {
+				"root": {
+					"position": {
+						"0.0": [0, -16, 0],
+						"0.0833": [0, -16, 0],
+						"0.1667": [0, 0, 0],
+						"0.5833": [0, 0, 0],
+						"1.0833": [0, -16, 0]
+					},
+					"scale": {
+						"0.0": [0, 0, 0],
+						"0.0833": [0, 0, 0],
+						"0.1667": [1, 1, 1],
+						"0.5833": [1, 1, 1],
+						"1.0833": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "spike_burst_2",
+					"locator": "locator"
+				}
+			}
+		}
+	}
+}

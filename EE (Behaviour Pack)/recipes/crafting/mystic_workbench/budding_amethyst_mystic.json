@@ -1,0 +1,28 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:budding_amethyst"
+    },
+    "tags": ["mystic_workbench"],
+    "pattern": ["PCP", "CAC", "PCP"],
+    "key": {
+      "P": "thump989:pure_magic",
+      "A": "minecraft:amethyst_block",
+      "C": "minecraft:amethyst_cluster"
+    },
+    "unlock": [
+      {
+        "item": "thump989:mystic_workbench"
+      },
+      { "item": "thump989:cube_of_knowledge" }
+    ],
+    "result": [
+      {
+        "item": "minecraft:budding_amethyst",
+
+        "count": 1
+      }
+    ]
+  }
+}

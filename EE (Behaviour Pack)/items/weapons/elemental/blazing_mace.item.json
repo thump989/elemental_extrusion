@@ -1,0 +1,36 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:blazing_mace",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "blazing_mace",
+      "minecraft:rarity": "epic",
+      "minecraft:damage": 6,
+      "thump989:blazing_mace": {},
+      "thump989:reduce_melee_damage": {},
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:enchantable": {
+        "slot": "axe",
+        "value": 20
+      },
+      "minecraft:durability": {
+        "max_durability": 500
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": ["blaze_rod"],
+            "repair_amount": 125
+          }
+        ]
+      }
+    }
+  }
+}

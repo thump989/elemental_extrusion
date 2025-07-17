@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "magic_boomerang",
+		"metalness_emissive_roughness": "magic_boomerang_mer"
+	}
+}

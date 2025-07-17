@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:glaive_dummy",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "particle_effects": {
+        "caldpteron_areaconjure": "thump989:caldpteron_areaconjure",
+        "caldpteron_areaconjure_outer": "thump989:caldpteron_areaconjure_outer"
+      },
+      "animations": {
+        "basic": "animation.glaive_dummy.particle"
+      },
+      "scripts": {
+        "animate": ["basic"]
+      },
+      "textures": {
+        "default": "textures/entity/dummy_blank"
+      },
+      "geometry": {
+        "default": "geometry.dummy_blank"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

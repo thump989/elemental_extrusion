@@ -1,0 +1,166 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.phantore_spirit",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "Body",
+					"pivot": [0, 13, 9],
+					"cubes": [
+						{"origin": [-5, 11, -11], "size": [10, 10, 22], "uv": [0, 32]}
+					],
+					"locators": {
+						"soul": {
+							"offset": [0, 16, -4],
+							"rotation": [0, 0, -180]
+						}
+					}
+				},
+				{
+					"name": "LegBL",
+					"parent": "Body",
+					"pivot": [3, 11, 9]
+				},
+				{
+					"name": "FlLeft",
+					"parent": "Body",
+					"pivot": [3, 11, -9],
+					"cubes": [
+						{"origin": [1, 5, -11], "size": [4, 6, 4], "uv": [48, 21], "mirror": true}
+					]
+				},
+				{
+					"name": "FCLeft",
+					"parent": "FlLeft",
+					"pivot": [3.025, 5, -11],
+					"cubes": [
+						{"origin": [1.025, 0, -11], "size": [4, 5, 4], "uv": [48, 67], "mirror": true}
+					],
+					"locators": {
+						"spell": {
+							"offset": [3, 0, -9],
+							"rotation": [0, 0, -180]
+						}
+					}
+				},
+				{
+					"name": "BlLeft2",
+					"parent": "Body",
+					"pivot": [3, 11, 9],
+					"cubes": [
+						{"origin": [1, 5, 7], "size": [4, 6, 4], "uv": [48, 21], "mirror": true}
+					]
+				},
+				{
+					"name": "BCLeft2",
+					"parent": "BlLeft2",
+					"pivot": [3.025, 5, 7],
+					"cubes": [
+						{"origin": [1.025, 0, 7], "size": [4, 5, 4], "uv": [48, 67], "mirror": true}
+					],
+					"locators": {
+						"spell4": {
+							"offset": [3, 0, 9],
+							"rotation": [0, 0, -180]
+						}
+					}
+				},
+				{
+					"name": "Neck",
+					"parent": "Body",
+					"pivot": [0, 17, -8],
+					"rotation": [30, 0, 0],
+					"cubes": [
+						{"origin": [-2, 16, -11], "size": [4, 12, 7], "uv": [0, 35]}
+					]
+				},
+				{
+					"name": "Head",
+					"parent": "Neck",
+					"pivot": [0, 25, -6],
+					"cubes": [
+						{"origin": [-3, 28, -11], "size": [6, 5, 7], "uv": [0, 13]}
+					],
+					"locators": {
+						"right_hand": {
+							"offset": [-3, 31, -8],
+							"rotation": [0, 0, 90]
+						},
+						"left_hand": {
+							"offset": [3, 31, -8],
+							"rotation": [0, 0, -90]
+						}
+					}
+				},
+				{
+					"name": "Muzzle",
+					"parent": "Head",
+					"pivot": [0, 28, -11],
+					"cubes": [
+						{"origin": [-2, 28, -16], "size": [4, 5, 5], "uv": [0, 25]}
+					]
+				},
+				{
+					"name": "Mane",
+					"parent": "Neck",
+					"pivot": [0, 17, -8],
+					"cubes": [
+						{"origin": [-1, 17, -3.95], "size": [2, 16, 2], "uv": [56, 36]}
+					]
+				},
+				{
+					"name": "FlRight",
+					"parent": "Body",
+					"pivot": [-3, 11, -9],
+					"cubes": [
+						{"origin": [-5, 5, -11], "size": [4, 6, 4], "uv": [48, 21]}
+					]
+				},
+				{
+					"name": "FCRight",
+					"parent": "FlRight",
+					"pivot": [-3.025, 5, -11],
+					"cubes": [
+						{"origin": [-5.025, 0, -11], "size": [4, 5, 4], "uv": [48, 67]}
+					],
+					"locators": {
+						"spell2": {
+							"offset": [-3, 0, -9],
+							"rotation": [0, 0, -180]
+						}
+					}
+				},
+				{
+					"name": "BlRight2",
+					"parent": "Body",
+					"pivot": [-3, 11, 9],
+					"cubes": [
+						{"origin": [-5, 5, 7], "size": [4, 6, 4], "uv": [48, 21]}
+					]
+				},
+				{
+					"name": "BCRight2",
+					"parent": "BlRight2",
+					"pivot": [-3.025, 5, 7],
+					"cubes": [
+						{"origin": [-5.025, 0, 7], "size": [4, 5, 4], "uv": [48, 67]}
+					],
+					"locators": {
+						"spell3": {
+							"offset": [-3, 0, 9],
+							"rotation": [0, 0, -180]
+						}
+					}
+				}
+			]
+		}
+	]
+}

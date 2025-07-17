@@ -1,0 +1,26 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:water_staff",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "water_staff",
+      "minecraft:rarity": "epic",
+      "minecraft:damage": 7,
+      "minecraft:cooldown": {
+        "category": "water_staff",
+        "duration": 7
+      },
+      "thump989:water_staff_use": {},
+      "thump989:water_staff_hit": {},
+      "minecraft:glint": true,
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:hand_equipped": true
+    }
+  }
+}

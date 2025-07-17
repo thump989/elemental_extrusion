@@ -1,0 +1,40 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:fire_universal_locator",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 64,
+      "minecraft:icon": "fire_universal_locator",
+      "thump989:universe_teleport_warning": {
+        "property_type": "fire_focus",
+        "dimension_property_type": "fire_dimension",
+        "use_message": "§4Fire Universal Focus§e is calibrated to:§b ",
+        "fail_message": "§cFire Universal Focus has not been calibrated!"
+      },
+      "thump989:universe_teleport_locator": {
+        "property_type": "fire_focus",
+        "dimension_property_type": "fire_dimension",
+        "fail_message": "§cFire Universal Focus has not been calibrated!"
+      },
+      "thump989:locator_particle": {
+        "particle_id": "thump989:fire_locator_particle"
+      },
+      "minecraft:use_modifiers": {
+        "movement_modifier": 1,
+        "use_duration": 3
+      },
+      "minecraft:use_animation": {
+        "value": "brush"
+      },
+      "minecraft:cooldown": {
+        "category": "teleporter",
+        "duration": 3
+      }
+    }
+  }
+}

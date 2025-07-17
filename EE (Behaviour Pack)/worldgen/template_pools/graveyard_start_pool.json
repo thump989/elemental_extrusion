@@ -1,0 +1,18 @@
+{
+  "format_version": "1.21.20",
+  "minecraft:template_pool": {
+    "description": {
+      "identifier": "thump989:graveyard_start"
+    },
+    "elements": [
+      {
+        "element": {
+          "element_type": "minecraft:single_pool_element",
+          "location": "graveyard_surface_1",
+          "processors": "thump989:graveyard_processor"
+        },
+        "weight": 1
+      }
+    ]
+  }
+}

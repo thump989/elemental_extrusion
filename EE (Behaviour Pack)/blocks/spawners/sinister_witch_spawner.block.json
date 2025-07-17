@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:block": {
+    "description": {
+      "identifier": "thump989:sinister_witch_spawner"
+    },
+    "components": {
+      "minecraft:collision_box": false,
+      "minecraft:selection_box": true,
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 15
+      },
+      "minecraft:tick": {
+        "interval_range": [20, 20],
+        "looping": true
+      },
+      "thump989:block_spawner_remove": {
+        "entity": "thump989:sinister_witch"
+      },
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:geometry": "geometry.ominous_sentry_spawner",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "sinister_witch_spawner",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:map_color": "#ffffff"
+    }
+  }
+}

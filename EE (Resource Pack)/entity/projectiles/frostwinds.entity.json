@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:frostwinds",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/dummy_blank"
+      },
+      "particle_effects": {
+        "frostwinds_body": "thump989:frostwinds_body",
+        "frostwinds_idle": "thump989:frostwinds_idle"
+      },
+      "animations": {
+        "basic": "animation.frostwinds.particle"
+      },
+      "scripts": {
+        "animate": ["basic"]
+      },
+      "geometry": {
+        "default": "geometry.dummy_blank"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

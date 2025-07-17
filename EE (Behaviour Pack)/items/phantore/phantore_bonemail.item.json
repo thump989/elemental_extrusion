@@ -1,0 +1,43 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:phantore_bonemail",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.chestplate"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "phantore_bonemail",
+      "minecraft:wearable": {
+        "slot": "slot.armor.chest",
+        "protection": 9
+      },
+      "minecraft:durability": {
+        "damage_chance": {
+          "min": 0,
+          "max": 100
+        },
+        "max_durability": 10000
+      },
+      "minecraft:durability_sensor": {
+        "durability_thresholds": [
+          {
+            "durability": 10000,
+            "particle_type": "evaporation",
+            "sound_event": "blast"
+          }
+        ]
+      },
+      "minecraft:damage_absorption": {
+        "absorbable_causes": ["magic", "override"]
+      },
+      "minecraft:enchantable": {
+        "slot": "armor_torso",
+        "value": 250
+      }
+    }
+  }
+}

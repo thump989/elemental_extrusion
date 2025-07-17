@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "royal_caldpteron_egg_used",
+		"metalness_emissive_roughness": "royal_caldpteron_egg_used_mer"
+	}
+}

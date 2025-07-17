@@ -1,0 +1,89 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:astral_shot",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:transient": {},
+      "minecraft:projectile": {
+        "anchor": 1,
+        "gravity": 0,
+        "inertia": 1,
+        "liquid_inertia": 1,
+        "should_bounce": true,
+        "on_hit": {
+          "stick_in_ground": {},
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "thump989:projectile_attack",
+              "target": "self"
+            }
+          },
+          "impact_damage": {
+            "damage": 5,
+            "knockback": true
+          },
+          "mob_effect": {
+            "amplifier": 0,
+            "duration": 600,
+            "durationeasy": 600,
+            "durationnormal": 600,
+            "durationhard": 600,
+            "effect": "poison",
+            "visible": true
+          }
+        }
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "event": "thump989:projectile_attack",
+            "target": "self",
+            "filters": {
+              "test": "on_ground",
+              "value": true
+            }
+          }
+        ]
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      },
+      "thump989:projectile_attack": {
+        "queue_command": {
+          "command": [
+            "scriptevent thump989:astral_star_recursive starburst",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

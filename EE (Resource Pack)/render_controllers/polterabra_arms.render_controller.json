@@ -1,0 +1,66 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.black_hole": {
+      "geometry": "Geometry.default",
+      "textures": ["Texture.default"],
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ]
+    },
+    "controller.render.astralminister_backlayer": {
+      "geometry": "Geometry.backlayer",
+      "textures": ["Texture.star_frontlayer"],
+      "ignore_lighting": true,
+      "light_color_multiplier": "(1.0)",
+      "is_hurt_color": {
+        "r": 0
+      },
+      "on_fire_color": {
+        "r": 0
+      },
+      "materials": [
+        {
+          "*": "Material.backlayer"
+        }
+      ]
+    },
+    "controller.render.astralminister_frontlayer": {
+      "geometry": "Geometry.frontlayer",
+      "textures": ["Texture.star_backlayer"],
+      "ignore_lighting": true,
+      "light_color_multiplier": "(1.0)",
+      "is_hurt_color": {
+        "r": 0
+      },
+      "on_fire_color": {
+        "r": 0
+      },
+      "materials": [
+        {
+          "*": "Material.innerlayer"
+        }
+      ],
+      "uv_anim": {
+        "scale": [1, "1 / 6"],
+        "offset": [0, "Math.mod(Math.floor(query.life_time * 20), 6) / 6"]
+      }
+    },
+    "controller.render.astralminister_inside": {
+      "geometry": "Geometry.inside",
+      "textures": ["Texture.star_inner_layer"],
+      "ignore_lighting": true,
+      "materials": [
+        {
+          "*": "Material.innerlayer"
+        }
+      ],
+      "uv_anim": {
+        "scale": [1, "1 / 6"],
+        "offset": [0, "Math.mod(Math.floor(query.life_time * 20), 6) / 6"]
+      }
+    }
+  }
+}

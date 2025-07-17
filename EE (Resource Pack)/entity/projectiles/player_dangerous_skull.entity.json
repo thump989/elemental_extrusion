@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:player_dangerous_skull",
+      "materials": {
+        "default": "wither_skull"
+      },
+      "textures": {
+        "default": "textures/entity/player_wither_skull/dangerous"
+      },
+      "geometry": {
+        "default": "geometry.player_wither_skull"
+      },
+      "animations": {
+        "move": "animation.projectile.move",
+        "spawn": "animation.player_wither_skull.spawn"
+      },
+      "scripts": {
+        "animate": ["move", "spawn"]
+      },
+      "render_controllers": ["controller.render.wither_skull"]
+    }
+  }
+}

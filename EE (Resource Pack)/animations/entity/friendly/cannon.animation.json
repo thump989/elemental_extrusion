@@ -1,0 +1,39 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.cannon.look_at_target": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [0, "q.target_y_rotation", 0]
+				}
+			}
+		},
+		"animation.cannon.shoot": {
+			"animation_length": 0.4167,
+			"bones": {
+				"cannon": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.0833": [0, 0, 1],
+						"0.1667": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "cannon_shot",
+					"locator": "cannon"
+				}
+			}
+		},
+		"animation.cannon.disabled": {
+			"loop": true,
+			"bones": {
+				"cannon": {
+					"rotation": [27.5, 0, 0]
+				}
+			}
+		}
+	}
+}

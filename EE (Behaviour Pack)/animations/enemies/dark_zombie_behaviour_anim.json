@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.dark_zombie.evil_skull_cast": {
+      "timeline": {
+        "1.0": ["/scriptevent thump989:darkzombie warningshot"],
+        "2.0": ["/scriptevent thump989:darkzombie_attack1 skull"]
+      },
+      "animation_length": 6,
+      "loop": true
+    },
+    "animation.shadowfire.active_1": {
+      "timeline": {
+        "0.0": ["/scriptevent thump989:shadowflame1 fire1"]
+      },
+      "animation_length": 0.25,
+      "loop": true
+    },
+    "animation.witch_blast.seek": {
+      "timeline": {
+        "1.15": ["/scriptevent thump989:witch_blast home"]
+      },
+      "animation_length": 1.25,
+      "loop": true
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.polterabra",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-8, 0, 0],
+							"size": [16, 23, 0],
+							"uv": {
+								"south": {"uv": [16, 0], "uv_size": [16, 23]}
+							}
+						},
+						{
+							"origin": [-8, 0, 0],
+							"size": [16, 23, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, -90, 0],
+							"uv": {
+								"south": {"uv": [16, 0], "uv_size": [16, 23]}
+							}
+						}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "root",
+					"pivot": [0, 23.25, 0],
+					"cubes": [
+						{
+							"origin": [-4.5, 22.75, 0],
+							"size": [9, 10, 0],
+							"uv": {
+								"north": {"uv": [0, 21], "uv_size": [9, 10]}
+							}
+						},
+						{
+							"origin": [-4.5, 23.25, 0.2],
+							"size": [9, 9, 0],
+							"uv": {
+								"north": {"uv": [9, 23], "uv_size": [9, 9]}
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.polterabra_arms",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0],
+					"rotation": [0, -45, 0],
+					"cubes": [
+						{
+							"origin": [-5, 0, 0],
+							"size": [16, 23, 0],
+							"uv": {
+								"south": {
+									"uv": [5, 3],
+									"uv_size": [16, 23]
+								}
+							}
+						},
+						{
+							"origin": [-4, 0, -1],
+							"size": [16, 23, 0],
+							"pivot": [0, 0, -1],
+							"rotation": [0, -90, 0],
+							"uv": {
+								"south": {
+									"uv": [5, 3],
+									"uv_size": [16, 23]
+								}
+							}
+						},
+						{
+							"origin": [-3, 0, 0],
+							"size": [16, 23, 0],
+							"pivot": [1, 0, 0],
+							"rotation": [0, 180, 0],
+							"uv": {
+								"south": {
+									"uv": [5, 3],
+									"uv_size": [16, 23]
+								}
+							}
+						},
+						{
+							"origin": [-4, 0, 1],
+							"size": [16, 23, 0],
+							"pivot": [0, 0, 1],
+							"rotation": [0, 90, 0],
+							"uv": {
+								"south": {
+									"uv": [5, 3],
+									"uv_size": [16, 23]
+								}
+							}
+						}
+					],
+					"locators": {
+						"fire1": [0, 19.25, -9],
+						"fire2": [0, 19.25, 9],
+						"fire3": [-9, 19.25, 0],
+						"fire4": [9, 19.25, 0]
+					}
+				}
+			]
+		}
+	]
+}

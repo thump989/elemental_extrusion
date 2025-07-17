@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:homeworld_locator",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 64,
+      "minecraft:icon": "homeworld_locator",
+      "minecraft:rarity": "uncommon",
+      "minecraft:cooldown": {
+        "category": "locator",
+        "duration": 3
+      },
+      "thump989:locator_particle": {
+        "particle_id": "thump989:homeworld_locator_particle"
+      },
+      "thump989:homeworld_locator": {},
+      "minecraft:use_modifiers": {
+        "movement_modifier": 1,
+        "use_duration": 3
+      },
+      "minecraft:use_animation": {
+        "value": "brush"
+      }
+    }
+  }
+}

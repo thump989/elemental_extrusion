@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "spider_egg_cluster",
+		"metalness_emissive_roughness": "spider_egg_cluster_mer"
+	}
+}

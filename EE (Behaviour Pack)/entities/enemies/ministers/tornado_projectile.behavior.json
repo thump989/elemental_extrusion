@@ -1,0 +1,89 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:tornado_projectile",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": true
+      },
+      "minecraft:timer": {
+        "time": 15,
+        "looping": true,
+        "time_down_event": {
+          "event": "thump989:explode",
+          "target": "self"
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.4,
+        "height": 0.4
+      },
+      "minecraft:projectile": {
+        "anchor": 1,
+        "crit_particle_on_hurt": true,
+        "homing": true,
+        "destroy_on_hurt": false,
+        "gravity": 0,
+        "liquid_inertia": 1,
+        "inertia": 1,
+        "on_hit": {
+          "impact_damage": {
+            "damage": 0,
+            "knockback": true
+          },
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "thump989:explode",
+              "target": "self"
+            }
+          }
+        }
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:explode": {
+        "minecraft:explode": {
+          "breaks_blocks": false,
+          "causes_fire": false,
+          "destroy_affected_by_griefing": false,
+          "fire_affected_by_griefing": false,
+          "fuse_lit": true,
+          "fuse_length": [0, 0],
+          "damage_scaling": 0.75,
+          "knockback_scaling": 0.6,
+          "particle_effect": "breeze_wind_burst",
+          "sound_effect": "breeze_wind_charge.burst",
+          "power": 3
+        }
+      }
+    },
+    "events": {
+      "thump989:explode": {
+        "add": {
+          "component_groups": ["self:explode"]
+        }
+      }
+    }
+  }
+}

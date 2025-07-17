@@ -1,0 +1,21 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:mystic_exctractor",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "mystic_exctractor",
+      "minecraft:rarity": "uncommon",
+      "minecraft:cooldown": {
+        "category": "mystic_exctractor",
+        "duration": 0.5
+      },
+      "thump989:exp_sacrafice": {}
+    }
+  }
+}

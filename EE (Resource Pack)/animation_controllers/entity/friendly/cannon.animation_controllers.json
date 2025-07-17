@@ -1,0 +1,48 @@
+{
+  "format_version": "1.19.0",
+  "animation_controllers": {
+    "controller.animation.cannon.attack": {
+      "states": {
+        "default": {
+          "transitions": [{ "attack": "v.attack_time>0" }]
+        },
+        "attack": {
+          "animations": ["shoot"],
+          "transitions": [{ "default": "q.all_animations_finished" }]
+        }
+      }
+    },
+    "controller.animation.cannon.disable_controller": {
+      "states": {
+        "default": {
+          "transitions": [{ "disabled": "q.variant==1" }],
+          "blend_transition": 0.5,
+          "blend_via_shortest_path": true
+        },
+        "disabled": {
+          "animations": ["disabled"],
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "locator": "smoke1"
+            },
+            {
+              "effect": "smoke",
+              "locator": "smoke2"
+            },
+            {
+              "effect": "smoke",
+              "locator": "smoke3"
+            },
+            {
+              "effect": "smoke",
+              "locator": "smoke4"
+            }
+          ],
+          "transitions": [{ "default": "q.variant==0" }],
+          "blend_transition": 0.1
+        }
+      }
+    }
+  }
+}

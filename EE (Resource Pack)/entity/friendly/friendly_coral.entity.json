@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:friendly_coral",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/friendly_coral"
+      },
+      "animations": {
+        "spawn": "animation.astral_coral.spawn",
+        "attack": "animation.astral_coral.attack",
+        "idle": "animation.astral_coral.idle",
+        "controller": "controller.animation.astral_coral.controller"
+      },
+      "scripts": {
+        "animate": ["controller"]
+      },
+      "geometry": {
+        "default": "geometry.astral_coral"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#ffe6b1",
+        "overlay_color": "#9effdd"
+      }
+    }
+  }
+}

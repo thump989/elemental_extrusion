@@ -1,0 +1,18 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.magic_boomerang.spin": {
+			"loop": true,
+			"bones": {
+				"magic_boomerang": {
+					"rotation": [0, "q.anim_time*1400", 0]
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "magic"
+				}
+			}
+		}
+	}
+}

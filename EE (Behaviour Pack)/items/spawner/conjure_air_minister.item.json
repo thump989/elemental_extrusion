@@ -1,0 +1,21 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:conjure_air_minister",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "conjure_air_minister",
+      "minecraft:rarity": "epic",
+      "thump989:entity_placer_1": {
+        "entity_id": "thump989:minister_spawner",
+        "spawn_event": "thump989:air_minister",
+        "remove_item": true
+      }
+    }
+  }
+}

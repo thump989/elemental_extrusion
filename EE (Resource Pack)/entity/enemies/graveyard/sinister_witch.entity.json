@@ -1,0 +1,45 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:sinister_witch",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/sinister_witch/colour"
+      },
+      "geometry": {
+        "default": "geometry.sinister_witch"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "v.isholdingitem = query.is_item_equipped ;"
+        ],
+        "scale": "0.9375",
+        "animate": ["look_at_target", "move", "general", "root_controller"]
+      },
+      "particle_effects": {
+        "spell": "minecraft:evoker_spell",
+        "ranged_attack": "thump989:sinister_witch_attack"
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "move": "animation.mystic_zombie.move",
+        "general": "animation.sinister_witch.general",
+        "cast": "animation.sinister_witch.cast",
+        "arms_fold": "animation.sinister_witch.arms_fold",
+        "arms_out": "animation.sinister_witch.arms_out",
+        "root_controller": "controller.animation.sinister_witch.root_controller",
+        "projectile_shoot": "animation.sinister_witch.projectile_shoot"
+      },
+      "enable_attachables": true,
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#ff0202",
+        "overlay_color": "#9503dd"
+      }
+    }
+  }
+}

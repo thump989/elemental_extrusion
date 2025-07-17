@@ -1,0 +1,39 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "thump989:bee_tree_1_feature",
+      "places_feature": "thump989:bee_tree_1"
+    },
+    "conditions": {
+      "grounded": {},
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": {
+        "all_of": [
+          {
+            "test": "has_biome_tag",
+            "value": "forest"
+          },
+          {
+            "test": "has_biome_tag",
+            "operator": "!=",
+            "value": "cold"
+          }
+        ]
+      }
+    },
+    "distribution": {
+      "iterations": 1,
+      "x": {
+        "extent": [0, 16],
+        "distribution": "uniform"
+      },
+      "y": "q.heightmap(v.worldx, v.worldz)",
+      "z": {
+        "extent": [0, 16],
+        "distribution": "uniform"
+      },
+      "scatter_chance": 0.1
+    }
+  }
+}

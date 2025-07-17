@@ -1,0 +1,14 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.warning_shot.effect": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "warning_shot",
+					"locator": "particle"
+				}
+			}
+		}
+	}
+}

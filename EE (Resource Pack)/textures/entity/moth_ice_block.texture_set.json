@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "moth_ice_block",
+		"metalness_emissive_roughness": "moth_ice_block_mer"
+	}
+}

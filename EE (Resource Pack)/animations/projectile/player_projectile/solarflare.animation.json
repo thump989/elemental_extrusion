@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.solarflare.move": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [360, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.solarflare.particle": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "solarflare_idle"
+				}
+			}
+		}
+	}
+}

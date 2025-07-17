@@ -1,0 +1,197 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:wisp",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:zombie"
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entity/wisp.json"
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 14 : 0"
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": [
+            {
+              "test": "is_family",
+              "subject": "other",
+              "value": "monster",
+              "operator": "not"
+            }
+          ]
+        }
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:movement.basic": {},
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:health": {
+        "value": 35,
+        "max": 35
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1,
+            "height": 1.5,
+            "pivot": [0, 1.35, 0]
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "height": 1.5,
+        "width": 0.23
+      },
+      "minecraft:jump.static": {
+        "jump_power": 0.42
+      },
+      "minecraft:navigation.generic": {
+        "avoid_water": false,
+        "can_jump": true,
+        "can_walk": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:type_family": {
+        "family": ["monster", "mob", "wisp", "undead"]
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:melee": {
+        "minecraft:attack": {
+          "damage": 11
+        },
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "scan_interval": 10,
+          "must_see": true,
+          "entity_types": [
+            {
+              "filters": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "iron_golem"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "wolf"
+                    }
+                  ]
+                }
+              ],
+              "max_dist": 32
+            }
+          ]
+        },
+        "minecraft:behavior.melee_attack": {
+          "melee_fov": 90,
+          "cooldown_time": 1,
+          "reach_multiplier": 2,
+          "priority": 1
+        }
+      },
+      "self:mustasche": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "scan_interval": 10,
+          "must_see": true,
+          "entity_types": [
+            {
+              "filters": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "irongolem"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "wolf"
+                    }
+                  ]
+                }
+              ],
+              "max_dist": 32
+            }
+          ]
+        },
+        "minecraft:shooter": {
+          "def": "thump989:wisp_fireball"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "attack_interval": 6,
+          "burst_interval": 2,
+          "burst_shots": 2,
+          "attack_radius": 32
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "add": {
+              "component_groups": ["self:melee"]
+            },
+            "weight": 7
+          },
+          {
+            "add": {
+              "component_groups": ["self:mustasche"]
+            },
+            "weight": 3
+          }
+        ]
+      },
+      "thump989:mustasche": {
+        "remove": {
+          "component_groups": ["self:melee"]
+        },
+        "add": {
+          "component_groups": ["self:mustasche"]
+        }
+      }
+    }
+  }
+}

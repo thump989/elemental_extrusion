@@ -1,0 +1,111 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:minister_star",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:tameable": {
+        "probability": 1
+      },
+      "minecraft:type_family": {
+        "family": ["mob", "monster", "boss", "astral_minister"]
+      },
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:transient": {},
+      "minecraft:projectile": {
+        "on_hit": {
+          "mob_effect": {
+            "amplifier": 0,
+            "effect": "weakness",
+            "durationeasy": 400,
+            "durationnormal": 400,
+            "durationhard": 400
+          },
+          "impact_damage": {
+            "damage": 25,
+            "knockback": false,
+            "destroy_on_hit": true
+          },
+          "stick_in_ground": {}
+        },
+        "power": 1.6,
+        "gravity": 0,
+        "anchor": 1,
+        "inertia": 1,
+        "liquid_inertia": 1,
+        "should_bounce": false,
+        "offset": [0, 0, 0]
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "event": "thump989:despawn_timer",
+            "target": "self",
+            "filters": {
+              "test": "on_ground",
+              "subject": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:despawn_timer": {
+        "minecraft:timer": {
+          "time": 1,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:instant_despawn",
+            "target": "self"
+          }
+        },
+        "minecraft:environment_sensor": {}
+      },
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:despawn_timer": {
+        "add": {
+          "component_groups": ["self:despawn_timer"]
+        }
+      },
+      "thump989:explode": {
+        "queue_command": {
+          "command": [
+            "damage @e[family=mob,r=1.9] 10 entity_explosion",
+            "particle thump989:solarflare_explode",
+            "playsound random.explode @a ~ ~ ~",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      },
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      }
+    }
+  }
+}

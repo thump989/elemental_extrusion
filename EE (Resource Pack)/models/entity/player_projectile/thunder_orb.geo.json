@@ -1,0 +1,41 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.thunder_orb",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 14, 0],
+					"cubes": [
+						{"origin": [-3, 11, -3], "size": [6, 6, 6], "uv": [0, 0]}
+					],
+					"locators": {
+						"locator": [0, 14, 0]
+					}
+				},
+				{
+					"name": "cube2",
+					"pivot": [0, 14, 0],
+					"cubes": [
+						{"origin": [-3, 11, -3], "size": [6, 6, 6], "inflate": 2, "uv": [0, 24]}
+					]
+				},
+				{
+					"name": "cube",
+					"pivot": [0, 14, 0],
+					"cubes": [
+						{"origin": [-3, 11, -3], "size": [6, 6, 6], "inflate": 1, "uv": [0, 12]}
+					]
+				}
+			]
+		}
+	]
+}

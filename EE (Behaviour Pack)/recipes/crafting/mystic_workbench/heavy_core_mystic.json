@@ -1,0 +1,27 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:heavy_core"
+    },
+    "tags": ["mystic_workbench"],
+    "pattern": ["III", "INI", "III"],
+    "key": {
+      "N": "minecraft:netherite_ingot",
+      "I": "minecraft:iron_block"
+    },
+    "unlock": [
+      {
+        "item": "thump989:mystic_workbench"
+      },
+      { "item": "thump989:cube_of_knowledge" }
+    ],
+    "result": [
+      {
+        "item": "minecraft:heavy_core",
+
+        "count": 1
+      }
+    ]
+  }
+}

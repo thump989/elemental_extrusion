@@ -1,0 +1,15 @@
+{
+  "format_version": "1.17.0",
+  "minecraft:ore_feature": {
+    "description": {
+      "identifier": "thump989:malumite_ore"
+    },
+    "count": 6,
+    "replace_rules": [
+      {
+        "places_block": "thump989:malumite_ore",
+        "may_replace": ["minecraft:sculk"]
+      }
+    ]
+  }
+}

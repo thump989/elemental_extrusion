@@ -1,0 +1,47 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.brine.idle": {
+			"loop": true,
+			"bones": {
+				"rod1": {
+					"position": [0, "math.sin(q.life_time*200)*5", 0]
+				},
+				"rod2": {
+					"position": [0, "math.sin(q.life_time*150)*-5", 0]
+				},
+				"rod3": {
+					"position": [0, "math.sin(q.life_time*200)*-5", 0]
+				},
+				"rod4": {
+					"position": [0, "math.sin(q.life_time*150)*5", 0]
+				},
+				"head": {
+					"rotation": [0, 0, 0]
+				}
+			}
+		},
+		"animation.brine.move": {
+			"loop": true,
+			"bones": {
+				"tail": {
+					"rotation": [0, 0, "q.modified_distance_moved * -90"]
+				}
+			}
+		},
+		"animation.brine_bubble_homing.move": {
+			"loop": true,
+			"bones": {
+				"tail": {
+					"rotation": [0, 0, "q.life_time * -720"]
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "brine_bubbleshot",
+					"locator": "bubble"
+				}
+			}
+		}
+	}
+}

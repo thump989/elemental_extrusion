@@ -1,0 +1,28 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:grapple"
+    },
+    "tags": ["crafting_table"],
+    "pattern": [" SI", "SCS", "BS "],
+    "key": {
+      "B": "thump989:blemish_rod",
+      "S": "minecraft:planks",
+      "C": "minecraft:chain",
+      "I": "minecraft:iron_ingot"
+    },
+    "unlock": [
+      {
+        "item": "thump989:blemish_rod"
+      }
+    ],
+    "result": [
+      {
+        "item": "thump989:grappling_hook",
+
+        "count": 1
+      }
+    ]
+  }
+}

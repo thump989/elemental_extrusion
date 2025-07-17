@@ -1,0 +1,42 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.mystic_zombie.attack_controller": {
+			"states": {
+				"default": {
+					"transitions": [
+						{"attacking": "v.attack_time>0"}
+					]
+				},
+				"attacking": {
+					"animations": ["attack"],
+					"transitions": [
+						{"default": "q.all_animations_finished"}
+					]
+				}
+			}
+		},
+		"controller.animation.mystic_zombie.root_controller": {
+			"states": {
+				"default": {
+					"animations": ["attack_controller"],
+					"transitions": [
+						{"casting": "q.property('thump989:darkzombie_is_casting')==true"}
+					]
+				},
+				"casting": {
+					"animations": ["cast"],
+					"particle_effects": [
+						{
+							"effect": "cast",
+							"locator": "particle"
+						}
+					],
+					"transitions": [
+						{"default": "q.property('thump989:darkzombie_is_casting')==false"}
+					]
+				}
+			}
+		}
+	}
+}

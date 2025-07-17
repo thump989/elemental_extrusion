@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:potion_of_haste_1",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.potion"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "potion_of_haste_1",
+      "minecraft:food": {
+        "nutrition": 0,
+        "saturation_modifier": 0,
+        "can_always_eat": true
+      },
+      "thump989:haste_1": {},
+      "minecraft:use_modifiers": {
+        "movement_modifier": 0.32,
+        "use_duration": 1.6
+      },
+      "minecraft:use_animation": "drink"
+    }
+  }
+}

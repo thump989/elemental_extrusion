@@ -1,0 +1,16 @@
+{
+  "format_version": "1.21.80",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:cursed_soulbone",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 64,
+      "minecraft:icon": "cursed_soulbone",
+      "minecraft:rarity": "epic"
+    }
+  }
+}

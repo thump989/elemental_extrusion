@@ -1,0 +1,26 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.moth_ice_spike.attack": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1.5,
+			"bones": {
+				"root": {
+					"scale": {
+						"0.0": [0, 0, 0],
+						"1.0833": [0, 0, 0],
+						"1.1667": [1.5, 1.5, 1.5],
+						"1.2083": [1, 1, 1],
+						"1.3333": [1, 1, 1],
+						"1.4167": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "moth_icespike_warn"
+				}
+			}
+		}
+	}
+}

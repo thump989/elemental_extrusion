@@ -1,0 +1,147 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.titan_beetle.head_idle": {
+			"loop": true,
+			"bones": {
+				"leftantannvae": {
+					"rotation": ["-25+math.sin(q.anim_time*300)", 67.5, 0],
+					"position": [1, 0, 1]
+				},
+				"rightantannvae": {
+					"rotation": ["-25+math.sin(q.anim_time*300)", -67.5, 0],
+					"position": [-1, 0, 1]
+				}
+			}
+		},
+		"animation.titan_beetle.mandible_idle": {
+			"loop": true,
+			"bones": {
+				"leftmandible": {
+					"rotation": [0, "20+math.cos(q.anim_time*120)", 0]
+				},
+				"rightmandible": {
+					"rotation": [0, "-20+math.cos(q.anim_time*120)", 0]
+				}
+			}
+		},
+		"animation.titan_beetle.mandible_loot": {
+			"loop": true,
+			"bones": {
+				"leftmandible": {
+					"rotation": [-20, "10+math.cos(q.anim_time*120)", 0]
+				},
+				"rightmandible": {
+					"rotation": [-20, "-10+math.cos(q.anim_time*120)", 0]
+				},
+				"loot": {
+					"rotation": [0, "math.cos(q.anim_time*120)", 0],
+					"position": [0, 2, 0.5]
+				}
+			}
+		},
+		"animation.titan_beetle.walk": {
+			"loop": true,
+			"animation_length": 0.375,
+			"bones": {
+				"leftleg1": {
+					"rotation": {
+						"0.0": [0, 0, 17.5],
+						"0.125": [0, -22.5, 0],
+						"0.25": [0, 22.5, 0],
+						"0.375": [0, 0, 17.5]
+					}
+				},
+				"leftleg2": {
+					"rotation": {
+						"0.0": [0, -22.5, 0],
+						"0.125": [0, 22.5, 0],
+						"0.25": [0, 0, 17.5],
+						"0.375": [0, -22.5, 0]
+					}
+				},
+				"leftleg3": {
+					"rotation": {
+						"0.0": [0, 0, 17.5],
+						"0.125": [0, -22.5, 0],
+						"0.25": [0, 22.5, 0],
+						"0.375": [0, 0, 17.5]
+					}
+				},
+				"rightleg1": {
+					"rotation": {
+						"0.0": [0, 22.5, 0],
+						"0.125": [0, -22.5, 0],
+						"0.25": [0, 0, -17.5],
+						"0.375": [0, 22.5, 0]
+					}
+				},
+				"rightleg2": {
+					"rotation": {
+						"0.0": [0, 0, -17.5],
+						"0.125": [0, 22.5, 0],
+						"0.25": [0, -22.5, 0],
+						"0.375": [0, 0, -17.5]
+					}
+				},
+				"rightleg3": {
+					"rotation": {
+						"0.0": [0, 22.5, 0],
+						"0.125": [0, -22.5, 0],
+						"0.25": [0, 0, -17.5],
+						"0.375": [0, 22.5, 0]
+					}
+				}
+			}
+		},
+		"animation.titan_beetle.gravid": {
+			"loop": true,
+			"animation_length": 0.1667,
+			"bones": {
+				"leftwing": {
+					"rotation": {
+						"0.0": [0, -15, 40],
+						"0.0833": [9.06159, -23.39896, 18.11977],
+						"0.1667": [0, -15, 40]
+					},
+					"position": [-3, 0, 2]
+				},
+				"rightwing": {
+					"rotation": {
+						"0.0": [0, 15, -40],
+						"0.0833": [9.06159, 23.39896, -18.11977],
+						"0.1667": [0, 15, -40]
+					},
+					"position": [3, 0, 2]
+				},
+				"leftelytra": {
+					"rotation": [50, -50, 0],
+					"position": [0, 0, -1]
+				},
+				"rightelytra": {
+					"rotation": [50, 50, 0],
+					"position": [0, 0, -1]
+				}
+			}
+		},
+		"animation.titan_beetle.noloot": {
+			"loop": true,
+			"bones": {
+				"loot": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.titan_beetle.wings_idle": {
+			"loop": true,
+			"bones": {
+				"leftwing": {
+					"scale": 0
+				},
+				"rightwing": {
+					"scale": 0
+				}
+			}
+		}
+	}
+}

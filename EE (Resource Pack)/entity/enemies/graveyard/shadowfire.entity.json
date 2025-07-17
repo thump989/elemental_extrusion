@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:shadowfire",
+      "materials": {
+        "default": "conduit_wind"
+      },
+      "textures": {
+        "default": "textures/entity/shadowfire"
+      },
+      "geometry": {
+        "default": "geometry.shadowfire"
+      },
+      "animations": {
+        "basic": "animation.shadowfire.spawn"
+      },
+      "scripts": {
+        "animate": ["basic"]
+      },
+      "render_controllers": ["controller.render.shadowfire"],
+      "spawn_egg": {
+        "base_color": "#250b46",
+        "overlay_color": "#f000ff"
+      }
+    }
+  }
+}

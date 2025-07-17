@@ -1,0 +1,50 @@
+[
+  {
+    "atlas_tile": "dark_totem",
+    "flipbook_texture": "textures/blocks/dark_totem",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "stellar_obsidian_outer",
+    "flipbook_texture": "textures/blocks/stellar_obsidian_outer",
+    "ticks_per_frame": 3,
+    "blend_frames": true
+  },
+  {
+    "atlas_tile": "celestial_padding",
+    "flipbook_texture": "textures/blocks/celestial_padding",
+    "ticks_per_frame": 40,
+    "blend_frames": true
+  },
+  {
+    "atlas_tile": "cosmic_drill",
+    "flipbook_texture": "textures/blocks/cosmic_drill",
+    "ticks_per_frame": 1,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "phantores_grave_top_active",
+    "flipbook_texture": "textures/blocks/phantores_grave/phantores_grave_top_open",
+    "ticks_per_frame": 1,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "phantores_grave_top_inactive",
+    "flipbook_texture": "textures/blocks/phantores_grave/phantores_grave_top_inacvtive",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "radioactive_coral_block",
+    "flipbook_texture": "textures/blocks/radioactive_coral_block/radioactive_default",
+    "ticks_per_frame": 80,
+    "blend_frames": true
+  },
+  {
+    "atlas_tile": "shadowfire",
+    "flipbook_texture": "textures/entity/shadowfire",
+    "ticks_per_frame": 1,
+    "blend_frames": false
+  }
+]

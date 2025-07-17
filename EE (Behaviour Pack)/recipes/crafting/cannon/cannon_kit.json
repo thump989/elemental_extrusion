@@ -1,0 +1,35 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:cannon_kit"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["CRB", " I ", "OOO"],
+    "key": {
+      "C": "thump989:cannon_chase",
+      "R": "thump989:cannon_reinforce",
+      "B": "thump989:cannon_cascable",
+      "I": "minecraft:iron_ingot",
+      "O": "minecraft:planks"
+    },
+    "unlock": [
+      {
+        "item": "thump989:cannon_chase"
+      },
+      {
+        "item": "thump989:cannon_reinforce"
+      },
+      {
+        "item": "thump989:cannon_cascable"
+      }
+    ],
+    "result": [
+      {
+        "item": "thump989:cannon_kit",
+
+        "count": 1
+      }
+    ]
+  }
+}

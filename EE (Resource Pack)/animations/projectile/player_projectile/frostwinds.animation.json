@@ -1,0 +1,19 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.frostwinds.particle": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "frostwinds_body",
+						"locator": "locator"
+					},
+					{
+						"effect": "frostwinds_idle"
+					}
+				]
+			}
+		}
+	}
+}

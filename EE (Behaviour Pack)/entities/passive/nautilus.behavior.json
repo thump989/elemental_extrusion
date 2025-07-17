@@ -1,0 +1,346 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:nautilus",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "thump989:nautilus": {
+          "client_sync": true,
+          "default": "none",
+          "type": "enum",
+          "values": ["none", "hiding"]
+        }
+      }
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:type_family": {
+        "family": ["mob", "nautilus"]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entity/nautilus.json"
+      },
+      "minecraft:experience_reward": {
+        "on_death": "q.last_hit_by_player ? 3 : 0",
+        "on_bred": 7
+      },
+      "minecraft:collision_box": {
+        "height": 0.6,
+        "width": 0.6
+      },
+      "minecraft:pushable": {
+        "is_pushable": true
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:movement": {
+        "value": 0.15
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.1
+      },
+      "minecraft:movement.amphibious": {
+        "max_turn": 30
+      },
+      "minecraft:leashable": {
+        "can_be_stolen": false,
+        "hard_distance": 8,
+        "max_distance": 12,
+        "soft_distance": 6
+      },
+      "minecraft:leashable_to": {
+        "can_retrieve_from": true
+      },
+      "minecraft:navigation.generic": {
+        "is_amphibious": true,
+        "can_path_over_water": true,
+        "can_swim": true,
+        "can_walk": false,
+        "can_sink": false,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "cause": "lava",
+            "damage_per_tick": 4,
+            "filters": [
+              {
+                "test": "in_lava",
+                "subject": "self"
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:jump.static": {
+        "jump_power": 0.42
+      },
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": true,
+        "always_show": false
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_air": false,
+        "breathes_water": true,
+        "breathes_lava": false,
+        "breathes_solids": false
+      },
+      "minecraft:health": {
+        "value": 20
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      }
+    },
+    "component_groups": {
+      "self:hiding": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "damage_multiplier": 0.1,
+              "on_damage": {
+                "filters": [
+                  {
+                    "none_of": [
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "suffocation"
+                      },
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "magic"
+                      },
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "wither"
+                      },
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "override"
+                      },
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "void"
+                      }
+                    ]
+                  }
+                ],
+                "target": "self",
+                "event": "thump989:nautilus_hurt"
+              }
+            }
+          ]
+        },
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "visible": true,
+              "effect": "regeneration",
+              "duration": 5,
+              "amplifier": 0
+            }
+          ]
+        },
+        "minecraft:is_stunned": {},
+        "minecraft:movement": {
+          "value": 0
+        },
+        "minecraft:underwater_movement": {
+          "value": 0
+        },
+        "minecraft:timer": {
+          "time": 5,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:nautilus_unhide",
+            "target": "self"
+          }
+        }
+      },
+      "self:adult": {
+        "minecraft:behavior.tempt": {
+          "can_get_scared": false,
+          "can_tempt_while_ridden": true,
+          "can_tempt_vertically": true,
+          "items": ["minecraft:cod"],
+          "within_radius": 0
+        },
+        "minecraft:behavior.breed": {
+          "priority": 0,
+          "speed_multiplier": 1
+        },
+        "minecraft:breedable": {
+          "allow_sitting": true,
+          "require_tame": false,
+          "causes_pregnancy": false,
+          "breed_cooldown": 120,
+          "extra_baby_chance": 0.1,
+          "breed_items": ["minecraft:cod"],
+          "breeds_with": [
+            {
+              "baby_type": "thump989:nautilus",
+              "breed_event": {
+                "event": "minecraft:entity_born",
+                "target": "baby"
+              },
+              "mate_type": "thump989:nautilus"
+            }
+          ]
+        }
+      },
+      "self:mobile": {
+        "minecraft:movement": {
+          "value": 0.15
+        },
+        "minecraft:underwater_movement": {
+          "value": 0.1
+        },
+        "minecraft:behavior.random_swim": {
+          "avoid_surface": true,
+          "priority": 0,
+          "interval": 90,
+          "xz_dist": 10,
+          "y_dist": 7
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": [
+                  {
+                    "none_of": [
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "suffocation"
+                      },
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "magic"
+                      },
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "wither"
+                      },
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "override"
+                      },
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "void"
+                      }
+                    ]
+                  }
+                ],
+                "event": "thump989:nautilus_hurt",
+                "target": "self"
+              }
+            }
+          ]
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 9,
+          "xz_dist": 10,
+          "interval": 100
+        },
+        "minecraft:behavior.swim_idle": {
+          "idle_time": 7,
+          "priority": 1,
+          "success_rate": 0.02
+        }
+      },
+      "self:baby": {
+        "minecraft:scale_by_age": {
+          "end_scale": 1,
+          "start_scale": 0.1
+        },
+        "minecraft:ageable": {
+          "duration": 1200,
+          "feed_items": "minecraft:cod",
+          "grow_up": {
+            "event": "thump989:grow_up",
+            "target": "self"
+          }
+        }
+      },
+      "self:dry": {
+        "minecraft:damage_over_time": {
+          "damage_per_hurt": 4,
+          "time_between_hurt": 0
+        }
+      }
+    },
+    "events": {
+      "thump989:dry_stop": {
+        "remove": {
+          "component_groups": ["self:dry"]
+        }
+      },
+      "thump989:dry": {
+        "add": {
+          "component_groups": ["self:dry"]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["self:mobile", "self:adult"]
+        }
+      },
+      "thump989:nautilus_hurt": {
+        "remove": {
+          "component_groups": ["self:mobile"]
+        },
+        "add": {
+          "component_groups": ["self:hiding"]
+        },
+        "set_property": {
+          "thump989:nautilus": "hiding"
+        }
+      },
+      "thump989:nautilus_unhide": {
+        "remove": {
+          "component_groups": ["self:hiding"]
+        },
+        "add": {
+          "component_groups": ["self:mobile"]
+        },
+        "set_property": {
+          "thump989:nautilus": "none"
+        }
+      },
+      "thump989:grow_up": {
+        "remove": {
+          "component_groups": ["self:baby"]
+        },
+        "add": {
+          "component_groups": ["self:adult"]
+        }
+      },
+      "minecraft:entity_born": {
+        "add": {
+          "component_groups": ["self:baby", "self:mobile"]
+        }
+      }
+    }
+  }
+}

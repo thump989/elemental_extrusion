@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.thunder_orb_aura": {
+      "timeline": {
+        "0.5": ["/scriptevent thump989:thunder_ball thunder_arc"]
+      },
+      "animation_length": 1,
+      "loop": true
+    }
+  }
+}

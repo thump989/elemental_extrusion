@@ -1,0 +1,29 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.minister_spawner.controller": {
+			"states": {
+				"default": {
+					"transitions": [
+						{"fire": "q.variant==1"},
+						{"air": "q.variant==2"},
+						{"earth": "q.variant==3"},
+						{"water": "q.variant==4"}
+					]
+				},
+				"fire": {
+					"animations": ["spawn_fire_minister"]
+				},
+				"air": {
+					"animations": ["spawn_air_minister"]
+				},
+				"earth": {
+					"animations": ["spawn_earth_minister"]
+				},
+				"water": {
+					"animations": ["spawn_water_minister"]
+				}
+			}
+		}
+	}
+}

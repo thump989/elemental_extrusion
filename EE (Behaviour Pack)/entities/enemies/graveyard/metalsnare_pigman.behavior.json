@@ -1,0 +1,170 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:metalsnare_pigman",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:zombie",
+      "properties": {
+        "thump989:metal_count": {
+          "client_sync": true,
+          "default": 4,
+          "range": [0, 4],
+          "type": "int"
+        }
+      }
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/spawn_equipment/faux_armour_30.json",
+        "slot_drop_chance": [
+          {
+            "drop_chance": 0,
+            "slot": "slot.armor.chest"
+          }
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": true
+      },
+      "minecraft:push_through": {
+        "value": 0
+      },
+      "minecraft:movement": {
+        "value": 0.2
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:knockback_resistance": {
+        "value": 0.7,
+        "max": 0.7
+      },
+      "minecraft:type_family": {
+        "family": ["mob", "monster", "undead"]
+      },
+      "minecraft:health": {
+        "value": 65,
+        "max": 65
+      },
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": true,
+        "always_show": false
+      },
+      "minecraft:experience_reward": {
+        "on_death": "q.last_hit_by_player ? 40 : 0"
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:navigation.walk": {
+        "avoid_water": true
+      },
+      "minecraft:behavior.melee_attack": {
+        "melee_fov": 90,
+        "reach_multiplier": 5,
+        "attack_once": false,
+        "on_attack": {
+          "target": "self",
+          "event": "thump989:metal_gain"
+        },
+        "require_complete_path": false,
+        "cooldown_time": 2.5
+      },
+      "minecraft:attack": {
+        "damage": 17
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "scan_interval": 10,
+        "must_see": true,
+        "entity_types": [
+          {
+            "filters": [
+              {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "irongolem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "wolf"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "int_property",
+                    "subject": "self",
+                    "domain": "thump989:metal_count",
+                    "operator": ">=",
+                    "value": 1
+                  },
+                  {
+                    "none_of": [
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "override"
+                      },
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "wither"
+                      },
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "magic"
+                      },
+                      {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "thorns"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "event": "thump989:metal_lose"
+            },
+            "deals_damage": "no",
+            "on_damage_sound_event": "scrape"
+          }
+        ]
+      }
+    },
+    "component_groups": {},
+    "events": {
+      "thump989:metal_gain": {
+        "set_property": {
+          "thump989:metal_count": "q.property('thump989:metal_count')+1"
+        }
+      },
+      "thump989:metal_lose": {
+        "set_property": {
+          "thump989:metal_count": "q.property('thump989:metal_count')-1"
+        }
+      }
+    }
+  }
+}

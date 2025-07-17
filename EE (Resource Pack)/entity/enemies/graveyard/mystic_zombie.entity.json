@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:mystic_zombie",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/mystic_zombie"
+      },
+      "geometry": {
+        "default": "geometry.mystic_zombie"
+      },
+      "spawn_egg": {
+        "base_color": "#df18db",
+        "overlay_color": "#63c630"
+      },
+      "particle_effects": {
+        "cast": "thump989:darkzombie_cast"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+        ],
+        "animate": ["move", "look_at_target_default", "root_controller"]
+      },
+      "animations": {
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "move": "animation.mystic_zombie.move",
+        "attack": "animation.mystic_zombie.attack",
+        "cast": "animation.mystic_zombie.cast",
+        "attack_controller": "controller.animation.mystic_zombie.attack_controller",
+        "root_controller": "controller.animation.mystic_zombie.root_controller"
+      },
+      "render_controllers": ["controller.render.default"],
+      "enable_attachables": true
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:shadowfire",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "thump989:shadowfire_state": {
+          "client_sync": true,
+          "default": "none",
+          "type": "enum",
+          "values": ["none", "active_1"]
+        }
+      },
+      "animations": {
+        "fire_1": "animation.shadowfire.active_1"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "fire_1": "q.property('thump989:shadowfire_state')=='active_1'"
+          }
+        ]
+      }
+    },
+    "components": {
+      "minecraft:transient": {},
+      "minecraft:mob_effect_immunity": {
+        "mob_effects": [
+          "absorption",
+          "bad_omen",
+          "blindness",
+          "conduit_power",
+          "darkness",
+          "fatal_poison",
+          "fire_resistance",
+          "haste",
+          "health_boost",
+          "hunger",
+          "infested",
+          "instant_damage",
+          "instant_health",
+          "invisibility",
+          "jump_boost",
+          "levitation",
+          "mining_fatigue",
+          "nausea",
+          "night_vision",
+          "oozing",
+          "poison",
+          "raid_omen",
+          "regeneration",
+          "resistance",
+          "saturation",
+          "slow_falling",
+          "slowness",
+          "speed",
+          "strength",
+          "trial_omen",
+          "village_hero",
+          "water_breathing",
+          "weakness",
+          "weaving",
+          "wind_charged",
+          "wither"
+        ]
+      },
+      "minecraft:cannot_be_attacked": {},
+      "minecraft:type_family": {
+        "family": ["monster", "inanimate"]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false,
+        "push_towards_closest_space": false
+      },
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 100
+      },
+      "minecraft:body_rotation_axis_aligned": {},
+      "minecraft:body_rotation_blocked": {}
+    },
+    "component_groups": {
+      "self:default_spawn": {
+        "minecraft:timer": {
+          "time": 0.75,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:activate_1",
+            "target": "self"
+          }
+        }
+      },
+      "self:active_1": {
+        "minecraft:timer": {}
+      },
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["self:default_spawn"]
+        }
+      },
+      "thump989:activate_1": {
+        "remove": {
+          "component_groups": ["self:default_spawn"]
+        },
+        "queue_command": {
+          "command": [
+            "fill ~ ~ ~ ~ ~ ~ thump989:shadowfire replace air",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

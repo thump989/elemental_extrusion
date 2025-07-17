@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:spectral_enhancer",
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "textures": {
+        "default": "textures/entity/spectral_enhancer/armour",
+        "weapon": "textures/entity/spectral_enhancer/weapon",
+        "tool": "textures/entity/spectral_enhancer/tool"
+      },
+      "particle_effects": {
+        "enchanter_body": "thump989:enchanter_body"
+      },
+      "animations": {
+        "controller": "controller.animation.spectral_enhancer.controller",
+        "spawn": "animation.spectral_enhancer.spawn",
+        "idle": "animation.spectral_enhancer.idle",
+        "idle_2": "animation.spectral_enhancer.idle_2",
+        "death": "animation.spectral_enhancer.death",
+        "lookat": "animation.spectral_enhancer.lookat"
+      },
+      "scripts": {
+        "animate": ["controller", { "death": "!q.is_alive" }, "lookat"]
+      },
+      "geometry": {
+        "default": "geometry.spectral_enhancer"
+      },
+      "render_controllers": ["controller.render.enhancer"],
+      "spawn_egg": {
+        "base_color": "#bbcadd",
+        "overlay_color": "#8e8e28"
+      }
+    }
+  }
+}

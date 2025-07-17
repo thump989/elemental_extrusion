@@ -1,0 +1,8 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "stellar_reactor_core",
+		"metalness_emissive_roughness": "stellar_reactor_core_mer",
+		"heightmap": "stellar_reactor_core_height"
+	}
+}

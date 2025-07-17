@@ -1,0 +1,135 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:block": {
+    "description": {
+      "identifier": "thump989:castle_vault",
+      "menu_category": {
+        "category": "nature"
+      },
+      "states": {
+        "thump989:castle_vault_state": [0, 1, 2, 3, 4, 5]
+      }
+    },
+    "components": {
+      "minecraft:collision_box": true,
+      "minecraft:selection_box": true,
+      "minecraft:destructible_by_mining": false,
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:geometry": "geometry.castle_vault",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "castle_vault_0",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:light_emission": 15,
+      "minecraft:light_dampening": 0,
+      "minecraft:map_color": "#2b365f",
+      "minecraft:liquid_detection": {
+        "detection_rules": [
+          {
+            "liquid_type": "water",
+            "can_contain_liquid": true,
+            "on_liquid_touches": "blocking"
+          }
+        ]
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('thump989:castle_vault_state')==0",
+        "components": {
+          "thump989:castle_vault_key": {},
+          "thump989:castle_vault_particle": {},
+          "minecraft:tick": {
+            "interval_range": [5, 5],
+            "looping": true
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "castle_vault_0",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('thump989:castle_vault_state')==1",
+        "components": {
+          "thump989:castle_vault_key": {},
+          "thump989:castle_vault_particle": {},
+          "minecraft:tick": {
+            "interval_range": [5, 5],
+            "looping": true
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "castle_vault_1",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('thump989:castle_vault_state')==2",
+        "components": {
+          "thump989:castle_vault_key": {},
+          "thump989:castle_vault_particle": {},
+          "minecraft:tick": {
+            "interval_range": [5, 5],
+            "looping": true
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "castle_vault_2",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('thump989:castle_vault_state')==3",
+        "components": {
+          "thump989:castle_vault_key_unlock": {},
+          "thump989:castle_vault_particle": {},
+          "minecraft:tick": {
+            "interval_range": [5, 5],
+            "looping": true
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "castle_vault_3",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('thump989:castle_vault_state')==4",
+        "components": {
+          "thump989:castle_vault_unlock_idle": {},
+          "minecraft:tick": {
+            "interval_range": [120, 120]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "castle_vault_active",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('thump989:castle_vault_state')==5",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "castle_vault_empty",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

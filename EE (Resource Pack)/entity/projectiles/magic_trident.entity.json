@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:magic_trident",
+      "materials": {
+        "default": "entity_beam_additive"
+      },
+      "textures": {
+        "default": "textures/entity/magic_trident"
+      },
+      "particle_effects": {
+        "magic": "thump989:magic_trident"
+      },
+      "animations": {
+        "scale": "animation.projectile.scale",
+        "basic": "animation.magic_trident.particle",
+        "move": "animation.projectile.move"
+      },
+      "scripts": {
+        "animate": ["move", "basic", "scale"]
+      },
+      "geometry": {
+        "default": "geometry.magic_trident"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

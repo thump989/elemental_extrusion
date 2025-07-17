@@ -1,0 +1,51 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.necro_skeleton.move_controller": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"transitions": [
+						{"walking": "q.ground_speed > 1.0"}
+					],
+					"blend_transition": 0.2
+				},
+				"walking": {
+					"animations": ["walk"],
+					"transitions": [
+						{"idle": "q.ground_speed < 0.5"}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.necro_skeleton.attack_controller": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": ["idle"],
+					"transitions": [
+						{"attack": "variable.attack_time > 0"}
+					]
+				},
+				"attack": {
+					"animations": ["attack"],
+					"transitions": [
+						{"idle": "q.all_animations_finished"}
+					]
+				}
+			}
+		},
+		"controller.animation.necro_skeleton.spawn_controller": {
+			"states": {
+				"default": {
+					"animations": ["spawn"],
+					"transitions": [
+						{"spawn": "q.all_animations_finished"}
+					]
+				},
+				"spawn": {}
+			}
+		}
+	}
+}

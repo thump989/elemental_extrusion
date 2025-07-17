@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:dimensional_focus",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/dimensional_focus_diamond",
+        "pearl": "textures/entity/dimensional_focus_pearl",
+        "emerald": "textures/entity/dimensional_focus_emerald",
+        "gold": "textures/entity/dimensional_focus_gold"
+      },
+      "animations": {
+        "basic": "animation.dimensional_focus.idle"
+      },
+      "scripts": {
+        "animate": ["basic"]
+      },
+      "geometry": {
+        "default": "geometry.dimensional_focus"
+      },
+      "render_controllers": ["controller.render.dimensional_focus"]
+    }
+  }
+}

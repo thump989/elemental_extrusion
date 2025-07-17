@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:water_minister_homing_bubble",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/water_minister_homing_bubble"
+      },
+      "particle_effects": {
+        "brine_bubbleshot": "thump989:brine_bubbleshot"
+      },
+      "animations": {
+        "move": "animation.common.look_at_target",
+        "basic": "animation.brine_bubble_homing.move"
+      },
+      "scripts": {
+        "animate": ["move", "basic"]
+      },
+      "geometry": {
+        "default": "geometry.water_minister_homing_bubble"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

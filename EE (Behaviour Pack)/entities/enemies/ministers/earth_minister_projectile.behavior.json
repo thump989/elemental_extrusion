@@ -1,0 +1,363 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:earth_minister_projectile",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:timer": {
+        "time": 5,
+        "looping": true,
+        "time_down_event": {
+          "event": "thump989:instant_despawn",
+          "target": "self"
+        }
+      },
+      "minecraft:projectile": {
+        "gravity": 0.05,
+        "power": 1.3,
+        "anchor": 2,
+        "offset": [0, 0, 0],
+        "stop_on_hurt": true,
+        "on_hit": {
+          "stick_in_ground": {},
+          "impact_damage": {
+            "damage": 8,
+            "knockback": true,
+            "destroy_on_hit": false,
+            "destroy_on_hit_requires_damage": false,
+            "should_bounce": true
+          }
+        }
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "event": "thump989:earth_minister_projectile_deepslate",
+            "target": "self",
+            "filters": {
+              "test": "on_ground"
+            }
+          }
+        ]
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:diamond": {
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "event": "thump989:earth_minister_projectile_diamond",
+              "target": "self",
+              "filters": {
+                "test": "on_ground"
+              }
+            }
+          ]
+        },
+        "minecraft:variant": {
+          "value": 5
+        },
+        "minecraft:projectile": {
+          "gravity": 0.05,
+          "power": 1.3,
+          "anchor": 2,
+          "offset": [0, 0, 0],
+          "stop_on_hurt": true,
+          "on_hit": {
+            "stick_in_ground": {},
+            "impact_damage": {
+              "damage": 15,
+              "knockback": true,
+              "destroy_on_hit": false,
+              "destroy_on_hit_requires_damage": false,
+              "should_bounce": true
+            }
+          }
+        }
+      },
+      "self:deepslate_iron": {
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "event": "thump989:earth_minister_projectile_deepslate_iron",
+              "target": "self",
+              "filters": {
+                "test": "on_ground"
+              }
+            }
+          ]
+        },
+        "minecraft:variant": {
+          "value": 4
+        },
+        "minecraft:projectile": {
+          "gravity": 0.05,
+          "power": 1.3,
+          "anchor": 2,
+          "offset": [0, 0, 0],
+          "stop_on_hurt": true,
+          "on_hit": {
+            "stick_in_ground": {},
+            "impact_damage": {
+              "damage": 14,
+              "knockback": true,
+              "destroy_on_hit": false,
+              "destroy_on_hit_requires_damage": false,
+              "should_bounce": true
+            }
+          }
+        }
+      },
+      "self:iron": {
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "event": "thump989:earth_minister_projectile_iron",
+              "target": "self",
+              "filters": {
+                "test": "on_ground"
+              }
+            }
+          ]
+        },
+        "minecraft:variant": {
+          "value": 3
+        },
+        "minecraft:projectile": {
+          "gravity": 0.05,
+          "power": 1.3,
+          "anchor": 2,
+          "offset": [0, 0, 0],
+          "stop_on_hurt": true,
+          "on_hit": {
+            "stick_in_ground": {},
+            "impact_damage": {
+              "damage": 10,
+              "knockback": true,
+              "destroy_on_hit": false,
+              "destroy_on_hit_requires_damage": false,
+              "should_bounce": true
+            }
+          }
+        }
+      },
+      "self:stone": {
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "event": "thump989:earth_minister_projectile_stone",
+              "target": "self",
+              "filters": {
+                "test": "on_ground"
+              }
+            }
+          ]
+        },
+        "minecraft:variant": {
+          "value": 2
+        },
+        "minecraft:projectile": {
+          "gravity": 0.05,
+          "power": 1.3,
+          "anchor": 2,
+          "offset": [0, 0, 0],
+          "stop_on_hurt": true,
+          "on_hit": {
+            "stick_in_ground": {},
+            "impact_damage": {
+              "damage": 6,
+              "knockback": true,
+              "destroy_on_hit": false,
+              "destroy_on_hit_requires_damage": false,
+              "should_bounce": true
+            }
+          }
+        }
+      },
+      "self:blackstone": {
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "event": "thump989:earth_minister_projectile_blackstone",
+              "target": "self",
+              "filters": {
+                "test": "on_ground"
+              }
+            }
+          ]
+        },
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:projectile": {
+          "gravity": 0.05,
+          "power": 1.3,
+          "anchor": 2,
+          "offset": [0, 0, 0],
+          "stop_on_hurt": true,
+          "on_hit": {
+            "stick_in_ground": {},
+            "impact_damage": {
+              "damage": 8,
+              "knockback": true,
+              "destroy_on_hit": false,
+              "destroy_on_hit_requires_damage": false,
+              "should_bounce": true
+            }
+          }
+        }
+      },
+      "self:deepslate": {
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "event": "thump989:earth_minister_projectile_deepslate",
+              "target": "self",
+              "filters": {
+                "test": "on_ground"
+              }
+            }
+          ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:projectile": {
+          "gravity": 0.05,
+          "power": 1.3,
+          "anchor": 2,
+          "offset": [0, 0, 0],
+          "stop_on_hurt": true,
+          "on_hit": {
+            "stick_in_ground": {},
+            "impact_damage": {
+              "damage": 8,
+              "knockback": true,
+              "destroy_on_hit": false,
+              "destroy_on_hit_requires_damage": false,
+              "should_bounce": true
+            }
+          }
+        }
+      },
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:earth_minister_projectile_diamond": {
+        "queue_command": {
+          "command": [
+            "setblock ~ ~ ~ deepslate_diamond_ore",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      },
+      "thump989:earth_minister_projectile_deepslate_iron": {
+        "queue_command": {
+          "command": [
+            "setblock ~ ~ ~ deepslate_iron_ore",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      },
+      "thump989:earth_minister_projectile_iron": {
+        "queue_command": {
+          "command": [
+            "setblock ~ ~ ~ iron_ore",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      },
+      "thump989:earth_minister_projectile_stone": {
+        "queue_command": {
+          "command": [
+            "setblock ~ ~ ~ stone",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      },
+      "thump989:earth_minister_projectile_blackstone": {
+        "queue_command": {
+          "command": [
+            "setblock ~ ~ ~ blackstone",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      },
+      "thump989:earth_minister_projectile_deepslate": {
+        "queue_command": {
+          "command": [
+            "setblock ~ ~ ~ deepslate",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      },
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "add": {
+              "component_groups": ["self:deepslate"]
+            },
+            "weight": 10
+          },
+          {
+            "add": {
+              "component_groups": ["self:blackstone"]
+            },
+            "weight": 10
+          },
+          {
+            "add": {
+              "component_groups": ["self:stone"]
+            },
+            "weight": 8
+          },
+          {
+            "add": {
+              "component_groups": ["self:iron"]
+            },
+            "weight": 6
+          },
+          {
+            "add": {
+              "component_groups": ["self:deepslate_iron"]
+            },
+            "weight": 6
+          },
+          {
+            "add": {
+              "component_groups": ["self:diamond"]
+            },
+            "weight": 1
+          }
+        ]
+      }
+    }
+  }
+}

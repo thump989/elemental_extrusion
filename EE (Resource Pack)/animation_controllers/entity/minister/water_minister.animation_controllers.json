@@ -1,0 +1,37 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.water_minister.controller": {
+			"states": {
+				"default": {
+					"transitions": [
+						{"sonic_boom": "q.variant==1"}
+					],
+					"blend_transition": 0.5,
+					"blend_via_shortest_path": true
+				},
+				"sonic_boom": {
+					"animations": ["despawn"],
+					"blend_transition": 0.5,
+					"blend_via_shortest_path": true
+				}
+			}
+		},
+		"controller.animation.water_minister.sonic_boom": {
+			"states": {
+				"default": {
+					"animations": ["idle"],
+					"transitions": [
+						{"sonic_boom": "q.is_sonic_boom"}
+					]
+				},
+				"sonic_boom": {
+					"animations": ["sonic_boom"],
+					"transitions": [
+						{"default": "!q.is_sonic_boom"}
+					]
+				}
+			}
+		}
+	}
+}

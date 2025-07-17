@@ -1,0 +1,79 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:mini_astral_shot",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:scale": {
+        "value": 0.5
+      },
+      "minecraft:transient": {},
+      "minecraft:projectile": {
+        "anchor": 1,
+        "gravity": 0.005,
+        "inertia": 0.99,
+        "offset": [0, -1, 0],
+        "liquid_inertia": 1,
+        "should_bounce": true,
+        "multiple_targets": true,
+        "on_hit": {
+          "stick_in_ground": {},
+          "impact_damage": {
+            "damage": 5,
+            "knockback": true
+          },
+          "mob_effect": {
+            "amplifier": 0,
+            "duration": 600,
+            "durationeasy": 600,
+            "durationnormal": 600,
+            "durationhard": 600,
+            "effect": "poison",
+            "visible": true
+          }
+        }
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "event": "thump989:projectile_attack",
+            "target": "self",
+            "filters": {
+              "test": "on_ground",
+              "value": true
+            }
+          }
+        ]
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:projectile_attack": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      }
+    }
+  }
+}

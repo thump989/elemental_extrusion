@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:emerald_cannonball",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/emerald_cannonball"
+      },
+      "geometry": {
+        "default": "geometry.emerald_cannonball"
+      },
+      "animations": {
+        "basic": "animation.actor.billboard"
+      },
+      "scripts": {
+        "animate": ["basic"]
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

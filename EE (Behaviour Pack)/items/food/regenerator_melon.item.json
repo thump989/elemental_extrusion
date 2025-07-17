@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:item": {
+		"description": {
+			"identifier": "thump989:regenerator_melon",
+			"menu_category": {
+				"category": "nature",
+				"group": "itemGroup.name.crop"
+			}
+		},
+		"components": {
+			"minecraft:icon":"regenerator_melon",
+			"minecraft:food": {
+				"nutrition": 1,
+				"saturation_modifier": "poor",
+				"can_always_eat": true,
+				"effects":[
+					{
+						"name": "regeneration",
+						"chance": 1.0,
+						"duration": 12,
+						"amplifier": 1
+					  }
+				]
+			},
+			"minecraft:use_duration":32
+		}
+	}
+}

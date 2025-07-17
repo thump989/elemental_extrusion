@@ -1,0 +1,26 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:mystic_cheese"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["EEE", "ESE", "EEE"],
+    "key": {
+      "E": "thump989:cheese",
+      "S": "thump989:pure_magic"
+    },
+    "unlock": [
+      {
+        "item": "thump989:pure_magic"
+      }
+    ],
+    "result": [
+      {
+        "item": "thump989:mystic_cheese",
+
+        "count": 8
+      }
+    ]
+  }
+}

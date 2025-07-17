@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:phantore_evil_skull",
+      "materials": {
+        "default": "conduit_wind"
+      },
+      "textures": {
+        "default": "textures/entity/evil_skull"
+      },
+      "particle_effects": {
+        "skull": "thump989:skull_ambient"
+      },
+      "animations": {
+        "move": "animation.projectile.move",
+        "particle": "animation.evil_skull.particle"
+      },
+      "scripts": {
+        "animate": ["move", "particle"]
+      },
+      "geometry": {
+        "default": "geometry.evil_skull"
+      },
+      "render_controllers": ["controller.render.evil_skull"]
+    }
+  }
+}

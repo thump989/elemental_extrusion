@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:metalsnare_pigman",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "four_metal": "textures/entity/metalsnare_pigman/metalsnare_pigman_4",
+        "three_metal": "textures/entity/metalsnare_pigman/metalsnare_pigman_3",
+        "two_metal": "textures/entity/metalsnare_pigman/metalsnare_pigman_2",
+        "one_metal": "textures/entity/metalsnare_pigman/metalsnare_pigman_1",
+        "zero_metal": "textures/entity/metalsnare_pigman/metalsnare_pigman_0"
+      },
+      "geometry": {
+        "default": "geometry.metalsnare_pigman"
+      },
+      "spawn_egg": {
+        "base_color": "#000000",
+        "overlay_color": "#f48f7f"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.pigmanattack = (v.attack_time*4)+q.anim_time;",
+          "variable.pigmanattack_scale = v.attack_time+1;",
+          "variable.pigmanattack_arm = (v.attack_time*8);"
+        ],
+        "animate": ["move", "metal_move", "look_at", "attack_controller"]
+      },
+      "animations": {
+        "look_at": "animation.metalsnare_pigman.look_at_target.default",
+        "move": "animation.mystic_zombie.move",
+        "metal_move": "animation.metalsnare_pigman.metal",
+        "arm_extend": "animation.metalsnare_pigman.arm_extend",
+        "attack_controller": "controller.animation.metalsnare_pigman.attack_controller"
+      },
+      "render_controllers": ["controller.render.metalnsare_pigman"],
+      "enable_attachables": true
+    }
+  }
+}

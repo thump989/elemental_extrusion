@@ -1,0 +1,21 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:recipe_book_glazedbread",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "thump989:glazed_bread": {},
+      "minecraft:cooldown": {
+        "category": "recipe",
+        "duration": 0.5
+      },
+      "minecraft:rarity": "uncommon",
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "recipe_book_glazedbread"
+    }
+  }
+}

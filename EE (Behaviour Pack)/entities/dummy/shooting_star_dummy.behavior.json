@@ -1,0 +1,100 @@
+{
+  "format_version": "1.21.80",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:shooting_star_dummy",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:cannot_be_attacked": {},
+      "minecraft:dimension_bound": {},
+      "minecraft:transient": {},
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": ["dummy"]
+      },
+      "minecraft:timer": {
+        "time": 1.5,
+        "looping": true,
+        "time_down_event": {
+          "event": "thump989:instant_despawn",
+          "target": "self"
+        }
+      },
+      "minecraft:tameable": {
+        "probability": 1
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      }
+    },
+    "component_groups": {
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "first_valid": [
+          {
+            "filters": [
+              {
+                "test": "has_biome_tag",
+                "value": "the_end"
+              }
+            ],
+            "randomize": [
+              {
+                "queue_command": {
+                  "command": ["event entity @s thump989:instant_depsawn"]
+                },
+                "weight": 10
+              },
+              {
+                "queue_command": {
+                  "command": [
+                    "summon thump989:shooting_star ~ ~100 ~",
+                    "event entity @s thump989:instant_depsawn"
+                  ]
+                },
+                "weight": 1
+              }
+            ]
+          },
+          {
+            "queue_command": {
+              "command": [
+                "summon thump989:shooting_star ~ ~100 ~",
+                "event entity @s thump989:instant_depsawn"
+              ]
+            }
+          }
+        ]
+      },
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      }
+    }
+  }
+}

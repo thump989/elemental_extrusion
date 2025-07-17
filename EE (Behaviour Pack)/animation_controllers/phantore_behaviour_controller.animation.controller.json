@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.phantore_attacks": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "skull_attack_1": "query.property('thump989:phantore_attack_state')=='skullshot'"
+            },
+            {
+              "skull_attack_2": "query.property('thump989:phantore_attack_state')=='skullshot_2'"
+            }
+          ]
+        },
+        "skull_attack_1": {
+          "animations": ["skullattack_1"],
+          "transitions": [
+            {
+              "default": "!query.property('thump989:phantore_attack_state')=='skullshot' || q.all_animations_finished"
+            }
+          ]
+        },
+        "skull_attack_2": {
+          "animations": ["skullattack_2"],
+          "transitions": [
+            {
+              "default": "!query.property('thump989:phantore_attack_state')=='skullshot_2' || q.all_animations_finished"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

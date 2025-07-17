@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:giant_clam",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "particle_effects": {
+        "bubble": "thump989:giant_clam_bubble"
+      },
+      "textures": {
+        "default": "textures/entity/giant_clam"
+      },
+      "animations": {
+        "idle": "animation.giant_clam.idle",
+        "close": "animation.giant_clam.close",
+        "root_controller": "controller.animation.giant_clam.root_controller"
+      },
+      "scripts": {
+        "animate": ["root_controller"]
+      },
+      "geometry": {
+        "default": "geometry.giant_clam"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#4be3ec",
+        "overlay_color": "#b98735"
+      }
+    }
+  }
+}

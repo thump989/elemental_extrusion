@@ -1,0 +1,54 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "thump989:magic_blade",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.sword"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "magic_blade",
+      "minecraft:damage": 7,
+      "minecraft:rarity": "uncommon",
+      "minecraft:cooldown": {
+        "category": "magic_sword",
+        "duration": 0.5
+      },
+      "minecraft:glint": true,
+      "thump989:exp_sword": {},
+      "thump989:reduce_melee_damage": {},
+      "thump989:mine_block_damage": {},
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": {
+              "tags": "q.any_tag('minecraft:is_sword_item_destructible')"
+            },
+            "speed": 12
+          }
+        ]
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:enchantable": {
+        "slot": "sword",
+        "value": 50
+      },
+      "minecraft:durability": {
+        "max_durability": 501
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": ["thump989:pure_magic"],
+            "repair_amount": 62
+          }
+        ]
+      }
+    }
+  }
+}

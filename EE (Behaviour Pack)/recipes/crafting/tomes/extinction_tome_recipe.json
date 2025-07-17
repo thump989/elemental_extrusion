@@ -1,0 +1,26 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "thump989:extinct_tome"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GLG", "PBP", "PPP"],
+    "key": {
+      "P": "thump989:pure_magic",
+      "B": "minecraft:book",
+      "L": "minecraft:wither_skeleton_skull",
+      "G": "thump989:black_bone"
+    },
+    "unlock": [
+      {
+        "item": "thump989:pure_magic"
+      }
+    ],
+    "result": [
+      {
+        "item": "thump989:extinction_tome"
+      }
+    ]
+  }
+}

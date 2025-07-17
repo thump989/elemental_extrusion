@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.earth_projectile": {
+      "arrays": {
+        "textures": {
+          "array.stone_variant": [
+            "texture.deepslate",
+            "texture.blackstone",
+            "texture.stone",
+            "texture.iron",
+            "texture.deepslate_iron",
+            "texture.diamond"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": ["array.stone_variant[query.variant]"]
+    }
+  }
+}

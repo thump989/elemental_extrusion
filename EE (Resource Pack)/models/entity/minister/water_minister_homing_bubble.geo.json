@@ -1,0 +1,43 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.water_minister_homing_bubble",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "head",
+					"pivot": [0, 2.5, 0],
+					"cubes": [
+						{"origin": [-2.5, 0, -2.5], "size": [5, 5, 5], "uv": [0, 0]}
+					],
+					"locators": {
+						"bubble": [0, 2.5, 0]
+					}
+				},
+				{
+					"name": "tail",
+					"parent": "head",
+					"pivot": [0, 2.27614, 3.27614]
+				},
+				{
+					"name": "rotation2",
+					"parent": "tail",
+					"pivot": [0, 2.02614, 2.27614],
+					"rotation": [-90, 0, 0],
+					"cubes": [
+						{"origin": [-0.5, 2.53452, 1.99162], "size": [1, 4, 1], "pivot": [0, 2.88807, 2.13807], "rotation": [-45, 0, 0], "uv": [0, 10]},
+						{"origin": [-1.75, 1.88807, 0.38807], "size": [1, 4, 1], "pivot": [-1.25, 3.88807, 0.88807], "rotation": [35.26439, -30, -54.73561], "uv": [0, 10]},
+						{"origin": [0.75, 1.88807, 0.38807], "size": [1, 4, 1], "pivot": [1.25, 3.88807, 0.88807], "rotation": [35.26439, 30, 54.73561], "uv": [0, 10], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}

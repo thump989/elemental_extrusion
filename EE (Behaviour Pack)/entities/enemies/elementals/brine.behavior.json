@@ -1,0 +1,207 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:brine",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 18 : 0"
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": [
+            {
+              "test": "is_family",
+              "subject": "other",
+              "value": "monster",
+              "operator": "not"
+            }
+          ]
+        }
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "cause": "lava",
+            "damage_per_tick": 4,
+            "filters": [
+              {
+                "test": "in_lava",
+                "subject": "self"
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entity/brine.json"
+      },
+      "minecraft:type_family": {
+        "family": ["monster", "mob", "brine"]
+      },
+      "minecraft:collision_box": {
+        "width": 0.9,
+        "height": 0.9
+      },
+      "minecraft:health": {
+        "value": 30,
+        "max": 30
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "scan_interval": 10,
+        "must_see": true,
+        "entity_types": [
+          {
+            "filters": [
+              {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "axolotl"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "irongolem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "wolf"
+                  }
+                ]
+              }
+            ],
+            "max_dist": 20
+          }
+        ]
+      },
+      "minecraft:follow_range": {
+        "value": 48,
+        "max": 48
+      },
+      "minecraft:target_nearby_sensor": {
+        "inside_range": 7.5,
+        "outside_range": 7.6,
+        "must_see": true,
+        "on_inside_range": {
+          "event": "thump989:brine_close_shot",
+          "target": "self"
+        },
+        "on_outside_range": {
+          "filters": [
+            {
+              "test": "in_water",
+              "value": true,
+              "subject": "self"
+            }
+          ],
+          "event": "thump989:brine_far_shot",
+          "target": "self"
+        }
+      },
+      "minecraft:navigation.generic": {
+        "is_amphibious": true,
+        "can_path_over_water": true,
+        "can_swim": true,
+        "can_walk": true,
+        "can_sink": false,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:behavior.move_to_water": {
+        "priority": 6,
+        "search_range": 16,
+        "search_height": 5,
+        "search_count": 1,
+        "goal_radius": 0.1
+      },
+      "minecraft:behavior.swim_idle": {
+        "priority": 7,
+        "idle_time": 5.0,
+        "success_rate": 0.05
+      },
+      "minecraft:behavior.random_swim": {
+        "priority": 8,
+        "interval": 0,
+        "xz_dist": 30,
+        "y_dist": 15
+      },
+      "minecraft:movement.amphibious": {
+        "max_turn": 15.0
+      },
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.2
+      },
+      "minecraft:jump.static": {},
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:close_mode": {
+        "minecraft:shooter": {
+          "def": "thump989:brine_bubble"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "attack_interval": 3,
+          "priority": 1,
+          "burst_shots": 7,
+          "burst_interval": 0,
+          "attack_radius": 25
+        }
+      },
+      "self:long_mode": {
+        "minecraft:shooter": {
+          "def": "thump989:brine_bubble_homing"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "attack_interval": 3,
+          "priority": 1,
+          "attack_radius": 35
+        }
+      }
+    },
+    "events": {
+      "thump989:brine_close_shot": {
+        "remove": {
+          "component_groups": ["self:long_mode"]
+        },
+        "add": {
+          "component_groups": ["self:close_mode"]
+        }
+      },
+      "thump989:brine_far_shot": {
+        "remove": {
+          "component_groups": ["self:close_mode"]
+        },
+        "add": {
+          "component_groups": ["self:long_mode"]
+        }
+      }
+    }
+  }
+}

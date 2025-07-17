@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "voidskipper_heart",
+		"metalness_emissive_roughness": "voidskipper_heart_mer"
+	}
+}

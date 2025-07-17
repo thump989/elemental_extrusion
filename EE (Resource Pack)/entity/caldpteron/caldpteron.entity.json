@@ -1,0 +1,65 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:caldpteron",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "particle_effects": {
+        "landing_dust": "thump989:moth_land",
+        "dust": "thump989:moth_dust",
+        "areaattack": "thump989:caldpteron_areaconjure",
+        "areaattack_outer": "thump989:caldpteron_areaconjure_outer",
+        "ranged_charge": "thump989:caldpteron_rangedattack_charge",
+        "summon_horn": "thump989:caldpteron_summon",
+        "summon_spikes_air": "thump989:moth_fly_cast_icespikes",
+        "summon_icecube_air": "thump989:moth_fly_cast_icecube",
+        "summon_icecube_ground": "thump989:moth_ground_cast_icecube",
+        "summon_spikes_ground": "thump989:moth_ground_cast_icespikes",
+        "icerain": "thump989:caldpteron_icerain"
+      },
+      "animations": {
+        "lookat": "animation.humanoid.look_at_target.default",
+        "wing_fly1": "animation.caldpteron.wing_fly1",
+        "body_fly_idle": "animation.caldpteron.body_fly_idle",
+        "body_fly_rangedattack_idle": "animation.caldpteron.body_fly_rangedattack_idle",
+        "head_icerain_idle": "animation.caldpteron.head_icerain_idle",
+        "head_idle": "animation.caldpteron.head_idle",
+        "head_ground_casting": "animation.caldpteron.head_ground_casting",
+        "body_fly_summon": "animation.caldpteron.body_fly_summon",
+        "body_ground_idle": "animation.caldpteron.body_ground_idle",
+        "body_ground_walk": "animation.caldpteron.body_ground_walk",
+        "all_land": "animation.caldpteron.all_land",
+        "take_off": "animation.caldpteron.take_off",
+        "ground_wing_idle": "animation.caldpteron.ground_wing_idle",
+        "ground_wing_casting": "animation.caldpteron.ground_wing_casting",
+        "wings_roar": "animation.caldpteron.wings_roar",
+        "body_legs_idle": "animation.caldpteron.body_legs_idle",
+        "body_legs_casting": "animation.caldpteron.body_legs_casting",
+        "body_roar": "animation.caldpteron.body_roar",
+        "ground_wing_areaattack": "animation.caldpteron.ground_wing_areaattack",
+        "walk_controller": "controller.animation.caldpteron.walk_controller",
+        "flying_controller": "controller.animation.caldpteron.flying_controller",
+        "grounded_controller": "controller.animation.caldpteron.grounded_controller",
+        "root_controller": "controller.animation.caldpteron.root_controller"
+      },
+      "scripts": {
+        "pre_animation": ["variable.ground_particle = 10 - q.position(1);"],
+        "should_update_bones_and_effects_offscreen": "(1.0)",
+        "animate": ["root_controller", "lookat"]
+      },
+      "textures": {
+        "default": "textures/entity/caldpteron"
+      },
+      "geometry": {
+        "default": "geometry.caldpteron"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#1de2c9",
+        "overlay_color": "#ffffff"
+      }
+    }
+  }
+}

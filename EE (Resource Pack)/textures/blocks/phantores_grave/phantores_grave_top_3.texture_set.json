@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "phantores_grave_top_3",
+		"metalness_emissive_roughness": "phantores_grave_top_3_mer"
+	}
+}

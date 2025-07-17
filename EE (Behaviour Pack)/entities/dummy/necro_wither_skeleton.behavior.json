@@ -1,0 +1,178 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:necro_wither_skeleton",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/wither_skeleton_gear.json",
+        "slot_drop_chance": [
+          {
+            "slot": "slot.weapon.mainhand",
+            "drop_chance": 0
+          }
+        ]
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:mob_effect_immunity": {
+        "mob_effects": ["wither"]
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "avoid_sun": true,
+        "avoid_water": true
+      },
+      "minecraft:type_family": {
+        "family": ["mob", "player"]
+      },
+      "minecraft:scale": {
+        "value": 1.2
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
+      "minecraft:tameable": {
+        "probability": 1
+      },
+      "minecraft:transient": {},
+      "minecraft:fire_immune": {},
+      "minecraft:behavior.melee_attack": {
+        "speed_multiplier": 1.25,
+        "can_spread_on_fire": true
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:health": {
+        "value": 25,
+        "max": 25
+      },
+      "minecraft:timer": {
+        "time": 1.85,
+        "looping": true,
+        "time_down_event": {
+          "event": "thump989:initiate",
+          "target": "self"
+        }
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:active": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "entity_types": [
+            {
+              "max_dist": 20,
+              "filters": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "monster"
+                },
+                {
+                  "none_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "wolf"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "axolotl"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "irongolem"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "minecraft:behavior.random_stroll": {
+          "interval": 120,
+          "priority": 8,
+          "xz_dist": 10,
+          "y_dist": 7
+        },
+        "minecraft:behavior.follow_owner": {
+          "can_teleport": true,
+          "priority": 0,
+          "post_teleport_distance": 4,
+          "start_distance": 22,
+          "stop_distance": 4
+        },
+        "minecraft:follow_range": {
+          "value": 48,
+          "max": 48
+        },
+        "minecraft:timer": {
+          "time": 45,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:degrade",
+            "target": "self"
+          }
+        },
+        "minecraft:attack": {
+          "damage": 4,
+          "effect_name": "wither",
+          "effect_duration": 10
+        },
+        "minecraft:behavior.melee_attack": {
+          "cooldown_time": 1,
+          "reach_multiplier": 2,
+          "can_spread_on_fire": true,
+          "speed_multiplier": 1.1
+        }
+      },
+      "self:degrade": {
+        "minecraft:damage_over_time": {
+          "damage_per_hurt": 2,
+          "time_between_hurt": 0
+        }
+      }
+    },
+    "events": {
+      "thump989:degrade": {
+        "add": {
+          "component_groups": ["self:degrade"]
+        }
+      },
+      "thump989:initiate": {
+        "remove": {
+          "component_groups": ["self:spawning"]
+        },
+        "add": {
+          "component_groups": ["self:active"]
+        }
+      }
+    }
+  }
+}

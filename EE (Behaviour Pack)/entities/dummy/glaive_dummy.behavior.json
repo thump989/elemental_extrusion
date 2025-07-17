@@ -1,0 +1,84 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:glaive_dummy",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:cannot_be_attacked": {},
+      "minecraft:area_attack": {
+        "damage_per_tick": 8,
+        "damage_range": 10,
+        "damage_cooldown": 1,
+        "entity_filter": [
+          {
+            "test": "is_family",
+            "subject": "other",
+            "value": "monster"
+          }
+        ],
+        "cause": "override"
+      },
+      "minecraft:mob_effect": {
+        "mob_effect": "slowness",
+        "cooldown_time": 1,
+        "effect_range": 11,
+        "effect_time": 60,
+        "entity_filter": [
+          {
+            "test": "is_family",
+            "subject": "other",
+            "value": "monster"
+          }
+        ]
+      },
+      "minecraft:timer": {
+        "time": 15,
+        "looping": true,
+        "time_down_event": {
+          "event": "thump989:instant_despawn",
+          "target": "self"
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "component_groups": {
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      }
+    }
+  }
+}

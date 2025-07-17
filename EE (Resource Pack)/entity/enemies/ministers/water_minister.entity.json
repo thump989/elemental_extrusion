@@ -1,0 +1,51 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:water_minister",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "kelp": "conduit_wind"
+      },
+      "textures": {
+        "default": "textures/entity/water_minister",
+        "kelp": "textures/entity/water_minister_kelp"
+      },
+      "particle_effects": {
+        "water_minister_aura": "thump989:water_minister_aura"
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "sonic_boom": "animation.water_minister.sonic_boom",
+        "boom_controller": "controller.animation.water_minister.controller",
+        "despawn": "animation.water_minister.despawn",
+        "move": "animation.brine.move",
+        "idle": "animation.brine.idle",
+        "tentacle_idle": "animation.water_minister.idle_tentacle",
+        "sonic_controller": "controller.animation.water_minister.sonic_boom"
+      },
+      "scripts": {
+        "animate": [
+          "look_at_target",
+          "move",
+          "tentacle_idle",
+          "boom_controller",
+          "sonic_controller"
+        ],
+        "should_update_effects_offscreen": "(1.0)"
+      },
+      "geometry": {
+        "default": "geometry.water_minister",
+        "kelp": "geometry.water_minister_kelp"
+      },
+      "render_controllers": [
+        "controller.render.default",
+        "controller.render.kelp_body"
+      ],
+      "spawn_egg": {
+        "base_color": "#000457",
+        "overlay_color": "#00327b"
+      }
+    }
+  }
+}

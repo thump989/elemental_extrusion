@@ -1,0 +1,82 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:magic_missile",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:tameable": {
+        "probability": 1
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "event": "thump989:projectile",
+            "target": "self",
+            "filters": {
+              "test": "on_ground",
+              "subject": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:variant": {
+        "value": 18
+      },
+      "minecraft:type_family": {
+        "family": ["inanimate", "magic_projectile", "killable"]
+      },
+      "minecraft:projectile": {
+        "anchor": 1,
+        "angle_offset": 0,
+        "inertia": 1,
+        "liquid_inertia": 1,
+        "ignored_entities": ["minecraft:player"],
+        "stop_on_hurt": true,
+        "multiple_targets": false,
+        "gravity": 0,
+        "power": 1,
+        "on_hit": {
+          "stick_in_ground": {}
+        }
+      },
+      "minecraft:transient": {}
+    },
+    "component_groups": {
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      },
+      "thump989:projectile": {
+        "queue_command": {
+          "command": [
+            "particle thump989:magic_missile_burst",
+            "event entity @s thump989:instant_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

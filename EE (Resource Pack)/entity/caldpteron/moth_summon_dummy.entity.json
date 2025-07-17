@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:moth_summon_dummy",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "particle_effects": {
+        "moth_dummy_icecube": "thump989:moth_dummy_icecube"
+      },
+      "animations": {
+        "particle_icecube": "animation.moth_summon_dummy.particle_icecube",
+        "idle": "animation.moth_summon_dummy.idle"
+      },
+      "scripts": {
+        "should_update_bones_and_effects_offscreen": "(1.0)",
+        "animate": ["idle", "particle_icecube"]
+      },
+      "textures": {
+        "default": "textures/entity/dummy_blank"
+      },
+      "geometry": {
+        "default": "geometry.dummy_blank"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

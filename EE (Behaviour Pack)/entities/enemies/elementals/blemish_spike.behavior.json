@@ -1,0 +1,114 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:blemish_spike",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:timer": {
+        "time": 1.6,
+        "looping": true,
+        "time_down_event": {
+          "event": "thump989:attack",
+          "target": "self"
+        }
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable_by_piston": false,
+        "is_pushable": false
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:cannot_be_attacked": {},
+      "minecraft:push_through": {
+        "value": 100
+      }
+    },
+    "component_groups": {
+      "self:despawn_timer": {
+        "minecraft:timer": {
+          "time": 1,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:instant_despawn",
+            "target": "self"
+          }
+        }
+      },
+      "self:strong_attack": {
+        "minecraft:timer": {
+          "time": 1.6,
+          "looping": true,
+          "time_down_event": {
+            "event": "thump989:strong_attack",
+            "target": "self"
+          }
+        }
+      },
+      "self:variant2": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "self:instant_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      }
+    },
+    "events": {
+      "thump989:minister_spawn": {
+        "add": {
+          "component_groups": ["self:strong_attack", "self:variant2"]
+        }
+      },
+      "thump989:instant_despawn": {
+        "add": {
+          "component_groups": ["self:instant_despawn"]
+        }
+      },
+      "thump989:strong_attack": {
+        "add": {
+          "component_groups": ["self:despawn_timer"]
+        },
+        "queue_command": {
+          "command": [
+            "damage @e[family=mob,family=!blemish,r=1] 10 entity_attack",
+            "damage @e[family=player,r=1] 10 entity_attack",
+            "playsound break.suspicious_gravel @a ~ ~ ~"
+          ]
+        }
+      },
+      "thump989:attack": {
+        "add": {
+          "component_groups": ["self:despawn_timer"]
+        },
+        "queue_command": {
+          "command": [
+            "damage @e[family=mob,family=!blemish,r=1] 5 entity_attack",
+            "damage @e[family=player,r=1] 5 entity_attack",
+            "playsound break.suspicious_gravel @a ~ ~ ~"
+          ]
+        }
+      }
+    }
+  }
+}

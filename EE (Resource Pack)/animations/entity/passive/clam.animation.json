@@ -1,0 +1,19 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.clam.swim": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": [-32.5, 0, 0]
+				},
+				"body": {
+					"rotation": [0, "math.cos(q.anim_time*900)*8", "math.cos(q.anim_time*900)*8"]
+				}
+			}
+		},
+		"animation.clam.idle": {
+			"loop": true
+		}
+	}
+}

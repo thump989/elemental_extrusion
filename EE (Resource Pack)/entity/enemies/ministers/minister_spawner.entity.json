@@ -1,0 +1,34 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "thump989:minister_spawner",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "animations": {
+        "controller": "controller.animation.minister_spawner.controller",
+        "spawn_water_minister": "animation.minister_spawner.spawn_water_minister",
+        "spawn_earth_minister": "animation.minister_spawner.spawn_earth_minister",
+        "spawn_fire_minister": "animation.minister_spawner.spawn_fire_minister",
+        "spawn_air_minister": "animation.minister_spawner.spawn_air_minister"
+      },
+      "particle_effects": {
+        "water_minister_spawn": "thump989:water_minister_spawn",
+        "earth_minister_spawn": "thump989:earth_minister_spawn",
+        "fire_minister_spawn": "thump989:fire_minister_spawn",
+        "air_minister_spawn": "thump989:air_minister_spawn"
+      },
+      "scripts": {
+        "animate": ["controller"]
+      },
+      "textures": {
+        "default": "textures/entity/dummy_blank"
+      },
+      "geometry": {
+        "default": "geometry.dummy_blank"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

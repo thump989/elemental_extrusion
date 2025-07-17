@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.runners_baton.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [132.5, 56, -32],
+					"position": [1.73953, 23.20968, 8.1851]
+				}
+			}
+		},
+		"animation.runners_baton.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [85, 0, 0],
+					"position": [-0.25, 22.30799, 3.0841],
+					"scale": 0.85
+				}
+			}
+		}
+	}
+}

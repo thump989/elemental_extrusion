@@ -1,0 +1,301 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "thump989:dimensional_focus",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "thump989:focus_type": {
+          "client_sync": true,
+          "default": "azure",
+          "type": "enum",
+          "values": ["azure", "alabaster", "amber", "verdant"]
+        }
+      }
+    },
+    "components": {
+      "minecraft:cannot_be_attacked": {},
+      "minecraft:fire_immune": {},
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:collision_box": {
+        "height": 0.2,
+        "width": 1
+      },
+      "minecraft:body_rotation_axis_aligned": {},
+      "minecraft:body_rotation_blocked": {},
+      "minecraft:is_collidable": {},
+      "minecraft:persistent": {},
+      "minecraft:knockback_resistance": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:health": {
+        "value": 5,
+        "max": 5
+      },
+      "minecraft:tick_world": {
+        "never_despawn": true,
+        "radius": 2
+      },
+      "minecraft:spell_effects": {
+        "add_effects": [
+          {
+            "visible": false,
+            "effect": "invisibility",
+            "duration": "infinite"
+          }
+        ]
+      },
+      "minecraft:renders_when_invisible": {},
+      "minecraft:mob_effect_immunity": {
+        "mob_effects": [
+          "absorption",
+          "bad_omen",
+          "blindness",
+          "conduit_power",
+          "darkness",
+          "fatal_poison",
+          "fire_resistance",
+          "haste",
+          "health_boost",
+          "hunger",
+          "infested",
+          "instant_damage",
+          "instant_health",
+          "jump_boost",
+          "levitation",
+          "mining_fatigue",
+          "nausea",
+          "night_vision",
+          "oozing",
+          "poison",
+          "raid_omen",
+          "regeneration",
+          "resistance",
+          "saturation",
+          "slow_falling",
+          "slowness",
+          "speed",
+          "strength",
+          "trial_omen",
+          "village_hero",
+          "water_breathing",
+          "weakness",
+          "weaving",
+          "wind_charged",
+          "wither"
+        ]
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "cause": "void",
+            "damage_per_tick": 5,
+            "filters": [
+              {
+                "test": "in_lava",
+                "value": true
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "value": "player",
+                      "subject": "other"
+                    }
+                  ]
+                }
+              ]
+            },
+            "deals_damage": "yes",
+            "damage_multiplier": 0.0001
+          },
+          {
+            "on_damage": {
+              "filters": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "value": "player",
+                      "subject": "other",
+                      "operator": "not"
+                    },
+                    {
+                      "all_of": [
+                        {
+                          "test": "has_damage",
+                          "subject": "self",
+                          "value": "void",
+                          "operator": "not"
+                        },
+                        {
+                          "test": "has_damage",
+                          "subject": "self",
+                          "value": "suffocation",
+                          "operator": "not"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": ["inanimate"]
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "add_items": {
+              "table": "loot_tables/teleporter/azure.json"
+            }
+          }
+        ]
+      }
+    },
+    "component_groups": {
+      "self:diamond": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:type_family": {
+          "family": ["inanimate", "azure"]
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "add_items": {
+                "table": "loot_tables/teleporter/azure.json"
+              },
+              "cooldown": 1,
+              "swing": true,
+              "play_sounds": "block.end_portal_frame.fill"
+            }
+          ]
+        }
+      },
+      "self:pearl": {
+        "minecraft:type_family": {
+          "family": ["inanimate", "alabaster"]
+        },
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "add_items": {
+                "table": "loot_tables/teleporter/alabaster.json"
+              },
+              "cooldown": 1,
+              "swing": true,
+              "play_sounds": "block.end_portal_frame.fill"
+            }
+          ]
+        }
+      },
+      "self:emerald": {
+        "minecraft:type_family": {
+          "family": ["inanimate", "verdant"]
+        },
+        "minecraft:variant": {
+          "value": 2
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "add_items": {
+                "table": "loot_tables/teleporter/verdant.json"
+              },
+              "cooldown": 1,
+              "swing": true,
+              "play_sounds": "block.end_portal_frame.fill"
+            }
+          ]
+        }
+      },
+      "self:gold": {
+        "minecraft:type_family": {
+          "family": ["inanimate", "amber"]
+        },
+        "minecraft:variant": {
+          "value": 3
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "add_items": {
+                "table": "loot_tables/teleporter/amber.json"
+              },
+              "cooldown": 1,
+              "swing": true,
+              "play_sounds": "block.end_portal_frame.fill"
+            }
+          ]
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["self:diamond"]
+        },
+        "set_property": {
+          "thump989:focus_type": "azure"
+        }
+      },
+      "thump989:spawn_pearl": {
+        "add": {
+          "component_groups": ["self:pearl"]
+        },
+        "set_property": {
+          "thump989:focus_type": "alabaster"
+        }
+      },
+      "thump989:spawn_emerald": {
+        "add": {
+          "component_groups": ["self:emerald"]
+        },
+        "set_property": {
+          "thump989:focus_type": "verdant"
+        }
+      },
+      "thump989:spawn_gold": {
+        "add": {
+          "component_groups": ["self:gold"]
+        },
+        "set_property": {
+          "thump989:focus_type": "amber"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.metalsnare_pigman.attack_controller": {
+			"states": {
+				"default": {
+					"transitions": [
+						{"attack": "v.attack_time>0"}
+					]
+				},
+				"attack": {
+					"animations": ["arm_extend"],
+					"transitions": [
+						{"default": "q.all_animations_finished"}
+					]
+				}
+			}
+		}
+	}
+}

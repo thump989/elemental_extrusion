@@ -1,0 +1,14 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.astral_crate.idle": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": [0, "q.anim_time*150", 0],
+					"position": [0, "math.cos(q.anim_time*150)", 0]
+				}
+			}
+		}
+	}
+}

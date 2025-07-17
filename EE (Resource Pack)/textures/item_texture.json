@@ -1,0 +1,496 @@
+{
+	"texture_data": {
+		"hydro_drop": {
+			"textures": "textures/items/hydro_drop.png"
+		},
+		"dormant_key": {
+			"textures": "textures/items/dormant_key.png"
+		},
+		"malice": {
+			"textures": "textures/items/malice.png"
+		},
+		"cooked_sniffer_ribs": {
+			"textures": "textures/items/cooked_sniffer_ribs.png"
+		},
+		"raw_sniffer_ribs": {
+			"textures": "textures/items/raw_sniffer_ribs.png"
+		},
+		"air_universal_locator": {
+			"textures": "textures/items/air_universal_locator"
+		},
+		"air_universal_focus": {
+			"textures": "textures/items/air_universal_focus"
+		},
+		"earth_universal_locator": {
+			"textures": "textures/items/earth_universal_locator"
+		},
+		"earth_universal_focus": {
+			"textures": "textures/items/earth_universal_focus"
+		},
+		"water_universal_locator": {
+			"textures": "textures/items/water_universal_locator"
+		},
+		"water_universal_focus": {
+			"textures": "textures/items/water_universal_focus"
+		},
+		"fire_universal_locator": {
+			"textures": "textures/items/fire_universal_locator"
+		},
+		"fire_universal_focus": {
+			"textures": "textures/items/fire_universal_focus"
+		},
+		"caldpteron_caterpillar_egg": {
+			"textures": "textures/items/caldpteron_caterpillar_egg"
+		},
+		"somberfish_eggs": {
+			"textures": "textures/items/somberfish_eggs"
+		},
+		"glowworm_egg_vine": {
+			"textures": "textures/items/glowworm_egg_vine"
+		},
+		"radioactive_coral": {
+			"textures": "textures/items/radioactive_coral"
+		},
+		"fly_bush": {
+			"textures": "textures/items/fly_bush"
+		},
+		"extinction_tome_dx": {
+			"textures": "textures/items/extinction_tome_dx"
+		},
+		"cosmic_star": {
+			"textures": "textures/items/cosmic_star"
+		},
+		"everfuel": {
+			"textures": "textures/items/everfuel"
+		},
+		"voidskipper_heart": {
+			"textures": "textures/items/voidskipper_heart"
+		},
+		"homeworld_locator": {
+			"textures": ["textures/items/homeworld_locator", "textures/items/homeworld_locator_mer"]
+		},
+		"homeworld_locator_mer": {
+			"textures": "textures/items/homeworld_locator_mer"
+		},
+		"cannon_wrench": {
+			"textures": "textures/items/cannon_wrench"
+		},
+		"endless_waffle": {
+			"textures": "textures/items/endless_waffle"
+		},
+		"cube_of_knowledge": {
+			"textures": "textures/items/cube_of_knowledge"
+		},
+		"spirit_of_the_turtle": {
+			"textures": "textures/items/spirit_of_the_turtle"
+		},
+		"runners_baton": {
+			"textures": "textures/items/runners_baton"
+		},
+		"faux_armour_10": {
+			"textures": "textures/items/faux_armour_10"
+		},
+		"faux_armour_30": {
+			"textures": "textures/items/faux_armour_30"
+		},
+		"faux_armour": {
+			"textures": "textures/items/faux_armour"
+		},
+		"stormsower_trident": {
+			"textures": "textures/items/stormsower_trident"
+		},
+		"magic_boomerang_tome": {
+			"textures": "textures/items/magic_boomerang_tome"
+		},
+		"amber_dimensional_locator": {
+			"textures": "textures/items/amber_dimensional_locator"
+		},
+		"alabaster_dimensional_locator": {
+			"textures": "textures/items/alabaster_dimensional_locator"
+		},
+		"alabaster_dimensional_focus": {
+			"textures": "textures/items/alabaster_dimensional_focus"
+		},
+		"verdant_dimensional_locator": {
+			"textures": "textures/items/verdant_dimensional_locator"
+		},
+		"amber_dimensional_focus": {
+			"textures": "textures/items/amber_dimensional_focus"
+		},
+		"verdant_dimensional_focus": {
+			"textures": "textures/items/verdant_dimensional_focus"
+		},
+		"azure_dimensional_focus": {
+			"textures": "textures/items/azure_dimensional_focus"
+		},
+		"azure_dimensional_locator": {
+			"textures": "textures/items/azure_dimensional_locator"
+		},
+		"boss_guide_book_collection": {
+			"textures": "textures/items/boss_guide_book_collection"
+		},
+		"guide_book_collection": {
+			"textures": "textures/items/guide_book_collection"
+		},
+		"blazing_asteroid_staff": {
+			"textures": "textures/items/blazing_asteroid_staff"
+		},
+		"phantore_bonemail": {
+			"textures": "textures/items/phantore_bonemail"
+		},
+		"dereliction_scythe": {
+			"textures": "textures/items/dereliction_scythe"
+		},
+		"ominous_talisman": {
+			"textures": "textures/items/ominous_talisman"
+		},
+		"sceptre_of_the_watcher": {
+			"textures": "textures/items/sceptre_of_the_watcher"
+		},
+		"tome_of_tempted_fate": {
+			"textures": "textures/items/tome_of_tempted_fate"
+		},
+		"cursed_soulbone": {
+			"textures": "textures/items/cursed_soulbone"
+		},
+		"toxic_dartstorm_tome": {
+			"textures": "textures/items/toxic_dartstorm_tome"
+		},
+		"magic_missile": {
+			"textures": "textures/items/magic_missile"
+		},
+		"cureall_tome": {
+			"textures": "textures/items/cureall_tome"
+		},
+		"skull_key": {
+			"textures": "textures/items/skull_key"
+		},
+		"phantore_phase_4_spawn_egg": {
+			"textures": ["textures/items/phantore_phase_4_spawn_egg"]
+		},
+		"phantore_phase_3_spawn_egg": {
+			"textures": ["textures/items/phantore_phase_3_spawn_egg"]
+		},
+		"phantore_phase_2_spawn_egg": {
+			"textures": ["textures/items/phantore_phase_2_spawn_egg"]
+		},
+		"phantore_phase_1_spawn_egg": {
+			"textures": ["textures/items/phantore_phase_1_spawn_egg"]
+		},
+		"honeycomb_ring": {
+			"textures": "textures/items/honeycomb_ring"
+		},
+		"spectral_enchaner_other": {
+			"textures": "textures/items/spectral_enchaner_other"
+		},
+		"spectral_enchaner_weapon": {
+			"textures": "textures/items/spectral_enchaner_weapon"
+		},
+		"spectral_enhancer_tool": {
+			"textures": "textures/items/spectral_enhancer_tool"
+		},
+		"pearl": {
+			"textures": "textures/items/pearl"
+		},
+		"arcane_tome_dx": {
+			"textures": "textures/items/arcane_tome_dx"
+		},
+		"lifeweaver_tome_dx": {
+			"textures": "textures/items/lifeweaver_tome_dx"
+		},
+		"necromantic_tome_dx": {
+			"textures": "textures/items/necromantic_tome_dx"
+		},
+		"butter": {
+			"textures": "textures/items/butter"
+		},
+		"grappling_hook": {
+			"textures": "textures/items/grappling_hook"
+		},
+		"faux_moth_wings": {
+			"textures": "textures/items/faux_moth_wings"
+		},
+		"icicle_glaive": {
+			"textures": "textures/items/icicle_glaive"
+		},
+		"frosthelm": {
+			"textures": "textures/items/frosthelm"
+		},
+		"frostwinds_staff": {
+			"textures": "textures/items/frostwinds_staff"
+		},
+		"caldpteron_scale": {
+			"textures": "textures/items/caldpteron_scale"
+		},
+		"stygian_scope": {
+			"textures": "textures/items/stygian_scope"
+		},
+		"demon_core": {
+			"textures": "textures/items/demon_core"
+		},
+		"mosquito_needle": {
+			"textures": "textures/items/mosquito_needle"
+		},
+		"glowworm_queen": {
+			"textures": "textures/items/glowworm_queen"
+		},
+		"glowworm_vines": {
+			"textures": "textures/items/glowworm_vines"
+		},
+		"castle_key": {
+			"textures": "textures/items/castle_key"
+		},
+		"astral_mace": {
+			"textures": "textures/items/astral_mace"
+		},
+		"spectral_enhancer": {
+			"textures": "textures/items/spectral_enhancer"
+		},
+		"spectral_matter": {
+			"textures": "textures/items/spectral_matter"
+		},
+		"golden_apple_seed": {
+			"textures": "textures/items/golden_apple_seed"
+		},
+		"shadow_chime": {
+			"textures": "textures/items/shadow_chime"
+		},
+		"null_item": {
+			"textures": "textures/items/null_item"
+		},
+		"recipe_book_glazedbread": {
+			"textures": "textures/items/recipe_book_glazedbread"
+		},
+		"glazed_bread": {
+			"textures": "textures/items/glazed_bread"
+		},
+		"astral_postion": {
+			"textures": "textures/items/astral_postion"
+		},
+		"astral_staff": {
+			"textures": "textures/items/astral_staff"
+		},
+		"astral_rod": {
+			"textures": "textures/items/astral_rod"
+		},
+		"astral_gem": {
+			"textures": "textures/items/astral_gem"
+		},
+		"extinction_tome": {
+			"textures": "textures/items/extinction_tome"
+		},
+		"flight_tome": {
+			"textures": "textures/items/flight_tome"
+		},
+		"teleportation_tome": {
+			"textures": "textures/items/teleportation_tome"
+		},
+		"mystic_cheese": {
+			"textures": "textures/items/mystic_cheese"
+		},
+		"cheese": {
+			"textures": "textures/items/cheese"
+		},
+		"solarflare_tome": {
+			"textures": "textures/items/solarflare_tome"
+		},
+		"reagent_tome": {
+			"textures": "textures/items/reagent_tome"
+		},
+		"arcane_tome": {
+			"textures": "textures/items/arcane_tome"
+		},
+		"lifeweaver_tome": {
+			"textures": "textures/items/lifeweaver_tome"
+		},
+		"necromantic_tome": {
+			"textures": "textures/items/necromantic_tome"
+		},
+		"cobalt_hoe": {
+			"textures": "textures/items/cobalt_hoe"
+		},
+		"cobalt_shovel": {
+			"textures": "textures/items/cobalt_shovel"
+		},
+		"cobalt_axe": {
+			"textures": "textures/items/cobalt_axe"
+		},
+		"cobalt_pickaxe": {
+			"textures": "textures/items/cobalt_pickaxe"
+		},
+		"malumite_hoe": {
+			"textures": "textures/items/malumite_hoe"
+		},
+		"cobalt_sword": {
+			"textures": "textures/items/cobalt_sword"
+		},
+		"cobalt_boots": {
+			"textures": "textures/items/cobalt_boots"
+		},
+		"cobalt_leggings": {
+			"textures": "textures/items/cobalt_leggings"
+		},
+		"cobalt_chestplate": {
+			"textures": "textures/items/cobalt_chestplate"
+		},
+		"cobalt_helmet": {
+			"textures": "textures/items/cobalt_helmet"
+		},
+		"lightning_tome": {
+			"textures": "textures/items/lightning_tome"
+		},
+		"potion_of_fire": {
+			"textures": "textures/items/potion_of_fire"
+		},
+		"potion_of_water": {
+			"textures": "textures/items/potion_of_water"
+		},
+		"potion_of_air": {
+			"textures": "textures/items/potion_of_air"
+		},
+		"potion_of_earth": {
+			"textures": "textures/items/potion_of_earth"
+		},
+		"magic_blade": {
+			"textures": "textures/items/magic_blade"
+		},
+		"raw_cobalt": {
+			"textures": "textures/items/raw_cobalt"
+		},
+		"mystic_exctractor": {
+			"textures": "textures/items/mystic_exctractor"
+		},
+		"pure_magic": {
+			"textures": "textures/items/pure_magic"
+		},
+		"black_bone": {
+			"textures": "textures/items/black_bone"
+		},
+		"potion_of_haste_strong": {
+			"textures": "textures/items/potion_of_haste_strong"
+		},
+		"potion_of_haste_long": {
+			"textures": "textures/items/potion_of_haste_long"
+		},
+		"potion_of_haste_1": {
+			"textures": "textures/items/potion_of_haste_1"
+		},
+		"conjure_water_minister": {
+			"textures": "textures/items/conjure_water_minister"
+		},
+		"conjure_earth_minister": {
+			"textures": "textures/items/conjure_earth_minister"
+		},
+		"water_staff": {
+			"textures": "textures/items/water_staff"
+		},
+		"earth_staff": {
+			"textures": "textures/items/earth_staff"
+		},
+		"air_staff": {
+			"textures": "textures/items/air_staff"
+		},
+		"conjure_air_minister": {
+			"textures": "textures/items/conjure_air_minister"
+		},
+		"earth_gem": {
+			"textures": "textures/items/earth_gem"
+		},
+		"air_gem": {
+			"textures": "textures/items/air_gem"
+		},
+		"water_gem": {
+			"textures": "textures/items/water_gem"
+		},
+		"fire_staff": {
+			"textures": "textures/items/fire_staff"
+		},
+		"fire_gem": {
+			"textures": "textures/items/fire_gem"
+		},
+		"conjure_fire_minister": {
+			"textures": "textures/items/conjure_fire_minister"
+		},
+		"vampire_dagger": {
+			"textures": "textures/items/vampire_dagger"
+		},
+		"bat_fang": {
+			"textures": "textures/items/bat_fang"
+		},
+		"brine_mace": {
+			"textures": "textures/items/brine_mace"
+		},
+		"brine_rod": {
+			"textures": "textures/items/brine_rod"
+		},
+		"blemished_mace": {
+			"textures": "textures/items/blemished_mace"
+		},
+		"blemish_rod": {
+			"textures": "textures/items/blemish_rod"
+		},
+		"blazing_mace": {
+			"textures": "textures/items/blazing_mace"
+		},
+		"malumite_shovel": {
+			"textures": "textures/items/malumite_shovel"
+		},
+		"malumite_axe": {
+			"textures": "textures/items/malumite_axe"
+		},
+		"testblade": {
+			"textures": "textures/items/testblade"
+		},
+		"cannon_kit": {
+			"textures": "textures/items/cannon_kit"
+		},
+		"cannon_reinforce": {
+			"textures": "textures/items/cannon_reinforce"
+		},
+		"cannon_cascable": {
+			"textures": "textures/items/cannon_cascable"
+		},
+		"cannon_chase": {
+			"textures": "textures/items/cannon_chase"
+		},
+		"biofuel": {
+			"textures": "textures/items/biofuel"
+		},
+		"toxic_dart": {
+			"textures": "textures/items/toxic_dart"
+		},
+		"toxic_blowgun": {
+			"textures": "textures/items/toxic_blowgun"
+		},
+		"regenerator_melon": {
+			"textures": "textures/items/regenerator_melon"
+		},
+		"malumite_boots": {
+			"textures": "textures/items/malumite_boots"
+		},
+		"malumite_leggings": {
+			"textures": "textures/items/malumite_leggings"
+		},
+		"malumite_chestplate": {
+			"textures": "textures/items/malumite_chestplate"
+		},
+		"malumite_helmet": {
+			"textures": "textures/items/malumite_helmet"
+		},
+		"malumite_pickaxe": {
+			"textures": "textures/items/malumite_pickaxe"
+		},
+		"malumite_sword": {
+			"textures": "textures/items/malumite_sword"
+		},
+		"malumite_bar": {
+			"textures": "textures/items/malumite_bar"
+		},
+		"raw_malumite": {
+			"textures": "textures/items/raw_malumite"
+		},
+		"cobalt_ingot": {
+			"textures": "textures/items/cobalt_ingot"
+		}
+	}
+}

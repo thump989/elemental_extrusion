@@ -1,0 +1,20 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.butterfly.float": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": [-22.5, 0, 0],
+					"position": [0, "-math.sin(q.anim_time*600)*2", 0]
+				},
+				"leftwing": {
+					"rotation": [0, 0, "math.sin(q.anim_time*600)*60"]
+				},
+				"rightwing": {
+					"rotation": [0, 0, "-math.sin(q.anim_time*600)*60"]
+				}
+			}
+		}
+	}
+}
