@@ -1,1 +1,0 @@
-loot spawn ~ ~1 ~ loot "spawn_equipment/guidebooks_boss"

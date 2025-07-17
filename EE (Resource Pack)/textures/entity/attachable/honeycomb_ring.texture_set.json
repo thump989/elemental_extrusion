@@ -1,7 +1,0 @@
-{
-	"format_version": "1.16.100",
-	"minecraft:texture_set": {
-		"color": "honeycomb_ring",
-		"metalness_emissive_roughness": "honeycomb_ring_mer"
-	}
-}

@@ -1,7 +1,0 @@
-{
-	"format_version": "1.16.100",
-	"minecraft:texture_set": {
-		"color": "glowworm_larva",
-		"metalness_emissive_roughness": "glowworm_larva_mer"
-	}
-}

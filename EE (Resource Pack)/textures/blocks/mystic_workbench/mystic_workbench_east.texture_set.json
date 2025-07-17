@@ -1,7 +1,0 @@
-{
-  "format_version": "1.16.100",
-  "minecraft:texture_set": {
-    "color": "mystic_workbench_east",
-    "metalness_emissive_roughness": "mystic_workbench_side_mer"
-  }
-}

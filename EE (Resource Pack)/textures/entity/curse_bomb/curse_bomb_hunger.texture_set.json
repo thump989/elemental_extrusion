@@ -1,7 +1,0 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "curse_bomb_hunger",
-    "metalness_emissive_roughness_subsurface": "curse_bomb_hunger_mer"
-  }
-}

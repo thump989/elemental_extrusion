@@ -1,7 +1,0 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "electric_particle_1",
-    "metalness_emissive_roughness_subsurface": "electric_particle_1_mer"
-  }
-}

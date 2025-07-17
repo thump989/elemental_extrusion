@@ -1,7 +1,0 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "astral_staff",
-    "metalness_emissive_roughness_subsurface": "staff_mer"
-  }
-}

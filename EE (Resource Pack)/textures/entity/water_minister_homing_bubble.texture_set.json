@@ -1,7 +1,0 @@
-{
-	"format_version": "1.16.100",
-	"minecraft:texture_set": {
-		"color": "water_minister_homing_bubble",
-		"metalness_emissive_roughness": "water_minister_homing_bubble_mer"
-	}
-}

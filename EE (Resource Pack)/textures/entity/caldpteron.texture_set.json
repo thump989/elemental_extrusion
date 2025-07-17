@@ -1,8 +1,0 @@
-{
-	"format_version": "1.16.100",
-	"minecraft:texture_set": {
-		"color": "caldpteron",
-		"metalness_emissive_roughness": "caldpteron_mer",
-		"heightmap": "caldpteron_height"
-	}
-}

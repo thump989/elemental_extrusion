@@ -1,7 +1,0 @@
-{
-	"format_version": "1.16.100",
-	"minecraft:texture_set": {
-		"color": "titan_beetle",
-		"metalness_emissive_roughness": "titan_beetle_mer"
-	}
-}

@@ -1,7 +1,0 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "magic_boomerang_tome",
-    "metalness_emissive_roughness_subsurface": "magic_boomerang_tome_mer"
-  }
-}

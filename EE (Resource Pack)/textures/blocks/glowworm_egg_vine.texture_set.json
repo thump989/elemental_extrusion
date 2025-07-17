@@ -1,7 +1,0 @@
-{
-	"format_version": "1.16.100",
-	"minecraft:texture_set": {
-		"color": "glowworm_egg_vine",
-		"metalness_emissive_roughness": "glowworm_egg_vine_mer"
-	}
-}

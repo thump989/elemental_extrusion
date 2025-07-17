@@ -1,7 +1,0 @@
-{
-	"format_version": "1.16.100",
-	"minecraft:texture_set": {
-		"color": "stellar_obsidian_outer",
-		"metalness_emissive_roughness": "stellar_obsidian_outer_mer"
-	}
-}

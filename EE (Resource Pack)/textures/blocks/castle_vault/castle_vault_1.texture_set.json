@@ -1,7 +1,0 @@
-{
-	"format_version": "1.16.100",
-	"minecraft:texture_set": {
-		"color": "castle_vault_1",
-		"metalness_emissive_roughness": "castle_vault_1_mer"
-	}
-}

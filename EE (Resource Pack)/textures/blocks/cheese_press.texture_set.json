@@ -1,7 +1,0 @@
-{
-	"format_version": "1.16.100",
-	"minecraft:texture_set": {
-		"color": "cheese_press",
-		"metalness_emissive_roughness": "cheese_press_mer"
-	}
-}
